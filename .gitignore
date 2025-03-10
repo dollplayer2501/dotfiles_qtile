@@ -6,8 +6,6 @@ config..original..20250108.py
 
 !/bin/.gitkeep
 
-/keybind-map/*
-!/keybind-map/.gitkeep
-
-
+# /keybind-map/*
+# !/keybind-map/.gitkeep
 

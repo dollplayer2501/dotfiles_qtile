@@ -35,28 +35,34 @@ layouts = [
   ),
 
   layout.TreeTab(
-    level_shitf = 5,
-    margin_left = 5,
-    margin_y = 50,
-    fontsize = 18,
-    font = font_set['main'],
-
-    sections = ['TreeTab', 'I dont understand'],
-    section_fg = '#7f3fbf',
-    section_fontsize = 18,
-    border_width = 10,
-
-    panel_width = 450,
-    bg_color = '#08052b80',
-
-    active_bg = '#7f3fbfc0',
+    active_bg = '#7f3fbf88',
     active_fg = '#ff7f7f',
-
-    inactive_bg = '#08052ba0',
+    bg_color = '#08052b88',
+    border_width = 5,
+    font = font_set['sub1'],
+    fontshadow = None,
+    fontsize = 18,
+    inactive_bg = '#08052baa',
     inactive_fg = '#7fbaff',
-
+    level_shitf = 0,
+    margin_left = 0,
+    margin_y = 0,
+    padding_left = 20,
+    padding_x = 0,
+    padding_y = 0,
+    panel_width = 450,
+    place_right = False,
+    previous_on_rm = False,
+    section_bottom = 10,
+    section_fg = '#7f3fbf',
+    section_fontsize = 20,
+    section_left = 10,
+    section_padding = 10,
+    section_top = 10,
+    sections = ['TreeTab', 'I dont understand', 'This layout settings'],
     urgent_bg = Theme_Colors['Debug'],
     urgent_fg = Theme_Colors['Debug'],
+    vspace = 0,
   ),
 
   # layout.Columns(

@@ -76,7 +76,8 @@ keys = [
   #   lazy.spawn("scrot -z -p 'EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png' -e ' mv $f ~/Pictures/'"),
   #   desc = 'Print screen now'),
 
-  Key([mod4, mod1], 'p', lazy.spawn("fish -c 'my_scrot_now'"), desc = 'Print screen now'),
+  Key([mod4, mod1], 'p', lazy.spawn("fish -c 'my_scrot_now'"),  desc = 'Print screen now'),
+  Key([mod4, mod1], 'i', lazy.spawn("fish -c 'my_scrot_wait'"), desc = 'Print screen after 10 sec'),
 
   # Key([mod4, mod1], 'p',
   #   lazy.function(lambda: os.system("fish -c 'my_scrot_now'")),

@@ -46,7 +46,7 @@ powerline = {
 # #  return os.popen('uptime -p').read().strip()
 #   return os.popen("awk '{print $1}' /proc/uptime | awk '{print int($1)}'").read().strip()
 
-#awk '{print $1}' /proc/uptime | awk '{print int($1)}'  
+#awk '{print $1}' /proc/uptime | awk '{print int($1)}'
 
 screens = [
   Screen(
@@ -132,8 +132,12 @@ screens = [
           padding = 0,
           padding_x = 2,
           padding_y = 0,
-          border = Theme_Colors['Purple'],
           icon_size = 18,
+          unfocused_border = 'None',
+          urgent_alert_method = 'border',
+
+          border = Theme_Colors['Purple'],
+          urgent_border = Theme_Colors['Oreange'],
 
           foreground = Theme_Colors['LightBlue'],
           background = Theme_Colors['DarkBlue_lighten'],
