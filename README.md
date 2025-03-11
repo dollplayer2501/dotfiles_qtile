@@ -1,7 +1,12 @@
 > [!NOTE]
 > Regarding the installation procedure for Qtile and Qtile-extras itself,  
-> I first install Xfce4 of EndeavourOS, then install Qtile and Qtile-extras with `yay`, and then configure the various environments.  
-> For this reason, various daemons use those of Xfce4.
+> I first install Xfce4 in EndeavourOS, then install Qtile and Qtile-extras with `yay`, and then configure the various environments.  
+> For this reason, various daemons use those of Xfce4.  
+> In other words, I'm not using [EndeavourOS-Community-Editions/qtile](https://github.com/EndeavourOS-Community-Editions/qtile).
+
+> [!WARNING]
+> This configuration is adapted to my personal needs, so it is not recommended to use it directly.  
+> I suggest forking the repository and modifying it according to your preferences.
 
 
 ## About:
@@ -15,7 +20,9 @@ I split the Qtile configuration files, and the template is [EndeavourOS-Communit
 
 ## Screenshots:
 
-I use Picom for application transparency only (no other features used).
+Regarding the color scheme, I am not using any famous one.  
+I am using the color scheme used by Xfce4 and Xfce4-terminal in EndeavourOS, please refer to `./modules/Theme_Colors_EndeavourOS_Xfce4.py`.  
+For information on the fonts, terminal used, please refer to `./modules/variables.py`.
 
 ### TreeTab Layout
 
