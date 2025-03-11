@@ -76,7 +76,9 @@ keys = [
   #   lazy.spawn("scrot -z -p 'EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png' -e ' mv $f ~/Pictures/'"),
   #   desc = 'Print screen now'),
 
+  # `my_scrot_now` is `command scrot -z -p "EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png" -e "mv \$f ~/Pictures/"`
   Key([mod4, mod1], 'p', lazy.spawn("fish -c 'my_scrot_now'"),  desc = 'Print screen now'),
+  # `my_scrot_wait` is `command scrot -c -d 10 -z -p "EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png" -e "mv \$f ~/Pictures/"`
   Key([mod4, mod1], 'i', lazy.spawn("fish -c 'my_scrot_wait'"), desc = 'Print screen after 10 sec'),
 
   # Key([mod4, mod1], 'p',
