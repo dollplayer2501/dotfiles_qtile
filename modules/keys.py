@@ -25,10 +25,29 @@ keys = [
 
   # Move windows between left/right columns or move up/down in current stack.
   # Moving out of range in Columns layout will create new column.
-  Key([mod4, 'shift'], 'h', lazy.layout.shuffle_left(),  desc = 'Move window to the left'),
-  Key([mod4, 'shift'], 'l', lazy.layout.shuffle_right(), desc = 'Move window to the right'),
-  Key([mod4, 'shift'], 'j', lazy.layout.shuffle_down(),  desc = 'Move window down'),
-  Key([mod4, 'shift'], 'k', lazy.layout.shuffle_up(),    desc = 'Move window up'),
+
+  # MEMO: .config/qtile · Derek Taylor / Dotfiles · GitLab
+  # https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/qtile?ref_type=heads
+
+  Key([mod4, 'shift'], 'h',
+    lazy.layout.shuffle_left(),
+    lazy.layout.move_left().when(layout = ['treetab']),
+    desc = 'Move window to the left/move tab left in treetab'),
+
+  Key([mod4, 'shift'], 'l',
+    lazy.layout.shuffle_right(),
+    lazy.layout.move_right().when(layout = ['treetab']),
+    desc = 'Move window to the right/move tab right in treetab'),
+
+  Key([mod4, 'shift'], 'j',
+    lazy.layout.shuffle_down(),
+    lazy.layout.section_down().when(layout = ['treetab']),
+    desc = 'Move window down/move down a section in treetab'),
+
+  Key([mod4, 'shift'], 'k',
+    lazy.layout.shuffle_up(),
+    lazy.layout.section_up().when(layout = ['treetab']),
+    desc = 'Move window up/move up a section in treetab'),
 
   # Grow windows. If current window is on the edge of screen and direction
   # will be to screen edge - window would shrink.

@@ -8,6 +8,8 @@ from libqtile.lazy import lazy
 from libqtile import layout
 #
 from modules.keys import keys
+# from modules.layouts import layouts
+
 from modules.variables import mod1, mod4, terminal_guess
 #
 import re
@@ -19,9 +21,8 @@ groups = [
   # MEMO: and using 2nd argument
 
   Group(name = '1', position = 1, label = '1.terminal',
-    # TODO: This is original, not configration.
+    # MEMO: That pattern is OK, but my layouts config does not apply.
     # layouts = [layout.VerticalTile(), layout.TreeTab()],
-    # TODO: This does not work.
     # layouts = ['verticaltile', 'max'],
     layout = 'verticaltile', 
     init = True, persist = True,
