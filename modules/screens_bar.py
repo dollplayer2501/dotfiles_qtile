@@ -297,22 +297,19 @@ screens = [
 
         ## ------------------------------------
 
-        widget.TextBox(
-          # Nerd Fonts https://www.nerdfonts.com/#features
-          fmt = '  ',
-
-          fontsize = 16,
-          font = font_set['main'],
-
-          padding = 0,
-          mouse_callbacks = {
-            'Button1': lambda: qtile.cmd_spawn('brave'),
-            'Button3': lambda: qtile.cmd_spawn('brave -incognito'),
-          },
-
-          foreground = Theme_Colors['Purple'],
-          background = Theme_Colors['DarkBlue_lighten'],
-        ),
+        # widget.TextBox(
+        #   # Nerd Fonts https://www.nerdfonts.com/#features
+        #   fmt = '  ',
+        #   fontsize = 16,
+        #   font = font_set['main'],
+        #   padding = 0,
+        #   mouse_callbacks = {
+        #     'Button1': lambda: qtile.cmd_spawn('brave'),
+        #     'Button3': lambda: qtile.cmd_spawn('brave -incognito'),
+        #   },
+        #   foreground = Theme_Colors['Purple'],
+        #   background = Theme_Colors['DarkBlue_lighten'],
+        # ),
 
         widget.QuickExit(
           # default_text = '[logoff]',

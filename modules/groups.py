@@ -53,6 +53,8 @@ groups = [
     matches = [Match(wm_class = re.compile(r"^(libreoffice|Gimp|Claws-mail)$"))],
   ),
 
+  # TODO: Add Virt-manager workspace?
+
   Group(name = '9', position = 9, label = '9.null',
     layout = 'max',
     init = True, persist = True,
