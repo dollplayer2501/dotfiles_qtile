@@ -37,7 +37,7 @@ dmenu_power = extension.CommandSet(
   commands = {
     'Shutdown': 'systemctl poweroff',
     'Reboot':   'systemctl reboot',
- 
+
     # TODO: Logout does not work?
     # "Lock": "betterlockscreen -l",
     # "Hibernate": "sudo pm-hibernate",

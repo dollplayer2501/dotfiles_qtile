@@ -24,7 +24,7 @@ groups = [
     # MEMO: That pattern is OK, but my layouts config does not apply.
     # layouts = [layout.VerticalTile(), layout.TreeTab()],
     # layouts = ['verticaltile', 'max'],
-    layout = 'verticaltile', 
+    layout = 'verticaltile',
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(kitty)$"))],
   ),

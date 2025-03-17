@@ -8,21 +8,22 @@
 # #08052B #221F45 #3B385E #555278 #6E6B91 #8784AA
 # https://www.colors.tools/lighten-and-darken/
 
+# MEMO: Transparent setting add '00' is completely transparentm 'ff' fully visible  
 
 Theme_Colors = {
   #
   'DarkBlue_default': '#08052b',
   'DarkBlue_lighten': '#221f45',
   #
-  'LightBlue':        '#7FBAFF',
-  'Purple':           '#7F3FBF',
-  'Oreange':          '#FF7F7F',
-  'Red':              '#CC3980',
+  'LightBlue':        '#7fbaff',
+  'Purple':           '#7f3fbf',
+  'Oreange':          '#ff7f7f',
+  'Red':              '#cc3980',
   'Green':            '#8ff0a4',
   #
-  'Gray_1':           '#9999CC',
-  'Gray_2':           '#CDCCDB',
-  'Gray_3':           '#E3E3EA',
+  'Gray_1':           '#9999cc',
+  'Gray_2':           '#cdccdb',
+  'Gray_3':           '#e3e3ea',
   #
   'Debug':            '#ff00ff',
 }

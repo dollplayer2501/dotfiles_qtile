@@ -59,6 +59,17 @@ screens = [
       [
         ## ------------------------------------
 
+        widget.Prompt(
+          fontsize = 20,
+          font = font_set['sub2'],
+
+          cursor_color = Theme_Colors['Oreange'],
+          foreground = Theme_Colors['LightBlue'],
+          background = Theme_Colors['DarkBlue_default'],
+        ),
+
+        ## ------------------------------------
+
         # widget.CurrentLayout(
         #   padding = 0,
         #   fontsize = 26,
@@ -107,37 +118,13 @@ screens = [
         #   **powerline,
         # ),
 
-        # widget.WindowTabs(
-        #   fontsize = 18,
-        #   font = font_set['sub1'],
-
-        #   markup = True,
-        #   selected = ('<u>', '</u>'),
-        #   padding = 0,
-
-        #   foreground = Theme_Colors['LightBlue'],
-        #   background = Theme_Colors['DarkBlue_lighten'],
-
-        #   **powerline,
-        # ),
-
-        widget.TaskList(
-          fontsize = 16,
+        widget.WindowTabs(
+          fontsize = 18,
           font = font_set['sub1'],
 
-          borderwidth = 1,
-          margin = 0,
-          margin_x = 2,
-          margin_y = 0,
+          markup = True,
+          selected = ('<u>', '</u>'),
           padding = 0,
-          padding_x = 2,
-          padding_y = 0,
-          icon_size = 18,
-          unfocused_border = 'None',
-          urgent_alert_method = 'border',
-
-          border = Theme_Colors['Purple'],
-          urgent_border = Theme_Colors['Oreange'],
 
           foreground = Theme_Colors['LightBlue'],
           background = Theme_Colors['DarkBlue_lighten'],
@@ -145,16 +132,26 @@ screens = [
           **powerline,
         ),
 
-        ## ------------------------------------
-
-        widget.Prompt(
-          fontsize = 16,
-          font = font_set['sub2'],
-
-          cursor_color = Theme_Colors['Oreange'],
-          foreground = Theme_Colors['LightBlue'],
-          background = Theme_Colors['DarkBlue_default'],
-        ),
+        # MEMO: Getting errors when moving across workspaces in application?
+        # widget.TaskList(
+        #   fontsize = 16,
+        #   font = font_set['sub1'],
+        #   borderwidth = 1,
+        #   margin = 0,
+        #   margin_x = 2,
+        #   margin_y = 0,
+        #   padding = 0,
+        #   padding_x = 2,
+        #   padding_y = 0,
+        #   icon_size = 18,
+        #   unfocused_border = 'None',
+        #   urgent_alert_method = 'border',
+        #   border = Theme_Colors['Purple'],
+        #   urgent_border = Theme_Colors['Oreange'],
+        #   foreground = Theme_Colors['LightBlue'],
+        #   background = Theme_Colors['DarkBlue_lighten'],
+        #   **powerline,
+        # ),
 
         ## ------------------------------------
 

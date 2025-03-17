@@ -48,12 +48,12 @@ def run_every_startup():
 
 # def set_wallpaper_for_group(group_name):
 #   wallpapers = {
-#     '1': '/home/dollplayer/Pictures/WallPaper/zz..KassandraLeigh/Baroness_48_of_68.jpg',
-#     '2': '/home/dollplayer/Pictures/WallPaper/zz..KassandraLeigh/CitadelExpansionPack55.jpg',
-#     '3': '/home/dollplayer/Pictures/WallPaper/zz..KassandraLeigh/HolodickHoliday_68_of_74.jpg',
-#     '4': '/home/dollplayer/Pictures/WallPaper/zz..KassandraLeigh/Sith_44.jpg',
-#     '5': '/home/dollplayer/Pictures/WallPaper/zz..KassandraLeigh/Sith_44.jpg',
-#     '9': '/home/dollplayer/Pictures/WallPaper/zz..KassandraLeigh/The_Eventide_Phantom_149_of_159.jpg',
+#     '1': '/home/dollplayer/Pictures/WallPaper/01.jpg',
+#     '2': '/home/dollplayer/Pictures/WallPaper/02.jpg',
+#     '3': '/home/dollplayer/Pictures/WallPaper/03.jpg',
+#     '4': '/home/dollplayer/Pictures/WallPaper/04.jpg',
+#     '5': '/home/dollplayer/Pictures/WallPaper/05.jpg',
+#     '9': '/home/dollplayer/Pictures/WallPaper/06.jpg',
 #   }
 #   wallpaper_path = wallpapers.get(group_name, default_wallpaper)
 #   for screen in qtile.screens:
@@ -62,7 +62,6 @@ def run_every_startup():
 # @hook.subscribe.group_window_added
 # def change_wallpaper(groups):
 #   set_wallpaper_for_group(groups.name)
-
 
 
 ##
