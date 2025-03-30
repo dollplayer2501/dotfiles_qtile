@@ -5,6 +5,7 @@
 
 #
 from libqtile import extension
+from libqtile.lazy import lazy
 #
 from theme_colors import Theme_Colors
 #
@@ -35,14 +36,19 @@ dmenu_normal = extension.DmenuRun(
 
 dmenu_power = extension.CommandSet(
   commands = {
-    'Shutdown': 'systemctl poweroff',
-    'Reboot':   'systemctl reboot',
-
-    # TODO: Logout does not work?
-    # "Lock": "betterlockscreen -l",
-    # "Hibernate": "sudo pm-hibernate",
-    # "Suspend": "sudo pm-suspend"
-    # "Logout": lazy.shutdown(),
+    # NOTE: see i3-wm of EndeavourOS
+    'Systemctl:Shutdown':    'systemctl poweroff',
+    'Systemctl:Reboot':      'systemctl reboot',
+    'Systemctl:Suspend':     'systemctl suspend',
+    'Systemctl:Hibernate':   'systemctl hibernate',
+    # NOTE: After the introduction of Xfce4, this system
+    'Xfce4:Screensaver':     'xfce4-screensaver-command -l',
+    'Xfce4:Lock':            'xfce4-screensaver-command -l',
+    #
+    'Qtile:Reboot':          lazy.reload_config(),
+    # NOTE: Implementing logout from LightDM is difficult for me
+    # Therefore, `lazy.shutdown()` is the de facto logout?
+    'Qtile:Shutdown/logout': lazy.shutdown(),
   },
 
   **dmenu_setting,

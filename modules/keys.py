@@ -1,5 +1,11 @@
 #
+# INFO: Here are my rules:
+#  Mod4 + Control:            Systematic control of Qtile
+#  Mod4 + Mod1/Alt:           Application Launcher
+#  Mod4 + Mod1/Alt + Control: Qtile's Scratchpad
 #
+# TODO: Some commands may not be accepted depending on the layout.
+# These will be written to the error log.
 #
 
 #
@@ -26,7 +32,7 @@ keys = [
   # Move windows between left/right columns or move up/down in current stack.
   # Moving out of range in Columns layout will create new column.
 
-  # MEMO: .config/qtile · Derek Taylor / Dotfiles · GitLab
+  # INFO: .config/qtile · Derek Taylor / Dotfiles · GitLab
   # https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/qtile?ref_type=heads
 
   Key([mod4, 'shift'], 'h',
@@ -71,10 +77,10 @@ keys = [
   Key([mod4], 'f', lazy.window.toggle_fullscreen(), desc = 'Toggle fullscreen on the focused window'),
   Key([mod4], 't', lazy.window.toggle_floating(),   desc = 'Toggle floating on the focused window'),
 
-  Key([mod4, 'control'], 'r', lazy.reload_config(),             desc = 'Reload the config'),
-  Key([mod4, 'shift'],   'r', lazy.spawncmd(),                  desc = 'Spawn a command using a prompt widget'),
-  Key([mod4, 'control'], 'q', lazy.shutdown(),                  desc = 'Shutdown Qtile'),
-  Key([mod4],            'w', lazy.window.kill(),               desc = 'Kill focused window'),
+  Key([mod4, 'control'], 'r', lazy.reload_config(), desc = 'Reload the config'),
+  Key([mod4, 'shift'],   'r', lazy.spawncmd(),      desc = 'Spawn a command using a prompt widget'),
+  Key([mod4, 'control'], 'q', lazy.shutdown(),      desc = 'Shutdown Qtile, logout'),
+  Key([mod4],            'w', lazy.window.kill(),   desc = 'Kill focused window'),
 
   Key([mod4],            'r', lazy.run_extension(dmenu_normal),   desc = 'Dmenu Run Normal'),
   Key([mod4, 'control'], 'a', lazy.run_extension(dmenu_window),   desc = 'Dmenu All Tasks'),
@@ -82,6 +88,7 @@ keys = [
   Key([mod4, 'control'], 't', lazy.run_extension(dmenu_terminal), desc = 'Dmenu All Terminal'),
 
   Key([mod4], 'Return', lazy.spawn(terminal_main),  desc = 'Launch terminal'),
+  # Key([mod4], 'Return', lazy.spawn('brave') if self.qtile.current_group == "2" else lazy.spawn(terminal_main)),
   Key([mod4], 'space',  lazy.layout.next(),         desc = 'Move window focus to other window'),
   Key([mod4], 'Tab',    lazy.next_layout(),         desc = 'Toggle between layouts'),
 
@@ -116,7 +123,7 @@ keys = [
   Key([mod4, mod1], 'v', lazy.spawn('vlc'),                    desc = 'Run VLC'),
   Key([mod4, mod1], 'x', lazy.spawn('xfce4-settings-manager'), desc = 'Run Xfce4 settings'),
 
-  #MEMO: Not reflected in gen-keybinding-img?
+  ## INFO: Not reflected in gen-keybinding-img?
   ## KeyChord([mod4], 'z', [
   ##     Key([], 'b', lazy.spawn('brave'),     desc = 'Launch Brave'),
   ##     Key([], 'k', lazy.spawn('keepassxc'), desc = 'Launch KeepassXC'),

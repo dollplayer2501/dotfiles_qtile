@@ -17,11 +17,11 @@ import re
 
 
 groups = [
-  # MEMO: xprop | grep WM_CLASS
-  # MEMO: and using 2nd argument
+  # INFO: xprop | grep WM_CLASS
+  # INFO: and using 2nd argument
 
   Group(name = '1', position = 1, label = '1.terminal',
-    # MEMO: That pattern is OK, but my layouts config does not apply.
+    # INFO: That pattern is OK, but my layouts config does not apply.
     # layouts = [layout.VerticalTile(), layout.TreeTab()],
     # layouts = ['verticaltile', 'max'],
     layout = 'verticaltile',

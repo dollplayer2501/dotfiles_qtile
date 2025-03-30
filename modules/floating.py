@@ -12,7 +12,7 @@ from modules.variables import terminal_sub1, terminal_sub8, terminal_sub9
 from theme_colors import Theme_Colors
 
 
-# MEMO: xprop | grep WM_CLASS
+# INFO: xprop | grep WM_CLASS
 
 floating_layout = layout.Floating(
   border_width = 1,
@@ -30,7 +30,7 @@ floating_layout = layout.Floating(
     Match(wm_class = 'Xfce4-about'),
     Match(wm_class = 'Ristretto'),
 
-    # MEMO: This is bad pattern
+    # INFO: This is bad pattern
     #  Match(wm_class = 'Xfce4-terminal'),
 
     # Match(wm_class = 'Mousepad'),

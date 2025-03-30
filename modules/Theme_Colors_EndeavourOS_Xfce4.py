@@ -8,7 +8,7 @@
 # #08052B #221F45 #3B385E #555278 #6E6B91 #8784AA
 # https://www.colors.tools/lighten-and-darken/
 
-# MEMO: Transparent setting add '00' is completely transparentm 'ff' fully visible  
+# INFO: Transparent setting add '00' is completely transparentm 'ff' fully visible
 
 Theme_Colors = {
   #

@@ -31,7 +31,8 @@ from modules.hooks import hook
 from modules.layouts import layouts
 from modules.screens_bar import screens
 from modules.floating import floating_layout
-from modules.dropdowns import dropdowns
+from modules.dropdowns import dropdowns, keys
+from modules.popup import keys
 from modules.mouse import mouse
 
 

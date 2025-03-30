@@ -132,7 +132,7 @@ screens = [
           **powerline,
         ),
 
-        # MEMO: Getting errors when moving across workspaces in application?
+        # INFO: Getting errors when moving across workspaces in application?
         # widget.TaskList(
         #   fontsize = 16,
         #   font = font_set['sub1'],
@@ -167,7 +167,7 @@ screens = [
           background = Theme_Colors['DarkBlue_default'],
         ),
 
-        # MEMO: need `python-psutil`
+        # INFO: need `python-psutil`
         # widget.ThermalSensor(
         #   format = '{temp:.1f}{unit}',
         #   fontsize = 22,
@@ -235,7 +235,7 @@ screens = [
         #   update_interval=60,  # 60秒ごとに更新
         # ),
 
-        # MEMO: NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+        # INFO: NB Systray is incompatible with Wayland, consider using StatusNotifier instead
         # widget.StatusNotifier(),
 
         # widget.Net(
@@ -321,7 +321,7 @@ screens = [
           background = Theme_Colors['DarkBlue_lighten'],
         ),
 
-        # MEMO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'qtile_extras.widget.syncthing.Syncthing': No module named 'dbus_fast'
+        # INFO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'qtile_extras.widget.syncthing.Syncthing': No module named 'dbus_fast'
         # widget.Syncthing(
         #   api_key = 'tSfbt9mM6doJgs2R25A66H6ay2gdFkrN',
         #   server = 'http://127.0.0.1:8384/',
@@ -331,16 +331,16 @@ screens = [
         #   show_bar = True,
         # ),
 
-        # MEMO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'qtile_extras.widget.statusnotifier.StatusNotifier': No module named 'dbus_next'
+        # INFO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'qtile_extras.widget.statusnotifier.StatusNotifier': No module named 'dbus_next'
         # need `python-pyxdg` and `python-dbus-next`, not `python-dbus-fast`
         # widget.StatusNotifier(
         #   background = Theme_Colors['DarkBlue_lighten'],
         # ),
 
-        # MEMO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'libqtile.widget.wlan.Wlan': No module named 'iwlib'
+        # INFO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'libqtile.widget.wlan.Wlan': No module named 'iwlib'
         # widget.Wlan(),
 
-        # MEMO: try!
+        # INFO: try!
         # widget.Bluetooth(),
       ],
 
