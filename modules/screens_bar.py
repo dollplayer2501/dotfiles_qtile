@@ -16,6 +16,7 @@ from qtile_extras.widget.decorations import PowerLineDecoration
 ## from libqtile import widget
 #
 from modules.variables import default_wallpaper, font_set, current_gengou_reiwa, custom_icon_path
+# from modules.MyWidget import Uptime
 #
 from theme_colors import Theme_Colors
 #
@@ -86,6 +87,8 @@ screens = [
           foreground = Theme_Colors['Debug'],
           background = Theme_Colors['DarkBlue_default'],
         ),
+
+        # Uptime(),
 
         widget.GroupBox(
           fontsize = 18,
