@@ -26,6 +26,7 @@ floating_layout = layout.Floating(
     Match(wm_class = 'Xfce4-screensaver-configure.py'),
 
     Match(wm_class = 'pavucontrol'),
+    Match(wm_class = 'nm-connection-editor'),
     Match(wm_class = 'Blueman-manager'),
     Match(wm_class = 'Xfce4-about'),
     Match(wm_class = 'Ristretto'),
