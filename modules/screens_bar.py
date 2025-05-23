@@ -12,7 +12,7 @@ from libqtile.config import Screen
 #
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
-## from qtile_extras.resources import wallpapers
+from qtile_extras.resources import wallpapers
 ## from libqtile import widget
 #
 from modules.variables import default_wallpaper, font_set, current_gengou_reiwa, custom_icon_path
@@ -91,6 +91,8 @@ screens = [
         # Uptime(),
 
         widget.GroupBox(
+          visible_groups = ['1', '2', '3', '4', '5', '9'],
+
           fontsize = 18,
           font = font_set['main'],
 
@@ -158,6 +160,20 @@ screens = [
 
         ## ------------------------------------
 
+        # TODO: When Cmus is not launched,
+        #  the width is set to zero and the page is not displayed.
+        # widget.Cmus(
+        #   fontsize = 16,
+        #   font = font_set['main'],
+        #   scroll = True,
+        #   scroll_fixed_width = True,
+        #   width = 50,
+        #   playing_color = Theme_Colors['LightBlue'],
+        #   stopped_color = Theme_Colors['Oreange'],
+        #   background = Theme_Colors['DarkBlue_default'],
+        #   **powerline,
+        # ),
+
         widget.CPU(
           format = 'CPU: {load_percent}%',
           # format = 'CPU: {freq_current}GHz {load_percent}%',
@@ -182,6 +198,10 @@ screens = [
         widget.ThermalZone(
           high = 31,
           crit = 41, 
+
+          format = '{temp}°C',
+          format_crit = '{temp}°C!!',
+          # format_crit = '{temp}°C CRIT!',
 
           padding = 4,
           fontsize = 16,
@@ -357,6 +377,64 @@ screens = [
     # By default we handle these events delayed to already improve performance, however your system might still be struggling
     # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
     # x11_drag_polling_rate = 60,
+  ),
+
+  #
+  # NOTE: Multiple monitor
+  # TODO: I want to manage the same settings separately.
+  #
+
+  Screen(
+    wallpaper = wallpapers.WALLPAPER_TRIANGLES,
+    wallpaper_mode = 'fill',
+
+    bottom = bar.Bar(
+      [
+        widget.CurrentLayoutIcon(
+          padding = 4,
+          scale = 0.8,
+
+          custom_icon_paths = custom_icon_path,
+          foreground = Theme_Colors['Debug'],
+          background = Theme_Colors['DarkBlue_default'],
+        ),
+
+        widget.GroupBox(
+          visible_groups = ['7', '8'],
+
+          fontsize = 18,
+          font = font_set['main'],
+
+          margin = 0,
+          margin_x = 0,
+          margin_y = 4,
+
+          active = Theme_Colors['LightBlue'],
+          block_highlight_text_color = Theme_Colors['Oreange'],
+          borderwidth = 0,
+
+          inactive = Theme_Colors['Purple'],
+          foreground = Theme_Colors['Debug'],
+          background = Theme_Colors['DarkBlue_default'],
+
+          **powerline,
+        ),
+
+        widget.WindowTabs(
+          fontsize = 18,
+          font = font_set['sub1'],
+
+          markup = True,
+          selected = ('<u>', '</u>'),
+          padding = 0,
+
+          foreground = Theme_Colors['LightBlue'],
+          background = Theme_Colors['DarkBlue_lighten'],
+        ),
+
+      ], 
+      24, 
+    ),
   ),
 ]
 

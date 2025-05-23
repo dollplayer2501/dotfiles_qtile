@@ -57,13 +57,21 @@ keys = [
 
   # Grow windows. If current window is on the edge of screen and direction
   # will be to screen edge - window would shrink.
-  Key([mod4, 'control'], 'h', lazy.layout.grow_left(),  desc = 'Grow window to the left'),
-  Key([mod4, 'control'], 'l', lazy.layout.grow_right(), desc = 'Grow window to the right'),
-  Key([mod4, 'control'], 'j', lazy.layout.grow_down(),  desc = 'Grow window down'),
-  Key([mod4, 'control'], 'k', lazy.layout.grow_up(),    desc = 'Grow window up'),
+  Key([mod4, 'control'], 'h', lazy.layout.grow_left(),  desc = 'Grow window to left'),
+  Key([mod4, 'control'], 'l', lazy.layout.grow_right(), desc = 'Grow window to right'),
+  Key([mod4, 'control'], 'j', lazy.layout.grow_down(),  desc = 'Grow window to down'),
+  Key([mod4, 'control'], 'k', lazy.layout.grow_up(),    desc = 'Grow window to up'),
 
   ## Key([mod4, 'shift', 'control'], 'h', lazy.layout.swap_column_left(),  desc = 'Swap Column left'),
   ## Key([mod4, 'shift', 'control'], 'l', lazy.layout.swap_column_right(), desc = 'Swap Column right'),
+
+  Key([mod4], 'Up',    lazy.window.move_floating(0, -10), desc = 'Move floating window to up'),
+  Key([mod4], 'Down',  lazy.window.move_floating(0, 10),  desc = 'Move floating window to down'),
+  Key([mod4], 'Left',  lazy.window.move_floating(-10, 0), desc = 'Move floating window to left'),
+  Key([mod4], 'Right', lazy.window.move_floating(10, 0),  desc = 'Move floating window to right'),
+
+  Key([mod4, 'shift'], 'Up',   lazy.window.resize_floating(0, 10),  desc = 'Resize floating window to large'),
+  Key([mod4, 'shift'], 'Down', lazy.window.resize_floating(0, -10), desc = 'Resize floating window to small'),
 
   # Toggle between split and unsplit sides of stack.
   # Split = all windows displayed
@@ -93,6 +101,12 @@ keys = [
   Key([mod4], 'Tab',    lazy.next_layout(),         desc = 'Toggle between layouts'),
 
 
+  # NOTE: Multiple monitor?
+  # Key([mod4], 'o', lazy.to_screen(0), desc = 'To Main Screen'),
+  # Key([mod4], 'p', lazy.to_screen(1), desc = 'To Sub Screen'),
+  Key([mod4], 'period', lazy.next_screen(), desc='Next monitor'),
+
+
   # Key([], 'Print',
   #   lazy.spawn("scrot -z -p 'EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png' -e ' mv $f ~/Pictures/'"),
   #   desc = 'Print screen'
@@ -107,11 +121,8 @@ keys = [
   # `my_scrot_wait` is `command scrot -c -d 10 -z -p "EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png" -e "mv \$f ~/Pictures/"`
   Key([mod4, mod1], 'i', lazy.spawn("fish -c 'my_scrot_wait'"), desc = 'Print screen after 10 sec'),
 
-  # Key([mod4, mod1], 'p',
-  #   lazy.function(lambda: os.system("fish -c 'my_scrot_now'")),
-  #   desc = 'Print screen now'),
-  # Key([mod], "f", lazy.function(lambda: os.system("fish -c 'my_function'")))
 
+  Key([mod4, mod1], 'a', lazy.spawn('alacritty'),              desc = 'Run Alacritty'),
   Key([mod4, mod1], 'b', lazy.spawn('brave'),                  desc = 'Run Brave'),
   Key([mod4, mod1], 'c', lazy.spawn('claws-mail'),             desc = 'Run Claws mail'),
   Key([mod4, mod1], 'g', lazy.spawn('gimp'),                   desc = 'Run Gimp'),
@@ -119,6 +130,7 @@ keys = [
   Key([mod4, mod1], 'l', lazy.spawn('libreoffice'),            desc = 'Run LibreOffice'),
   Key([mod4, mod1], 'm', lazy.spawn('mousepad'),               desc = 'Run Mousepad'),
   Key([mod4, mod1], 'n', lazy.spawn('notable'),                desc = 'Run Notable'),
+  Key([mod4, mod1], 'o', lazy.spawn('pavucontrol'),            desc = 'Run Pavucontrol'),
   Key([mod4, mod1], 't', lazy.spawn('thunar'),                 desc = 'Run Thunar'),
   Key([mod4, mod1], 'v', lazy.spawn('vlc'),                    desc = 'Run VLC'),
   Key([mod4, mod1], 'x', lazy.spawn('xfce4-settings-manager'), desc = 'Run Xfce4 settings'),

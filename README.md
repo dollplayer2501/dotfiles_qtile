@@ -9,6 +9,12 @@
 > I suggest forking the repository and modifying it according to your preferences.
 
 
+> [!NOTE]
+> As of late May 2025, I am adding a multi-monitor setup.  
+> I'm still adjusting and don't always use multiple screens though.  
+> <a href="https://github.com/dollplayer2501/dollplayer2501/blob/main/EndeavourOS_Qtile_2025-05-23_19-52-39.png"><img src="https://raw.githubusercontent.com/dollplayer2501/dollplayer2501/refs/heads/main/EndeavourOS_Qtile_2025-05-23_19-52-39.png" width=600 /></a>
+
+
 ## About:
 
 This is just a simple Qtile configuration files.  

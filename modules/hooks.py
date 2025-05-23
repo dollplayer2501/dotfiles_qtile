@@ -7,7 +7,7 @@
 #
 
 #
-from libqtile import hook
+from libqtile import hook, qtile, widget
 # from libqtile import hook, qtile
 # from libqtile.utils import send_notification
 from libqtile.log_utils import logger
@@ -20,6 +20,9 @@ import subprocess
 
 
 logger.setLevel('INFO')
+
+groupbox1 = widget.GroupBox(visible_groups = ['1', '2', '3', '4', '5', '9'])
+groupbox2 = widget.GroupBox(visible_groups = ['7', '8'])
 
 
 @hook.subscribe.startup_once
@@ -44,6 +47,16 @@ def autostart():
 def run_every_startup():
   logger.info('Hook: restart')
   # send_notification('qtile', 'Restarting...')
+
+
+@hook.subscribe.screens_reconfigured
+async def _():
+  if len(qtile.screens) > 1:
+    groupbox1.visible_groups = ['1', '2', '3', '4', '5', '9']
+  else:
+    groupbox1.visible_groups = ['1', '2', '3', '4', '5', '7', '8', '9']
+  if hasattr(groupbox1, 'bar'):
+    groupbox1.bar.draw()
 
 
 # def set_wallpaper_for_group(group_name):
