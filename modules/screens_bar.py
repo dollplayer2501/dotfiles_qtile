@@ -253,6 +253,25 @@ screens = [
           background = Theme_Colors['DarkBlue_default'],
         ),
 
+        widget.Volume(
+          emoji = False,
+
+          fmt = 'Vol:{}',
+          mute_format = 'Mute',
+
+          padding = 4,
+          fontsize = 16,
+          font = font_set['main'],
+
+          mouse_callbacks = {
+            # Button1 is mute on/off
+            'Button3': lambda: qtile.cmd_spawn('pavucontrol'),
+          },
+
+          foreground = Theme_Colors['LightBlue'],
+          background = Theme_Colors['DarkBlue_default'],
+        ),
+
         # widget.TextBox(
         #   text=get_uptime(),
         #   update_interval=60,  # 60秒ごとに更新
@@ -291,18 +310,6 @@ screens = [
         widget.Systray(
           icon_size = 14,
           padding = 2,
-
-          background = Theme_Colors['DarkBlue_lighten'],
-        ),
-
-        widget.Volume(
-          emoji = True,
-          padding = 5,
-
-          mouse_callbacks = {
-            # Button1 is mute on/off
-            'Button3': lambda: qtile.cmd_spawn('pavucontrol'),
-          },
 
           background = Theme_Colors['DarkBlue_lighten'],
         ),
