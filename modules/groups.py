@@ -62,14 +62,14 @@ groups = [
   # TODO: Add Virt-manager workspace?
 
 
-  Group(name = '7', position = 7, label = '7.Sub-1',
+  Group(name = '7', position = 7, label = '7.sub-1',
     layout = 'max',
     screen_affinity = 1,
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(alacritty)$"))],
   ),
 
-  Group(name = '8', position = 8, label = '8.Sub-2',
+  Group(name = '8', position = 8, label = '8.sub-2',
     layout = 'max',
     screen_affinity = 1,
     init = True, persist = True,

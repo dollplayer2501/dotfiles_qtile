@@ -47,14 +47,24 @@ powerline = {
 # #  return os.popen('uptime -p').read().strip()
 #   return os.popen("awk '{print $1}' /proc/uptime | awk '{print int($1)}'").read().strip()
 
-#awk '{print $1}' /proc/uptime | awk '{print int($1)}'
+# awk '{print $1}' /proc/uptime | awk '{print int($1)}'
+
+common_config_screen = {
+  "wallpaper": default_wallpaper,
+  # "wallpaper": wallpapers.WALLPAPER_TILES,
+  "wallpaper_mode": 'fill',
+}
+
+common_config_bar = {
+  "border_width": [1, 0, 1, 0],
+  "border_color": [Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange']],
+  "margin": [0, 0, 0, 0],
+  "opacity": 0.90,
+}
 
 screens = [
   Screen(
-
-    wallpaper = default_wallpaper,
-    # wallpaper = wallpapers.WALLPAPER_TILES,
-    wallpaper_mode = 'fill',
+    **common_config_screen,
 
     bottom = bar.Bar(
       [
@@ -375,10 +385,8 @@ screens = [
       ],
 
       24,
-      border_width = [1, 0, 1, 0],
-      border_color = [Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange']],
-      margin = [0, 0, 0, 0],
-      opacity = 0.90,
+
+      **common_config_bar,
     ),
     # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
     # By default we handle these events delayed to already improve performance, however your system might still be struggling
@@ -392,8 +400,7 @@ screens = [
   #
 
   Screen(
-    wallpaper = wallpapers.WALLPAPER_TRIANGLES,
-    wallpaper_mode = 'fill',
+    **common_config_screen,
 
     bottom = bar.Bar(
       [
@@ -427,6 +434,27 @@ screens = [
           **powerline,
         ),
 
+        widget.Volume(
+          emoji = False,
+
+          fmt = 'Vol:{}',
+          mute_format = 'Mute',
+
+          padding = 4,
+          fontsize = 16,
+          font = font_set['main'],
+
+          mouse_callbacks = {
+            # Button1 is mute on/off
+            'Button3': lambda: qtile.cmd_spawn('pavucontrol'),
+          },
+
+          foreground = Theme_Colors['LightBlue'],
+          background = Theme_Colors['DarkBlue_lighten'],
+
+          **powerline,
+        ),
+ 
         widget.WindowTabs(
           fontsize = 18,
           font = font_set['sub1'],
@@ -436,11 +464,11 @@ screens = [
           padding = 0,
 
           foreground = Theme_Colors['LightBlue'],
-          background = Theme_Colors['DarkBlue_lighten'],
+          background = Theme_Colors['DarkBlue_default'],
         ),
-
       ], 
       24, 
+      **common_config_bar,
     ),
   ),
 ]
