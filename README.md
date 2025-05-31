@@ -67,7 +67,7 @@ The applications and built-in Layouts with Workspace, Group, I use in this envir
     - Group 1: Kitty Terminal
     - Group 2: Code OSS
     - Group 3: Brave Web Browser
-    - Group 4: Thunar file manager
+    - Group 4: Thunar File Manager
     - Group 5: Another Workspace
     - Group **9**: Another Workspace
 1. Screen 2:  
