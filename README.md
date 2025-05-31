@@ -61,16 +61,26 @@ In my case, I mainly use Kitty and use Alacritty for ScratchPad DropDown.
 
 ## My main usage:
 
-The applications and built-in Layouts with Workspace, I use in this environment are as follows:
+The applications and built-in Layouts with Workspace, Group, I use in this environment are as follows:
 
-1. Workspace1: Kitty Terminal  
-TreeTab, Max, VerticalTile layout.
-2. Workspace2: Code OSS  
-Max layout.
-3. Workspace3: Brave Web Browser  
-Max layout.
-4. Another Workspace  
-TreeTab, Max layout.
+1. Screen 1:
+    - Group 1: Kitty Terminal
+    - Group 2: Code OSS
+    - Group 3: Brave Web Browser
+    - Group 4: Thunar file manager
+    - Group 5: Another Workspace
+    - Group **9**: Another Workspace
+1. Screen 2:  
+I don't have this enabled all the time.
+    - Group **7**: Another Workspace
+    - Group **8**: Another Workspace
+
+For detailed settings, please refer to the following.
+
+- [`./modules/groups.py`](./modules/groups.py).
+- [`./modules/hooks.py`](./modules/hooks.py).
+- [`./modules/keys.py`](./modules/keys.py).
+- [`./modules/screens_bar.py`](./modules/screens_bar.py).
 
 It looks like you might be able to choose which layouts to use for each workspace, but I don't have the skills to implement that.
 
@@ -91,9 +101,9 @@ And I created icons of [CurrentLayoutIcon](https://docs.qtile.org/en/latest/manu
 
 ### I'm making "Keybindings in images" available for use
 
-Maybe because I installed it with `yay`, I'm not in an environment where I can use [Keybindings in images](https://docs.qtile.org/en/latest/manual/commands/keybindings.html).
-However, I have forced it, `gen-keybinding-img` to work.
-For example, I created `./bin/` and symbolically linked `/usr/bin/qtile` to it.
+Maybe because I installed it with `yay`, I'm not in an environment where I can use [Keybindings in images](https://docs.qtile.org/en/latest/manual/commands/keybindings.html).  
+However, I have forced it, `gen-keybinding-img` to work.  
+For example, I created `./bin/` and symbolically linked `/usr/bin/qtile` to it.  
 However, `KeyChord` doesn't seem to work effectively.
 
 
