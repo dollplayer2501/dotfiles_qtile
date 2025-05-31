@@ -92,7 +92,9 @@ And I created icons of [CurrentLayoutIcon](https://docs.qtile.org/en/latest/manu
 ### I'm making "Keybindings in images" available for use
 
 Maybe because I installed it with `yay`, I'm not in an environment where I can use [Keybindings in images](https://docs.qtile.org/en/latest/manual/commands/keybindings.html).
-
+However, I have forced it, `gen-keybinding-img` to work.
+For example, I created `./bin/` and symbolically linked `/usr/bin/qtile` to it.
+However, `KeyChord` doesn't seem to work effectively.
 
 
 

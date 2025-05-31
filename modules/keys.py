@@ -70,8 +70,10 @@ keys = [
   Key([mod4], 'Left',  lazy.window.move_floating(-10, 0), desc = 'Move floating window to left'),
   Key([mod4], 'Right', lazy.window.move_floating(10, 0),  desc = 'Move floating window to right'),
 
-  Key([mod4, 'shift'], 'Up',   lazy.window.resize_floating(0, 10),  desc = 'Resize floating window to large'),
-  Key([mod4, 'shift'], 'Down', lazy.window.resize_floating(0, -10), desc = 'Resize floating window to small'),
+  Key([mod4, 'shift'], 'Up',   lazy.window.resize_floating(0, 10),  desc = 'Resize floating window to bottom, large'),
+  Key([mod4, 'shift'], 'Down', lazy.window.resize_floating(0, -10), desc = 'Resize floating window to bottom, small'),
+  Key([mod4, 'shift'], 'Left', lazy.window.resize_floating(-5, 0),  desc = 'Resize floating window to right, small'),
+  Key([mod4, 'shift'], 'Right', lazy.window.resize_floating(5, 0),  desc = 'Resize floating window to right, large'),
 
   # Toggle between split and unsplit sides of stack.
   # Split = all windows displayed
