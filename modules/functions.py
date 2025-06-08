@@ -2,7 +2,7 @@
 #
 #
 
-from libqtile import qtile
+# from libqtile import qtile
 
 
 def focus_next_floating(qtile):
@@ -19,6 +19,16 @@ def focus_next_floating(qtile):
     next_idx = 0
 
   floating_windows[next_idx].focus()
+
+
+# NOTE: This function does not work
+# Toggle, show or hide bottom bar
+# def toggle_bar(qtile):
+#   screen = qtile.current_screen
+#   bar = screen.bottom
+#   if bar and hasattr(bar, 'window') and hasattr(bar.window, 'toggle'):
+#     bar.window.toggle()
+
 
 
 ##
