@@ -17,6 +17,7 @@ from libqtile.config import Key, KeyChord
 #
 from modules.variables import mod1, mod4, terminal_main, terminal_sub1, terminal_sub8, terminal_sub9, terminal_guess, terminal_gpu
 from modules.dmenu import dmenu_normal, dmenu_power, dmenu_terminal, dmenu_window
+from modules.functions import focus_next_floating
 
 
 keys = [
@@ -99,8 +100,9 @@ keys = [
 
   Key([mod4], 'Return', lazy.spawn(terminal_main),  desc = 'Launch terminal'),
   # Key([mod4], 'Return', lazy.spawn('brave') if self.qtile.current_group == "2" else lazy.spawn(terminal_main)),
-  Key([mod4], 'space',  lazy.layout.next(),         desc = 'Move window focus to other window'),
+  Key([mod4], 'space',  lazy.layout.next(),         desc = 'Move normal window focus to other window'),
   Key([mod4], 'Tab',    lazy.next_layout(),         desc = 'Toggle between layouts'),
+  Key([mod4, 'shift'], 'space', lazy.function(focus_next_floating), desc = 'Move floating window focus to other window'),
 
 
   # NOTE: Multiple monitor?
