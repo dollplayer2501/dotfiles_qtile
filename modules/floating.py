@@ -17,7 +17,7 @@ from theme_colors import Theme_Colors
 floating_layout = layout.Floating(
   border_width = 1,
   border_focus = Theme_Colors['Green'],
-  border_normal = Theme_Colors['LightBlue'],
+  border_normal = Theme_Colors['Gray_1'],
 
   float_rules = [
     *layout.Floating.default_float_rules,
