@@ -8,74 +8,92 @@ from libqtile import layout
 #
 from modules.variables import font_set
 #
+from modules.variables import layout_setting_max
 from theme_colors import Theme_Colors
+
+
+layout_setting_max = {
+  'border_width': 0,
+  'margin': [0, 0, 0, 0],
+
+  'only_focused': True,
+
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+}
+
+layout_setting_verticalTile = {
+  'border_width': 1,
+  'margin': [1, 10, 1, 100],
+
+  'single_border_width': 1,
+  'single_margin': [1, 1, 2, 500],
+
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+}
+
+layout_setting_treeTab = {
+  # TODO: Setting margin/padding width when in staircase state
+  'active_bg': ''.join([ Theme_Colors['Purple'], '88' ]),
+  'active_fg': ''.join([ Theme_Colors['Oreange'] ]),
+  'bg_color': ''.join([ Theme_Colors['DarkBlue_default'], 'dd' ]),
+  'border_width': 5,
+  'font': font_set['sub1'],
+  'fontshadow': None,
+  'fontsize': 18,
+  'inactive_bg': ''.join([ Theme_Colors['DarkBlue_lighten'], 'ee' ]),
+  'inactive_fg': ''.join([ Theme_Colors['LightBlue'] ]),
+  'level_shitf': 0,
+  'margin_left': 0,
+  'margin_y': 0,
+  'padding_left': 10,
+  'padding_x': 0,
+  'padding_y': 0,
+  'panel_width': 450,
+  'place_right': False,
+  'previous_on_rm': False,
+  'section_bottom': 10,
+  'section_fg': ''.join([ Theme_Colors['Purple'] ]),
+  'section_fontsize': 20,
+  'section_left': 60,
+  'section_padding': 10,
+  'section_top': 10,
+  'sections': ['TreeTab', 'I dont understand', 'This layout settings'],
+  'urgent_bg': ''.join([ Theme_Colors['Red'] ]),
+  'urgent_fg': ''.join([ Theme_Colors['DarkBlue_default'] ]),
+  'vspace': 0,
+}
+
+layout_setting_floating = {
+  'border_width': 0,
+  'fullscreen_border_width': 0,
+  'max_border_width': 0,
+
+  # NOTE: Will floating_layout's settings take priority?
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+}
 
 
 layouts = [
 
   layout.Max(
-    border_width = 0,
-    margin = [0, 0, 0, 0],
-
-    only_focused = True,
-
-    border_focus = Theme_Colors['Oreange'],
-    border_normal = Theme_Colors['Purple'],
+    **layout_setting_max
   ),
 
   layout.VerticalTile(
-    border_width = 1,
-    margin = [1, 10, 1, 100],
-
-    single_border_width = 1,
-    single_margin = [1, 1, 2, 500],
-
-    border_focus = Theme_Colors['Oreange'],
-    border_normal = Theme_Colors['Purple'],
+    **layout_setting_verticalTile
   ),
 
   layout.TreeTab(
-    # TODO: Setting margin/padding width when in staircase state
-    active_bg = ''.join([ Theme_Colors['Purple'], '88' ]),
-    active_fg = ''.join([ Theme_Colors['Oreange'] ]),
-    bg_color = ''.join([ Theme_Colors['DarkBlue_default'], 'dd' ]),
-    border_width = 5,
-    font = font_set['sub1'],
-    fontshadow = None,
-    fontsize = 18,
-    inactive_bg = ''.join([ Theme_Colors['DarkBlue_lighten'], 'ee' ]),
-    inactive_fg = ''.join([ Theme_Colors['LightBlue'] ]),
-    level_shitf = 0,
-    margin_left = 0,
-    margin_y = 0,
-    padding_left = 10,
-    padding_x = 0,
-    padding_y = 0,
-    panel_width = 450,
-    place_right = False,
-    previous_on_rm = False,
-    section_bottom = 10,
-    section_fg = ''.join([ Theme_Colors['Purple'] ]),
-    section_fontsize = 20,
-    section_left = 60,
-    section_padding = 10,
-    section_top = 10,
-    sections = ['TreeTab', 'I dont understand', 'This layout settings'],
-    urgent_bg = ''.join([ Theme_Colors['Red'] ]),
-    urgent_fg = ''.join([ Theme_Colors['DarkBlue_default'] ]),
-    vspace = 0,
+    **layout_setting_treeTab
   ),
 
   layout.Floating(
-    border_width = 0,
-    fullscreen_border_width = 0,
-    max_border_width = 0,
-
-    # NOTE: Will floating_layout's settings take priority?
-    border_focus = Theme_Colors['Oreange'],
-    border_normal = Theme_Colors['Purple'],
+    **layout_setting_floating,
   ),
- 
+
   # layout.Columns(
   #   border_width = 1,
   #   margin = [1, 1, 1, 1],
@@ -85,7 +103,7 @@ layouts = [
   #   border_focus = Theme_Colors['Oreange'],
   #   border_focus_stack = Theme_Colors['Debug'],
   #   border_normal = Theme_Colors['LightBlue'],
-  #   border_normal_stack = Theme_Colors['Debug'], 
+  #   border_normal_stack = Theme_Colors['Debug'],
   # ),
 
   # layout.Tile(

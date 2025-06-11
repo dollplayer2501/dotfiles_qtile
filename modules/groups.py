@@ -8,8 +8,7 @@ from libqtile.lazy import lazy
 from libqtile import layout
 #
 from modules.keys import keys
-# from modules.layouts import layouts
-
+from modules.layouts import layout_setting_max, layout_setting_verticalTile, layout_setting_treeTab, layout_setting_floating
 from modules.variables import mod1, mod4, terminal_guess
 #
 import re
@@ -22,39 +21,54 @@ groups = [
   # INFO: xprop | grep WM_CLASS
   # INFO: and using 2nd argument
 
-  Group(name = '1', position = 1, label = '1.terminal',
-    # INFO: That pattern is OK, but my layouts config does not apply.
-    # layouts = [layout.VerticalTile(), layout.TreeTab()],
-    # layouts = ['verticaltile', 'max'],
-    layout = 'verticaltile',
-    screen_affinity = 0,
+  Group(name = '1', label = '1.terminal',
+    screen_affinity = 0, position = 1,
+    layouts = [
+      layout.VerticalTile(**layout_setting_verticalTile),
+      layout.TreeTab(**layout_setting_treeTab),
+      layout.Max(**layout_setting_max),
+    ],
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(kitty)$"))],
   ),
 
-  Group(name = '2', position = 2, label = '2.code',
-    layout = 'max',
+  Group(name = '2', label = '2.code',
+    screen_affinity = 0, position = 2,
+    layouts = [
+      layout.Max(**layout_setting_max),
+    ],
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(code-oss)$"))],
   ),
 
-  Group(name = '3', position = 3, label = '3.web',
-    layout = 'max',
-    screen_affinity = 0,
+  Group(name = '3', label = '3.web',
+    screen_affinity = 0, position = 3,
+    layouts = [
+      layout.Max(**layout_setting_max),
+      layout.TreeTab(**layout_setting_treeTab),
+    ],
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(brave-browser|firefox)$"))],
   ),
 
-  Group(name = '4', position = 4, label = '4.tool',
-    layout = 'floating',
-    screen_affinity = 0,
+  Group(name = '4', label = '4.tool',
+    screen_affinity = 0, position = 4,
+    layouts = [
+      layout.Max(**layout_setting_max),
+      layout.TreeTab(**layout_setting_treeTab),
+      layout.Floating(**layout_setting_floating),
+    ],
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(keepassxc|Notable|Yad|Virt-manager|Mousepad|Thunar)$"))],
   ),
 
-  Group(name = '5', position = 5, label = '5.misc',
-    layout = 'treetab',
-    screen_affinity = 0,
+  Group(name = '5', label = '5.misc',
+    screen_affinity = 0, position = 5,
+    layouts = [
+      layout.Max(**layout_setting_max),
+      layout.TreeTab(**layout_setting_treeTab),
+      layout.Floating(**layout_setting_floating),
+    ],
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(libreoffice|Gimp|Claws-mail)$"))],
   ),
@@ -62,23 +76,25 @@ groups = [
   # TODO: Add Virt-manager workspace?
 
 
-  Group(name = '7', position = 7, label = '7.sub-1',
+  Group(name = '7', label = '7.sub-1',
+    screen_affinity = 1, position = 7,
     layout = 'max',
-    screen_affinity = 1,
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(alacritty)$"))],
   ),
 
-  Group(name = '8', position = 8, label = '8.sub-2',
+  Group(name = '8', label = '8.sub-2',
+    screen_affinity = 1,  position = 8,
     layout = 'max',
-    screen_affinity = 1,
     init = True, persist = True,
   ),
 
 
-  Group(name = '9', position = 9, label = '9.null',
-    layout = 'max',
-    screen_affinity = 0,
+  Group(name = '9', label = '9.null',
+    screen_affinity = 0, position = 9,
+    layouts = [
+      layout.Max(**layout_setting_max),
+    ],
     init = True, persist = True,
   ),
 ]
