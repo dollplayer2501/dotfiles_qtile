@@ -6,6 +6,8 @@
 #  https://docs.qtile.org/en/stable/manual/ref/hooks.html
 #
 
+import os
+import subprocess
 #
 from libqtile import hook, qtile, widget
 # from libqtile import hook, qtile
@@ -13,10 +15,6 @@ from libqtile import hook, qtile, widget
 from libqtile.log_utils import logger
 #
 from modules.variables import autostart_sh, shutdown_sh
-# from modules.groups import groups
-#
-import os
-import subprocess
 
 
 logger.setLevel('INFO')

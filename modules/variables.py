@@ -2,11 +2,10 @@
 #
 #
 
-#
-from libqtile.utils import guess_terminal
-#
 import os
 from datetime import datetime
+#
+from libqtile.utils import guess_terminal
 
 
 mod1 = 'mod1' # Alt

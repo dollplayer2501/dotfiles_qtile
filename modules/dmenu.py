@@ -3,13 +3,11 @@
 #   https://docs.qtile.org/en/latest/manual/ref/extensions.html
 #
 
-#
 from libqtile import extension
 from libqtile.lazy import lazy
 #
-from theme_colors import Theme_Colors
-#
 from modules.variables import font_set
+from theme_colors import Theme_Colors
 
 
 dmenu_setting = {

@@ -3,12 +3,10 @@
 #   https://docs.qtile.org/en/stable/manual/config/index.html of `floating_layout`
 #
 
-#
 from libqtile import layout
 from libqtile.config import Match
 #
 from modules.variables import terminal_sub1, terminal_sub8, terminal_sub9
-#
 from theme_colors import Theme_Colors
 
 

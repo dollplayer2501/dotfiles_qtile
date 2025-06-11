@@ -3,12 +3,10 @@
 #   https://docs.qtile.org/en/latest/manual/config/groups.html#dropdown
 #
 
-#
 from libqtile.config import DropDown, Key, ScratchPad
 from libqtile.lazy import lazy
 #
 from modules.variables import mod1, mod4, terminal_sub1
-#
 from modules.keys import keys
 from modules.groups import groups
 

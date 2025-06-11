@@ -7,8 +7,6 @@
 from libqtile import layout
 #
 from modules.variables import font_set
-#
-from modules.variables import layout_setting_max
 from theme_colors import Theme_Colors
 
 
@@ -79,15 +77,15 @@ layout_setting_floating = {
 layouts = [
 
   layout.Max(
-    **layout_setting_max
+    **layout_setting_max,
   ),
 
   layout.VerticalTile(
-    **layout_setting_verticalTile
+    **layout_setting_verticalTile,
   ),
 
   layout.TreeTab(
-    **layout_setting_treeTab
+    **layout_setting_treeTab,
   ),
 
   layout.Floating(

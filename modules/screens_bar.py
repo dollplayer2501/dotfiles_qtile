@@ -6,6 +6,7 @@
 #  https://qtile-extras.readthedocs.io/en/stable/
 #
 
+import os
 #
 from libqtile import bar, qtile
 from libqtile.config import Screen
@@ -17,10 +18,8 @@ from qtile_extras.resources import wallpapers
 #
 from modules.variables import default_wallpaper, font_set, current_gengou_reiwa, custom_icon_path
 # from modules.MyWidget import Uptime
-#
 from theme_colors import Theme_Colors
-#
-import os
+
 
 # widget_defaults = dict(
 #   font = "sans",
