@@ -66,6 +66,16 @@ layouts = [
     vspace = 0,
   ),
 
+  layout.Floating(
+    border_width = 0,
+    fullscreen_border_width = 0,
+    max_border_width = 0,
+
+    # NOTE: Will floating_layout's settings take priority?
+    border_focus = Theme_Colors['Oreange'],
+    border_normal = Theme_Colors['Purple'],
+  ),
+ 
   # layout.Columns(
   #   border_width = 1,
   #   margin = [1, 1, 1, 1],

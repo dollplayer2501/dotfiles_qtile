@@ -46,7 +46,7 @@ groups = [
   ),
 
   Group(name = '4', position = 4, label = '4.tool',
-    layout = 'max',
+    layout = 'floating',
     screen_affinity = 0,
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(keepassxc|Notable|Yad|Virt-manager|Mousepad|Thunar)$"))],
