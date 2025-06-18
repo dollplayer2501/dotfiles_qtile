@@ -10,7 +10,13 @@ from libqtile import layout
 #
 from modules.variables import mod1, mod4, terminal_guess
 from modules.keys import keys
-from modules.layouts import layout_setting_max, layout_setting_verticalTile, layout_setting_treeTab, layout_setting_floating
+from modules.layouts import (
+    layout_setting_max,
+    layout_setting_verticalTile,
+    layout_setting_treeTab,
+    layout_setting_floating,
+    layout_setting_monadWide,
+  )
 from modules.functions import go_to_group, go_to_group_and_move_window
 
 # NOTE: How can I get my groups to stick to screens? -- Qtile:Frequently Asked Questions
@@ -54,8 +60,7 @@ groups = [
   Group(name = '4', label = '4.tool',
     screen_affinity = 0, position = 4,
     layouts = [
-      layout.Max(**layout_setting_max),
-      layout.TreeTab(**layout_setting_treeTab),
+      layout.MonadWide(**layout_setting_monadWide),
       layout.Floating(**layout_setting_floating),
     ],
     init = True, persist = True,
@@ -99,38 +104,6 @@ groups = [
   ),
 ]
 
-
-# def go_to_group(name: str):
-#   def _inner(qtile):
-#     if len(qtile.screens) == 1:
-#       qtile.groups_map[name].toscreen()
-#       return
-# 
-#     if name in '123459':
-#       qtile.focus_screen(0)
-#       qtile.groups_map[name].toscreen()
-#     else:
-#       qtile.focus_screen(1)
-#       qtile.groups_map[name].toscreen()
-# 
-#   return _inner
-# 
-# def go_to_group_and_move_window(name: str):
-#   def _inner(qtile):
-#     if len(qtile.screens) == 1:
-#       qtile.current_window.togroup(name, switch_group = True)
-#       return
-# 
-#     if name in '123459':
-#       qtile.current_window.togroup(name, switch_group = False)
-#       qtile.focus_screen(0)
-#       qtile.groups_map[name].toscreen()
-#     else:
-#       qtile.current_window.togroup(name, switch_group = False)
-#       qtile.focus_screen(1)
-#       qtile.groups_map[name].toscreen()
-# 
-#   return _inner
 
 for i in groups:
   keys.append(

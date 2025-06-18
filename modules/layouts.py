@@ -73,6 +73,15 @@ layout_setting_floating = {
   'border_normal': Theme_Colors['Purple'],
 }
 
+layout_setting_monadWide = {
+  'border_width': 1,
+  'margin': 2,
+  'ratio': 0.6,
+
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+}
+
 
 layouts = [
 
