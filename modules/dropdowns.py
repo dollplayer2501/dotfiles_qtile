@@ -13,16 +13,28 @@ from modules.groups import groups
 
 ## TODO: dropdown of xfce4-terminal does not work?
 
+dropdown_common_settings = {
+  'width': 0.8,
+  'height': 0.9,
+  # 'x': 0,
+  'y':  0.01,
+  'opacity': 0.9,
+  'match': None,
+  'on_focus_lost_hide': False,
+  'warp_pointer': False,
+}
+
 dropdowns = [
-  DropDown('scratch_term',      [terminal_sub1],            width = 0.8, height = 0.7, y = 0,    opacity = 0.9),
-  DropDown('scratch_keepassxc', ['keepassxc'],              width = 0.8, height = 0.9, y = 0.01, opacity = 0.9),
-  DropDown('scratch_mousepad',  ['mousepad'],               width = 0.8, height = 0.9, y = 0.01, opacity = 0.9),
-  DropDown('scratch_notable',   ['notable'],                width = 0.8, height = 0.9, y = 0.01, opacity = 0.9),
-  DropDown('scratch_thunar',    ['thunar'],                 width = 0.8, height = 0.9, y = 0.01, opacity = 0.9),
-  DropDown('scratch_setting',   ['xfce4-settings-manager'], width = 0.8, height = 0.9, y = 0.01, opacity = 0.9),
+  DropDown('scratch_term',      [terminal_sub1],            **dropdown_common_settings),
+  DropDown('scratch_keepassxc', ['keepassxc'],              **dropdown_common_settings),
+  DropDown('scratch_mousepad',  ['mousepad'],               **dropdown_common_settings),
+  DropDown('scratch_notable',   ['notable'],                **dropdown_common_settings),
+  DropDown('scratch_thunar',    ['thunar'],                 **dropdown_common_settings),
+  DropDown('scratch_setting',   ['xfce4-settings-manager'], **dropdown_common_settings),
 ]
 
 
+# NOTE: This may not be necessary, it works even without it.
 for i in dropdowns:
   i.floating = True
 
