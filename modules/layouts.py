@@ -82,6 +82,18 @@ layout_setting_monadWide = {
   'border_normal': Theme_Colors['Purple'],
 }
 
+layout_setting_matrix = {
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+  'border_width': 1,
+  # NOTE: 4 if the monitor is placed horizontally, 2 if placed vertically
+  # TODO: Automatically detects whether the monitor is in landscape or portrait orientation
+  'columns': 2,
+  'margin': 0,
+}
+
+
+# TODO: The following may not be necessary
 
 layouts = [
 

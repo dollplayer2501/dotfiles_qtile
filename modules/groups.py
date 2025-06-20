@@ -4,7 +4,7 @@
 
 import re
 #
-from libqtile.config import DropDown, Key, Group, Match, ScratchPad
+from libqtile.config import Key, Group, Match
 from libqtile.lazy import lazy
 from libqtile import layout
 #
@@ -16,16 +16,14 @@ from modules.layouts import (
     layout_setting_treeTab,
     layout_setting_floating,
     layout_setting_monadWide,
+    layout_setting_matrix,
   )
 from modules.functions import go_to_group, go_to_group_and_move_window
 
-# NOTE: How can I get my groups to stick to screens? -- Qtile:Frequently Asked Questions
-# https://docs.qtile.org/en/stable/manual/faq.html#how-can-i-get-my-groups-to-stick-to-screens
-
 
 groups = [
-  # INFO: xprop | grep WM_CLASS
-  # INFO: and using 2nd argument
+  # NOTE: xprop | grep WM_CLASS
+  # NOTE: and using 2nd argument
 
   Group(name = '1', label = '1.terminal',
     screen_affinity = 0, position = 1,
@@ -78,19 +76,22 @@ groups = [
     matches = [Match(wm_class = re.compile(r"^(libreoffice|Gimp|Claws-mail)$"))],
   ),
 
-  # TODO: Add Virt-manager workspace?
-
 
   Group(name = '7', label = '7.sub-1',
     screen_affinity = 1, position = 7,
-    layout = 'max',
+    layouts = [
+      layout.Floating(**layout_setting_floating),
+    ],
     init = True, persist = True,
     matches = [Match(wm_class = re.compile(r"^(alacritty)$"))],
   ),
 
   Group(name = '8', label = '8.sub-2',
     screen_affinity = 1,  position = 8,
-    layout = 'max',
+    layouts = [
+      layout.Max(**layout_setting_max),
+      layout.Matrix(**layout_setting_matrix),
+    ],
     init = True, persist = True,
   ),
 
@@ -98,7 +99,9 @@ groups = [
   Group(name = '9', label = '9.null',
     screen_affinity = 0, position = 9,
     layouts = [
+      layout.Floating(**layout_setting_floating),
       layout.Max(**layout_setting_max),
+      layout.Matrix(**layout_setting_matrix),
     ],
     init = True, persist = True,
   ),
@@ -114,34 +117,6 @@ for i in groups:
     Key([mod4, 'shift'], i.name, lazy.function(go_to_group_and_move_window(i.name)),
       desc = 'Switch to & move focused window to group {}'.format(i.name))
   )
-
-
-# for i in groups:
-  # keys.extend([
-    # mod4 + group number = switch to group
-    ## Key([mod4], i.name,
-    ##   lazy.group[i.name].toscreen(),
-    ##   desc = 'Switch to group {}'.format(i.name),
-    ## ),
-
-    # mod4 + shift + group number = switch to & move focused window to group
-    ## Key([mod4, 'shift'], i.name,
-    ##   lazy.window.togroup(i.name, switch_group = True),
-    ##   desc = 'Switch to & move focused window to group {}'.format(i.name),
-    ## ),
-
-    # Or, use below if you prefer not to switch to that group.
-    # # mod4 + shift + group number = move focused window to group
-    # Key([mod4, "shift"], i.name, lazy.window.togroup(i.name),
-    #     desc="move focused window to group {}".format(i.name)),
-  # ])
-
-  # keys.append(
-  #   Key(['control', 'mod1'], f'f{i.name}',
-  #     lazy.core.change_vt(i.name).when(func = lambda: qtile.core.name == 'wayland'),
-  #     desc = f'Switch to VT{i.name}',
-  #   )
-  # )
 
 
 # We can't check qtile.core.name in default config as it is loaded before qtile is started
