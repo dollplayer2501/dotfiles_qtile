@@ -16,6 +16,7 @@ from modules.layouts import (
     layout_setting_treeTab,
     layout_setting_floating,
     layout_setting_monadWide,
+    layout_setting_monadTail,
     layout_setting_matrix,
   )
 from modules.functions import go_to_group, go_to_group_and_move_window
@@ -59,6 +60,7 @@ groups = [
     screen_affinity = 0, position = 4,
     layouts = [
       layout.MonadWide(**layout_setting_monadWide),
+      layout.MonadTall(**layout_setting_monadTail),
       layout.Floating(**layout_setting_floating),
     ],
     init = True, persist = True,
@@ -90,7 +92,7 @@ groups = [
     screen_affinity = 1,  position = 8,
     layouts = [
       layout.Max(**layout_setting_max),
-      layout.Matrix(**layout_setting_matrix),
+      layout.Matrix(**layout_setting_matrix, columns = 2),
     ],
     init = True, persist = True,
   ),
@@ -101,7 +103,7 @@ groups = [
     layouts = [
       layout.Floating(**layout_setting_floating),
       layout.Max(**layout_setting_max),
-      layout.Matrix(**layout_setting_matrix),
+      layout.Matrix(**layout_setting_matrix, columns = 4),
     ],
     init = True, persist = True,
   ),

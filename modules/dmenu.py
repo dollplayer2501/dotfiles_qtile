@@ -40,8 +40,8 @@ dmenu_power = extension.CommandSet(
     'Systemctl:Suspend':     'systemctl suspend',
     'Systemctl:Hibernate':   'systemctl hibernate',
     # NOTE: After the introduction of Xfce4, this system
-    'Xfce4:Screensaver':     'xfce4-screensaver-command -l',
-    'Xfce4:Lock':            'xfce4-screensaver-command -l',
+    'Xfce4:Screensaver':     'xfce4-screensaver-command --activate',
+    'Xfce4:Lock':            'xfce4-screensaver-command --lock',
     #
     'Qtile:Reboot':          lazy.reload_config(),
     # NOTE: Implementing logout from LightDM is difficult for me

@@ -55,10 +55,10 @@ common_config_screen = {
 }
 
 common_config_bar = {
-  "border_width": [1, 0, 1, 0],
-  "border_color": [Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange']],
-  "margin": [0, 0, 0, 0],
-  "opacity": 0.90,
+  'border_width': [1, 0, 1, 0],
+  'border_color': [Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange'], Theme_Colors['Oreange']],
+  'margin': [0, 0, 0, 0],
+  'opacity': 0.90,
 }
 
 screens = [
@@ -206,7 +206,7 @@ screens = [
 
         widget.ThermalZone(
           high = 31,
-          crit = 41, 
+          crit = 41,
 
           format = '{temp}°C',
           format_crit = '{temp}°C!!',
@@ -384,7 +384,6 @@ screens = [
       ],
 
       24,
-
       **common_config_bar,
     ),
     # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
@@ -453,7 +452,7 @@ screens = [
 
           **powerline,
         ),
- 
+
         widget.WindowTabs(
           fontsize = 18,
           font = font_set['sub1'],
@@ -465,8 +464,8 @@ screens = [
           foreground = Theme_Colors['LightBlue'],
           background = Theme_Colors['DarkBlue_default'],
         ),
-      ], 
-      24, 
+      ],
+      24,
       **common_config_bar,
     ),
   ),
