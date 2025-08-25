@@ -12,9 +12,9 @@ from libqtile import bar, qtile
 from libqtile.config import Screen
 #
 from qtile_extras import widget
+# from libqtile import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
-from qtile_extras.resources import wallpapers
-## from libqtile import widget
+# from qtile_extras.resources import wallpapers
 #
 from modules.variables import default_wallpaper, font_set, current_gengou_reiwa, custom_icon_path
 # from modules.MyWidget import Uptime
@@ -82,8 +82,9 @@ screens = [
 
         # widget.CurrentLayout(
         #   padding = 0,
-        #   fontsize = 26,
+        #   fontsize = 16,
         #   font = font_set['sub2'],
+          # custom_icon_paths = custom_icon_path,
         #   foreground = Theme_Colors['Oreange'],
         #   background = Theme_Colors['DarkBlue_default'],
         # ),
@@ -402,14 +403,23 @@ screens = [
 
     bottom = bar.Bar(
       [
-        widget.CurrentLayoutIcon(
-          padding = 4,
-          scale = 0.8,
-
-          custom_icon_paths = custom_icon_path,
-          foreground = Theme_Colors['Debug'],
+        widget.CurrentLayout(
+          padding = 0,
+          fontsize = 16,
+          font = font_set['sub2'],
+          # custom_icon_paths = custom_icon_path,
+          foreground = Theme_Colors['Oreange'],
           background = Theme_Colors['DarkBlue_default'],
         ),
+
+        # widget.CurrentLayoutIcon(
+        #   padding = 4,
+        #   scale = 0.8,
+
+        #   custom_icon_paths = custom_icon_path,
+        #   foreground = Theme_Colors['Debug'],
+        #   background = Theme_Colors['DarkBlue_default'],
+        # ),
 
         widget.GroupBox(
           visible_groups = ['7', '8'],

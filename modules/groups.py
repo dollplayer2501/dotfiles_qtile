@@ -92,7 +92,7 @@ groups = [
     screen_affinity = 1,  position = 8,
     layouts = [
       layout.Max(**layout_setting_max),
-      layout.Matrix(**layout_setting_matrix, columns = 2),
+      layout.Matrix(**layout_setting_matrix, columns = 4),
     ],
     init = True, persist = True,
   ),
