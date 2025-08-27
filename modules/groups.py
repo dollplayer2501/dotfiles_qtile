@@ -75,7 +75,7 @@ groups = [
       layout.Floating(**layout_setting_floating),
     ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(libreoffice|Gimp|Claws-mail)$"))],
+    matches = [Match(wm_class = re.compile(r"^(libreoffice|Gimp|Claws-mail|steam)$"))],
   ),
 
 

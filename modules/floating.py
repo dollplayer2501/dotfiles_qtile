@@ -11,6 +11,7 @@ from theme_colors import Theme_Colors
 
 
 # INFO: xprop | grep WM_CLASS
+# Use 2nd argument
 
 floating_layout = layout.Floating(
   border_width = 1,
@@ -50,6 +51,7 @@ floating_layout = layout.Floating(
       # - sudo mount -t virtiofs Share_Points /home/dollplayer/Public/
 
     Match(wm_class = 'Parole'),
+    Match(wm_class = 'steam'),
     Match(wm_class = 'vlc'),
       # Movie Player
 
