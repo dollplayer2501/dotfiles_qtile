@@ -21,7 +21,10 @@ from qtile_extras.popup import (
 )
 #
 from modules.keys import keys
-from modules.variables import mod4
+from modules.variables import (
+  font_set,
+  mod4,
+)
 from theme_colors import Theme_Colors
 
 
@@ -76,61 +79,61 @@ def hide_graphs(qtile):
 #
 def show_power_menu(qtile):
   controls = [
+    # 1. Screensaver
     PopupImage(
-      filename = '~/.config/qtile/icons/reshot-icon-lock-E9JS4ARYUH.svg',
-      pos_x = 0.15,
-      pos_y = 0.1,
-      width = 0.1,
-      height = 0.5,
-      mouse_callbacks = {
-        'Button1': lazy.spawn('xfce4-screensaver-command --lock')
-      }
+      filename = '~/.config/qtile/icons/svgrepo-com-zzz.svg',
+      pos_x = 0.15, pos_y = 0.1, width = 0.1, height = 0.5,
+      colour = Theme_Colors['LightBlue'].replace('#', ''), mask = True,
+      highlight = Theme_Colors['Oreange'],
+      mouse_callbacks = { 'Button1': lazy.spawn('xfce4-screensaver-command --activate') },
     ),
+    # 2. Logout
     PopupImage(
-      filename = '~/.config/qtile/icons/reshot-icon-sleep-7SLFANCXGJ.svg',
-      pos_x = 0.45,
-      pos_y = 0.1,
-      width = 0.1,
-      height = 0.5,
-      mouse_callbacks = {
-        'Button1': lazy.spawn('systemctl suspend')
-      }
+      filename = '~/.config/qtile/icons/svgrepo-com-exit-point.svg',
+      pos_x = 0.35, pos_y = 0.1, width = 0.1, height = 0.5,
+      colour = Theme_Colors['LightBlue'].replace('#', ''), mask = True,
+      highlight = Theme_Colors['Oreange'],
+      mouse_callbacks = { 'Button1': lazy.shutdown() },
     ),
+    # 3. Power off
     PopupImage(
-      filename = '~/.config/qtile/icons/reshot-icon-turn-off-CDSGQH63TN-d79a9.svg',
-      pos_x = 0.75,
-      pos_y = 0.1,
-      width = 0.1,
-      height = 0.5,
-      highlight = 'A00000',
-      mouse_callbacks = {
-        'Button1': lazy.shutdown(),
-      },
+      filename = '~/.config/qtile/icons/svgrepo-com-power.svg',
+      pos_x = 0.55, pos_y = 0.1, width = 0.1, height = 0.5,
+      colour = Theme_Colors['LightBlue'].replace('#', ''), mask = True,
+      highlight = Theme_Colors['Oreange'],
+      mouse_callbacks = { 'Button1': lazy.spawn('systemctl reboot') },
     ),
-    PopupText(
-      text = 'Lock',
-      pos_x = 0.1,
-      pos_y = 0.7,
-      width = 0.2,
-      height = 0.2,
-      h_align = 'center',
+    # 4. Reboot
+    PopupImage(
+      filename = '~/.config/qtile/icons/svgrepo-com-restart.svg',
+      pos_x = 0.75, pos_y = 0.1, width = 0.1, height = 0.5,
+      colour = Theme_Colors['LightBlue'].replace('#', ''), mask = True,
+      highlight = Theme_Colors['Oreange'],
+      mouse_callbacks = { 'Button1': lazy.shutdown(), },
     ),
-    PopupText(
-      text = 'Sleep',
-      pos_x = 0.4,
-      pos_y = 0.7,
-      width = 0.2,
-      height = 0.2,
-      h_align = 'center',
-    ),
-    PopupText(
-      text = 'Shutdown',
-      pos_x = 0.7,
-      pos_y = 0.7,
-      width = 0.2,
-      height = 0.2,
-      h_align = 'center',
-    ),
+
+    # 1. Screensaver
+    PopupText( text = 'Sleep',     pos_x = 0.10, pos_y = 0.7, width = 0.2, height = 0.2, h_align = 'center',
+      font = font_set['main'], fontsize = 20,
+      foreground_highlighted = Theme_Colors['Oreange'],
+      foreground = Theme_Colors['LightBlue'],
+      highlight = Theme_Colors['Oreange'],),
+    # 2. Logout
+    PopupText( text = 'Logout',    pos_x = 0.30, pos_y = 0.7, width = 0.2, height = 0.2, h_align = 'center',
+      font = font_set['main'], fontsize = 20,
+      foreground_highlighted = Theme_Colors['Oreange'],
+      foreground = Theme_Colors['LightBlue'],
+      highlight = Theme_Colors['Oreange'],),
+    # 3. Power off
+    PopupText( text = 'Power off', pos_x = 0.50, pos_y = 0.7, width = 0.2, height = 0.2, h_align = 'center',
+      font = font_set['main'], fontsize = 20,
+      foreground = Theme_Colors['LightBlue'],
+      highlight = Theme_Colors['Oreange'],),
+    # 4. Reboot
+    PopupText( text = 'Reboot',    pos_x = 0.70, pos_y = 0.7, width = 0.2, height = 0.2, h_align = 'center',
+      font = font_set['main'], fontsize = 20,
+      foreground = Theme_Colors['LightBlue'],
+      highlight = Theme_Colors['Oreange'],),
   ]
 
   layout = PopupRelativeLayout(
@@ -138,8 +141,8 @@ def show_power_menu(qtile):
     width = 1000,
     height = 200,
     controls = controls,
-    background = ''.join([ Theme_Colors['DarkBlue_default'], '44' ]),
-    initial_focus = None,
+    background = ''.join([ Theme_Colors['DarkBlue_lighten'], '88' ]),
+    initial_focus = 0,
   )
 
   layout.show(centered = True)
