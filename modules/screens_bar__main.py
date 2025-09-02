@@ -9,6 +9,7 @@
 #
 from libqtile import bar, qtile
 from libqtile.config import Screen
+from libqtile.lazy import lazy
 #
 from qtile_extras import widget
 # from libqtile import widget
@@ -23,6 +24,7 @@ from modules.screens_bar___common import (
   common_config_screen,
   common_config_bar,
 )
+from modules.popup import show_power_menu
 #
 from theme_colors import Theme_Colors
 
@@ -299,32 +301,28 @@ screen_main = Screen(
 
       ## ------------------------------------
 
-      # widget.TextBox(
-      #   # Nerd Fonts https://www.nerdfonts.com/#features
-      #   fmt = '  ',
-      #   fontsize = 16,
-      #   font = font_set['main'],
-      #   padding = 0,
-      #   mouse_callbacks = {
-      #     'Button1': lambda: qtile.cmd_spawn('brave'),
-      #     'Button3': lambda: qtile.cmd_spawn('brave -incognito'),
-      #   },
-      #   foreground = Theme_Colors['Purple'],
-      #   background = Theme_Colors['DarkBlue_lighten'],
-      # ),
-
-      widget.QuickExit(
-        # default_text = '[logoff]',
-        default_text = '  ',
-        countdown_start = 3,
-        countdown_format='{}',
-
+      widget.TextBox(
+        fmt = '  ',
         fontsize = 18,
         font = font_set['main'],
-
+        padding = 0,
+        mouse_callbacks = {
+          'Button1': lazy.function(show_power_menu),
+        },
         foreground = Theme_Colors['Purple'],
         background = Theme_Colors['DarkBlue_lighten'],
       ),
+
+      # widget.QuickExit(
+        # default_text = '[logoff]',
+      #   default_text = '  ',
+      #   countdown_start = 3,
+      #   countdown_format='{}',
+      #   fontsize = 18,
+      #   font = font_set['main'],
+      #   foreground = Theme_Colors['Purple'],
+      #   background = Theme_Colors['DarkBlue_lighten'],
+      # ),
 
       # INFO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'qtile_extras.widget.syncthing.Syncthing': No module named 'dbus_fast'
       # widget.Syncthing(
