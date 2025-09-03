@@ -169,7 +169,7 @@ def show_power_menu(qtile):
     height = 200,
     controls = controls,
     background = ''.join([ Theme_Colors['DarkBlue_lighten'], '88' ]),
-    initial_focus = 0,
+    initial_focus = 1,
   )
 
   layout.show(centered = True)

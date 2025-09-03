@@ -40,9 +40,24 @@ screen_main = Screen(
         fontsize = 20,
         font = font_set['sub2'],
 
-        cursor_color = Theme_Colors['Oreange'],
-        foreground = Theme_Colors['LightBlue'],
-        background = Theme_Colors['DarkBlue_default'],
+        cursor_color = Theme_Colors['DarkBlue_default'],
+        foreground = Theme_Colors['DarkBlue_default'],
+        background = Theme_Colors['Oreange'],
+      ),
+
+      widget.Chord(
+        fontsize = 20,
+        font = font_set['sub2'],
+
+        chords_colors = {
+          'applications': (
+            Theme_Colors['Oreange'],
+            Theme_Colors['DarkBlue_default'],
+          ),
+        },
+
+        foreground = Theme_Colors['DarkBlue_default'],
+        background = Theme_Colors['Oreange'],
       ),
 
       ## ------------------------------------

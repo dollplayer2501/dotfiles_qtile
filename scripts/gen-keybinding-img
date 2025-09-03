@@ -373,7 +373,11 @@ class MInfo(KInfo):
 
 
 def get_kb_map(config_path=None):
+    #
+    # Add a setting to ignore KeyChord if it is included.
+    #
     from libqtile.confreader import Config
+    from libqtile.config import KeyChord
 
     c = Config(config_path)
     if config_path:
@@ -381,6 +385,10 @@ def get_kb_map(config_path=None):
 
     kb_map = {}
     for key in c.keys:
+
+        if isinstance(key, KeyChord):
+            continue
+
         mod = "-".join(key.modifiers)
         if mod not in kb_map:
             kb_map[mod] = {}

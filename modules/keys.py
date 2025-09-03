@@ -140,10 +140,13 @@ keys = [
   Key([mod4, mod1], 'x', lazy.spawn('xfce4-settings-manager'), desc = 'Run Xfce4 settings'),
 
   ## INFO: Not reflected in gen-keybinding-img?
-  ## KeyChord([mod4], 'z', [
-  ##     Key([], 'b', lazy.spawn('brave'),     desc = 'Launch Brave'),
-  ##     Key([], 'k', lazy.spawn('keepassxc'), desc = 'Launch KeepassXC'),
-  ## ]),
+  KeyChord([mod4], 'z', [
+      Key([], 'b', lazy.spawn('brave'),     desc = 'Launch Brave'),
+      Key([], 'k', lazy.spawn('keepassxc'), desc = 'Launch KeepassXC'),
+    ],
+    mode = True,
+    name = 'applications',
+  ),
 ]
 
 
