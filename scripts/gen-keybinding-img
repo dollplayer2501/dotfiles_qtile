@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
 
+
+#
+# - Original
+#    qtile/scripts/gen-keybinding-img at master · qtile/qtile
+#    https://github.com/qtile/qtile/blob/master/scripts/gen-keybinding-img
+#
+# - Modified by
+#    dollplayer2501
+#    https://github.com/dollplayer2501
+# - Correction details
+#    - Fonts, layouts etc.
+#    - Terribly low level display support for KeyChord
+#
+
+
 #######################################
 #  Qtile keybindings image generator  #
 #######################################
@@ -372,10 +387,17 @@ class MInfo(KInfo):
         self.scope = self.get_scope(mouse)
 
 
+class CInfo(KInfo):
+    def __init__(self, key):
+        if key.key in self.KEY_MAP:
+            self.key = self.KEY_MAP[key.key]
+        else:
+            self.key = key.key
+        self.command = 'KeyChord: ' + key.name
+        self.scope = None
+
+
 def get_kb_map(config_path=None):
-    #
-    # Add a setting to ignore KeyChord if it is included.
-    #
     from libqtile.confreader import Config
     from libqtile.config import KeyChord
 
@@ -386,15 +408,17 @@ def get_kb_map(config_path=None):
     kb_map = {}
     for key in c.keys:
 
-        if isinstance(key, KeyChord):
-            continue
-
         mod = "-".join(key.modifiers)
         if mod not in kb_map:
             kb_map[mod] = {}
 
-        info = KInfo(key)
-        kb_map[mod][info.key] = info
+        if isinstance(key, KeyChord):
+            info = CInfo(key)
+            kb_map[mod][info.key] = info
+        else:
+
+            info = KInfo(key)
+            kb_map[mod][info.key] = info
 
     for mouse in c.mouse:
         mod = "-".join(mouse.modifiers)

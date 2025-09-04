@@ -103,7 +103,7 @@ groups = [
     layouts = [
       layout.Floating(**layout_setting_floating),
       layout.Max(**layout_setting_max),
-      layout.Matrix(**layout_setting_matrix, columns = 4),
+      layout.Matrix(**layout_setting_matrix, columns = 3),
     ],
     init = True, persist = True,
   ),

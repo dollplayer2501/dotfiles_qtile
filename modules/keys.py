@@ -142,6 +142,7 @@ keys = [
   ## INFO: Not reflected in gen-keybinding-img?
   KeyChord([mod4], 'z', [
       Key([], 'b', lazy.spawn('brave'),     desc = 'Launch Brave'),
+      # Key(['shift'], 'b', lazy.spawn('brave --incognito'),  desc = 'Launch Brave Incognito'),
       Key([], 'k', lazy.spawn('keepassxc'), desc = 'Launch KeepassXC'),
     ],
     mode = True,
