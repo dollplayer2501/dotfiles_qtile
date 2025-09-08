@@ -123,7 +123,7 @@ def show_power_menu(qtile):
       pos_x = 0.55,
       filename = '~/.config/qtile/icons/svgrepo-com-power.svg',
       mouse_callbacks = {
-        'Button1': lazy.spawn('systemctl reboot')
+        'Button1': lazy.shutdown(),
       },
       **popupImage_common_settings,
     ),
@@ -132,7 +132,7 @@ def show_power_menu(qtile):
       pos_x = 0.75,
       filename = '~/.config/qtile/icons/svgrepo-com-restart.svg',
       mouse_callbacks = {
-        'Button1': lazy.shutdown(),
+        'Button1': lazy.spawn('systemctl reboot')
       },
       **popupImage_common_settings,
     ),

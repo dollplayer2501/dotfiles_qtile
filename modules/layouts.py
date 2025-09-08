@@ -33,9 +33,9 @@ layout_setting_verticalTile = {
 
 layout_setting_treeTab = {
   # TODO: Setting margin/padding width when in staircase state
-  'active_bg': ''.join([ Theme_Colors['Purple'], '88' ]),
+  'active_bg': ''.join([ Theme_Colors['Purple'], '66' ]),
   'active_fg': ''.join([ Theme_Colors['Oreange'] ]),
-  'bg_color': ''.join([ Theme_Colors['DarkBlue_default'], 'dd' ]),
+  'bg_color': ''.join([ Theme_Colors['DarkBlue_default'], 'aa' ]),
   'border_width': 5,
   'font': font_set['sub1'],
   'fontshadow': None,

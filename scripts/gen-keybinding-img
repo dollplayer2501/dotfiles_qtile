@@ -415,8 +415,8 @@ def get_kb_map(config_path=None):
         if isinstance(key, KeyChord):
             info = CInfo(key)
             kb_map[mod][info.key] = info
-        else:
 
+        else:
             info = KInfo(key)
             kb_map[mod][info.key] = info
 

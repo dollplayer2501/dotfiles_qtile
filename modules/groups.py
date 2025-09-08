@@ -34,7 +34,7 @@ groups = [
       layout.Max(**layout_setting_max),
     ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(kitty)$"))],
+    matches = [Match(wm_class = re.compile(r"^(kitty|Notable)$"))],
   ),
 
   Group(name = '2', label = '2.code',
@@ -64,7 +64,7 @@ groups = [
       layout.Floating(**layout_setting_floating),
     ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(keepassxc|Notable|Yad|Virt-manager|Mousepad|Thunar)$"))],
+    matches = [Match(wm_class = re.compile(r"^(keepassxc|Yad|Virt-manager|Mousepad|Thunar)$"))],
   ),
 
   Group(name = '5', label = '5.misc',
