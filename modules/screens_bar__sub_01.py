@@ -93,7 +93,7 @@ screen_sub_01 = Screen(
 
         mouse_callbacks = {
           # Button1 is mute on/off
-          'Button3': lambda: qtile.cmd_spawn('pavucontrol'),
+          'Button3': lambda: qtile.spawn('pavucontrol'),
         },
 
         foreground = Theme_Colors['LightBlue'],
