@@ -14,7 +14,7 @@ from libqtile import bar, extension, hook, layout, qtile
 from libqtile.lazy import lazy
 from libqtile.config import Key, KeyChord
 #
-from modules.variables import mod1, mod4, terminal_main, terminal_sub1, terminal_sub8, terminal_sub9, terminal_guess, terminal_gpu
+from modules.variables import mod1, mod4, terminal_main, terminal_sub1, terminal_sub8, terminal_sub9
 from modules.dmenu import dmenu_normal, dmenu_power, dmenu_terminal, dmenu_window
 from modules.functions import focus_next_floating #, toggle_bar
 

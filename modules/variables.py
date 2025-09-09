@@ -5,14 +5,11 @@
 import os
 from datetime import datetime
 #
-from libqtile.utils import guess_terminal
+# from libqtile.utils import guess_terminal
 
 
 mod1 = 'mod1' # Alt
 mod4 = 'mod4' # Windows key
-
-terminal_guess = guess_terminal() # Xcfe4-terminai
-terminal_gpu = 'wezterm'
 
 terminal_main = 'kitty'
 terminal_sub1 = 'alacritty'

@@ -7,13 +7,6 @@ from libqtile import widget
 from libqtile.config import Key
 from libqtile.lazy import lazy
 #
-# from qtile_extras.popup.toolkit import (
-#     PopupRelativeLayout,
-#     PopupWidget,
-#     PopupImage,
-#     PopupText,
-#     PopupRelative,
-#   )
 from qtile_extras.popup import (
     PopupRelativeLayout,
     PopupImage,

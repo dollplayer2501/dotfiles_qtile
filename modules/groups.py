@@ -8,7 +8,7 @@ from libqtile.config import Key, Group, Match
 from libqtile.lazy import lazy
 from libqtile import layout
 #
-from modules.variables import mod1, mod4, terminal_guess
+from modules.variables import mod1, mod4
 from modules.keys import keys
 from modules.layouts import (
     layout_setting_max,
