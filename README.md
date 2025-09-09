@@ -104,7 +104,7 @@ And I created icons of [CurrentLayoutIcon](https://docs.qtile.org/en/latest/manu
 > [!NOTE]
 > I rewrote some parts of [`gen-keybinding-img`](./scripts/gen-keybinding-img).  
 > - Fonts, layouts etc.
-> - Terribly low level display support for KeyChord
+> - Terribly low level display support for KeyChord, only 2 stroke keys
 
 Maybe because I installed it with `yay`, I'm not in an environment where I can use [Keybindings in images](https://docs.qtile.org/en/latest/manual/commands/keybindings.html).  
 However, I have forced it, `gen-keybinding-img` to work.  
