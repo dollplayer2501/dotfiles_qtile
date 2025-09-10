@@ -10,27 +10,87 @@ from modules.variables import font_set
 from theme_colors import Theme_Colors
 
 
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#columns
+#
+layout_setting_columns = {
+  'border_width': 1,
+  'margin': [1, 1, 1, 1],
+  'border_on_single': True,
+  # NOTE: First, place 2 windows side by side, second, Mod4 + n
+  'initial_ratio': 0.5,
+
+  'border_focus': Theme_Colors['Oreange'],
+  'border_focus_stack': Theme_Colors['Debug'],
+  'border_normal': Theme_Colors['LightBlue'],
+  'border_normal_stack': Theme_Colors['Debug'],
+}
+
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#floating
+#
+layout_setting_floating = {
+  'border_width': 0,
+  'fullscreen_border_width': 0,
+  'max_border_width': 0,
+
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+}
+
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#matrix
+#
+layout_setting_matrix = {
+  'border_width': 1,
+  # NOTE: 4 if the monitor is placed horizontally, 2 if placed vertically
+  # TODO: Automatically detects whether the monitor is in landscape or portrait orientation
+  # 'columns': 2,
+  'margin': 0,
+
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+}
+
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#max
+#
 layout_setting_max = {
   'border_width': 0,
   'margin': [0, 0, 0, 0],
-
   'only_focused': True,
 
   'border_focus': Theme_Colors['Oreange'],
   'border_normal': Theme_Colors['Purple'],
 }
 
-layout_setting_verticalTile = {
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#monadtall
+#
+layout_setting_monadTall = {
   'border_width': 1,
-  'margin': [1, 10, 1, 100],
-
-  'single_border_width': 1,
-  'single_margin': [1, 1, 2, 500],
+  'margin': 2,
+  'ratio': 0.7,
 
   'border_focus': Theme_Colors['Oreange'],
   'border_normal': Theme_Colors['Purple'],
 }
 
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#monadwide
+#
+layout_setting_monadWide = {
+  'border_width': 1,
+  'margin': 2,
+  'ratio': 0.6,
+
+  'border_focus': Theme_Colors['Oreange'],
+  'border_normal': Theme_Colors['Purple'],
+}
+
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#treetab
+#
 layout_setting_treeTab = {
   # TODO: Setting margin/padding width when in staircase state
   'active_bg': ''.join([ Theme_Colors['Purple'], '66' ]),
@@ -63,76 +123,53 @@ layout_setting_treeTab = {
   'vspace': 0,
 }
 
-layout_setting_floating = {
-  'border_width': 0,
-  'fullscreen_border_width': 0,
-  'max_border_width': 0,
-
-  # NOTE: Will floating_layout's settings take priority?
-  'border_focus': Theme_Colors['Oreange'],
-  'border_normal': Theme_Colors['Purple'],
-}
-
-layout_setting_monadWide = {
+#
+# https://docs.qtile.org/en/stable/manual/ref/layouts.html#verticaltile
+#
+layout_setting_verticalTile = {
   'border_width': 1,
-  'margin': 2,
-  'ratio': 0.6,
+  'margin': [1, 10, 1, 100],
+  'single_border_width': 1,
+  'single_margin': [1, 1, 2, 500],
 
   'border_focus': Theme_Colors['Oreange'],
   'border_normal': Theme_Colors['Purple'],
 }
 
-layout_setting_monadTail = {
-  'border_width': 1,
-  'margin': 2,
-  'ratio': 0.7,
-
-  'border_focus': Theme_Colors['Oreange'],
-  'border_normal': Theme_Colors['Purple'],
-}
-
-layout_setting_matrix = {
-  'border_focus': Theme_Colors['Oreange'],
-  'border_normal': Theme_Colors['Purple'],
-  'border_width': 1,
-  # NOTE: 4 if the monitor is placed horizontally, 2 if placed vertically
-  # TODO: Automatically detects whether the monitor is in landscape or portrait orientation
-  # 'columns': 2,
-  'margin': 0,
-}
-
-
-# TODO: The following may not be necessary
 
 layouts = [
 
-  layout.Max(
-    **layout_setting_max,
-  ),
-
-  layout.VerticalTile(
-    **layout_setting_verticalTile,
-  ),
-
-  layout.TreeTab(
-    **layout_setting_treeTab,
+  layout.Columns(
+    **layout_setting_columns,
   ),
 
   layout.Floating(
     **layout_setting_floating,
   ),
 
-  # layout.Columns(
-  #   border_width = 1,
-  #   margin = [1, 1, 1, 1],
-  #   border_on_single = True,
-  #   margin_on_single = [1, 1, 2, 500],
-  #   initial_ratio = 0.6,
-  #   border_focus = Theme_Colors['Oreange'],
-  #   border_focus_stack = Theme_Colors['Debug'],
-  #   border_normal = Theme_Colors['LightBlue'],
-  #   border_normal_stack = Theme_Colors['Debug'],
-  # ),
+  layout.Matrix(
+    **layout_setting_matrix,
+  ),
+
+  layout.Max(
+    **layout_setting_max,
+  ),
+
+  layout.MonadTall(
+    **layout_setting_monadTall,
+  ),
+
+  layout.MonadWide(
+    **layout_setting_monadWide,
+  ),
+
+  layout.TreeTab(
+    **layout_setting_treeTab,
+  ),
+
+  layout.VerticalTile(
+    **layout_setting_verticalTile,
+  ),
 
   # layout.Tile(
   #   border_width = 1,

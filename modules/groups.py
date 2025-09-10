@@ -11,13 +11,14 @@ from libqtile import layout
 from modules.variables import mod1, mod4
 from modules.keys import keys
 from modules.layouts import (
-    layout_setting_max,
-    layout_setting_verticalTile,
-    layout_setting_treeTab,
+    layout_setting_columns,
     layout_setting_floating,
-    layout_setting_monadWide,
-    layout_setting_monadTail,
     layout_setting_matrix,
+    layout_setting_max,
+    layout_setting_monadTall,
+    layout_setting_monadWide,
+    layout_setting_treeTab,
+    layout_setting_verticalTile,
   )
 from modules.functions import go_to_group, go_to_group_and_move_window
 
@@ -60,7 +61,7 @@ groups = [
     screen_affinity = 0, position = 4,
     layouts = [
       layout.MonadWide(**layout_setting_monadWide),
-      layout.MonadTall(**layout_setting_monadTail),
+      layout.MonadTall(**layout_setting_monadTall),
       layout.Floating(**layout_setting_floating),
     ],
     init = True, persist = True,
@@ -101,9 +102,9 @@ groups = [
   Group(name = '9', label = '9.null',
     screen_affinity = 0, position = 9,
     layouts = [
-      layout.Floating(**layout_setting_floating),
-      layout.Max(**layout_setting_max),
       layout.Matrix(**layout_setting_matrix, columns = 3),
+      layout.Columns(**layout_setting_columns),
+      layout.Floating(**layout_setting_floating),
     ],
     init = True, persist = True,
   ),
