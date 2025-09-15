@@ -1,5 +1,6 @@
 #
-#
+# Groups
+#   https://docs.qtile.org/en/stable/manual/config/groups.html
 #
 
 import re

@@ -3,7 +3,6 @@
 #   https://docs.qtile.org/en/stable/manual/ref/layouts.html
 #
 
-#
 from libqtile import layout
 #
 from modules.variables import font_set

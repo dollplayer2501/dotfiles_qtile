@@ -6,8 +6,6 @@
 from libqtile.config import DropDown, Key, KeyChord, ScratchPad
 from libqtile.lazy import lazy
 #
-#from modules.variables import mod1, mod4
-#from modules.keys import keys
 from modules.groups import groups
 
 

@@ -8,7 +8,6 @@
 
 # TODO: Tooltips of qtile-extras
 
-#
 from libqtile import bar, qtile
 from libqtile.config import Screen
 from libqtile.lazy import lazy

@@ -6,8 +6,6 @@
 #  https://qtile-extras.readthedocs.io/en/stable/
 #
 
-
-#
 from qtile_extras.widget.decorations import PowerLineDecoration
 # from qtile_extras.resources import wallpapers
 #

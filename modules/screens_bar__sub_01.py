@@ -6,7 +6,6 @@
 #  https://qtile-extras.readthedocs.io/en/stable/
 #
 
-#
 from libqtile import bar, qtile
 from libqtile.config import Screen
 #

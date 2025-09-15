@@ -1,16 +1,10 @@
 #
-# INFO: Here are my rules:
-#  Mod4 + Control:            Systematic control of Qtile
-#  Mod4 + Mod1/Alt:           Application Launcher
-#  Mod4 + Mod1/Alt + Control: Qtile's Scratchpad
-#
-# TODO: Some commands may not be accepted depending on the layout.
-# These will be written to the error log.
+# Keys
+#   https://docs.qtile.org/en/stable/manual/config/keys.html
 #
 
 import os
 #
-from libqtile import bar, extension, hook, layout, qtile
 from libqtile.lazy import lazy
 from libqtile.config import Key, KeyChord
 #
@@ -89,15 +83,16 @@ keys = [
   Key([mod4], 't', lazy.window.toggle_floating(),   desc = 'Toggle floating on the focused window'),
 
   Key([mod4, 'control'], 'r', lazy.reload_config(), desc = 'Reload the config'),
-  Key([mod4, 'shift'],   'r', lazy.spawncmd(),      desc = 'Spawn a command using a prompt widget'),
-  Key([mod4, 'control'], 'q', lazy.shutdown(),      desc = 'Shutdown Qtile, logout'),
+  Key([mod4], 'r', lazy.spawncmd(),                 desc = 'Spawn a command using a prompt widget'),
+  # Key([mod4, 'control'], 'q', lazy.shutdown(),      desc = 'Shutdown Qtile, logout'),
+  Key([mod4], 'q', lazy.function(show_power_menu),  desc = 'Popup Power Menu'),
   Key([mod4],            'w', lazy.window.kill(),   desc = 'Kill focused window'),
 
-  Key([mod4],            'r', lazy.run_extension(dmenu_normal),   desc = 'Dmenu Run Normal'),
   Key([mod4, 'control'], 'a', lazy.run_extension(dmenu_window),   desc = 'Dmenu All Tasks'),
-  Key([mod4, 'control'], 'p', lazy.run_extension(dmenu_power),    desc = 'Dmenu Power Menu'),
+  Key([mod4, 'control'], 'd', lazy.run_extension(dmenu_normal),   desc = 'Dmenu Run Normal'),
+  Key([mod4, 'control'], 'm', lazy.run_extension(dmenu_power),    desc = 'Dmenu Power Menu'),
   Key([mod4, 'control'], 't', lazy.run_extension(dmenu_terminal), desc = 'Dmenu All Terminal'),
-
+  #
   Key([mod4], 'Return', lazy.spawn('kitty'), desc = 'Launch kitty'),
   # Key([mod4], 'Return', lazy.spawn('brave') if self.qtile.current_group == "2" else lazy.spawn('kitty')),
   Key([mod4], 'space',  lazy.layout.next(),  desc = 'Move normal window focus to other window'),
@@ -122,18 +117,20 @@ keys = [
   #   desc = 'Print screen now'),
 
   # `my_scrot_now` is `command scrot -z -p "EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png" -e "mv \$f ~/Pictures/"`
-  Key([mod4, mod1], 'p', lazy.spawn("fish -c 'my_scrot_now'"),  desc = 'Print screen now'),
+  Key([mod4, 'control'], 'p', lazy.spawn("fish -c 'my_scrot_now'"),  desc = 'Print screen now'),
   # `my_scrot_wait` is `command scrot -c -d 10 -z -p "EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png" -e "mv \$f ~/Pictures/"`
-  Key([mod4, mod1], 'i', lazy.spawn("fish -c 'my_scrot_wait'"), desc = 'Print screen after 10 sec'),
+  Key([mod4, 'control'], 'i', lazy.spawn("fish -c 'my_scrot_wait'"), desc = 'Print screen after 10 sec'),
 
-  Key([mod4, 'shift'], 'q', lazy.function(show_power_menu), desc = 'Popup Power Menu'),
+  # Key([mod4, 'shift'], 'q', lazy.function(show_power_menu), desc = 'Popup Power Menu'),
 
   KeyChord([mod4], 'z', [
       # TODO: brave --incognito
+      # TODO: My customized gen-keybinging-img does not hook mod+z, shift+b
       Key([], 'a', lazy.spawn('alacritty'),   desc = 'Run Alacritty'),
       Key([], 'b', lazy.spawn('brave'),       desc = 'Run Brave'),
       Key([], 'c', lazy.spawn('claws-mail'),  desc = 'Run Claws mail'),
       Key([], 'g', lazy.spawn('gimp'),        desc = 'Run Gimp'),
+      Key([], 'h', lazy.spawn('brave --incognito'), desc = 'Run Brave private'),
       Key([], 'k', lazy.spawn('keepassxc'),   desc = 'Run KeepassXC'),
       Key([], 'l', lazy.spawn('libreoffice'), desc = 'Run LibreOffice'),
       Key([], 'm', lazy.spawn('mousepad'),    desc = 'Run Mousepad'),
@@ -143,6 +140,7 @@ keys = [
       Key([], 'v', lazy.spawn('vlc'),         desc = 'Run VLC'),
     ],
     mode = True,
+    # timeout = 3, # NOTE: This does not use?
     name = 'Applications',
   ),
 
@@ -157,9 +155,8 @@ keys = [
   ),
 
 
+  # This is test.
   Key([mod4], "F2", lazy.spawn("vlc")),
-
-
 ]
 
 

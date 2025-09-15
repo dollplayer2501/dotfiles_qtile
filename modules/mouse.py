@@ -3,7 +3,6 @@
 #   https://docs.qtile.org/en/stable/manual/config/mouse.html
 #
 
-#
 from libqtile.config import Click, Drag
 from libqtile.lazy import lazy
 #
