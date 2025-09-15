@@ -6,6 +6,8 @@
 #  https://qtile-extras.readthedocs.io/en/stable/
 #
 
+# TODO: Tooltips of qtile-extras
+
 #
 from libqtile import bar, qtile
 from libqtile.config import Screen
@@ -317,8 +319,9 @@ screen_main = Screen(
       ## ------------------------------------
 
       widget.TextBox(
-        fmt = '  ',
-        fontsize = 18,
+        # fmt = '  ',
+        fmt = '  ',
+        fontsize = 20,
         font = font_set['main'],
         padding = 0,
         mouse_callbacks = {

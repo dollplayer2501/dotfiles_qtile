@@ -14,9 +14,10 @@ from libqtile import bar, extension, hook, layout, qtile
 from libqtile.lazy import lazy
 from libqtile.config import Key, KeyChord
 #
-from modules.variables import mod1, mod4, terminal_main, terminal_sub1, terminal_sub8, terminal_sub9
+from modules.variables import mod1, mod4
 from modules.dmenu import dmenu_normal, dmenu_power, dmenu_terminal, dmenu_window
-from modules.functions import focus_next_floating #, toggle_bar
+from modules.popup import show_power_menu
+from modules.functions import focus_next_floating
 
 
 keys = [
@@ -97,10 +98,10 @@ keys = [
   Key([mod4, 'control'], 'p', lazy.run_extension(dmenu_power),    desc = 'Dmenu Power Menu'),
   Key([mod4, 'control'], 't', lazy.run_extension(dmenu_terminal), desc = 'Dmenu All Terminal'),
 
-  Key([mod4], 'Return', lazy.spawn(terminal_main),  desc = 'Launch terminal'),
-  # Key([mod4], 'Return', lazy.spawn('brave') if self.qtile.current_group == "2" else lazy.spawn(terminal_main)),
-  Key([mod4], 'space',  lazy.layout.next(),         desc = 'Move normal window focus to other window'),
-  Key([mod4], 'Tab',    lazy.next_layout(),         desc = 'Toggle between layouts'),
+  Key([mod4], 'Return', lazy.spawn('kitty'), desc = 'Launch kitty'),
+  # Key([mod4], 'Return', lazy.spawn('brave') if self.qtile.current_group == "2" else lazy.spawn('kitty')),
+  Key([mod4], 'space',  lazy.layout.next(),  desc = 'Move normal window focus to other window'),
+  Key([mod4], 'Tab',    lazy.next_layout(),  desc = 'Toggle between layouts'),
 
   Key([mod4, 'shift'  ], 'space', lazy.function(focus_next_floating), desc = 'Move floating window focus to other window'),
   # Key([mod4, 'control'], 'b',     lazy.function(toggle_bar),          desc = 'Toggle bottom bar'),
@@ -108,7 +109,7 @@ keys = [
   # NOTE: Multiple monitor?
   # Key([mod4], 'o', lazy.to_screen(0), desc = 'To Main Screen'),
   # Key([mod4], 'p', lazy.to_screen(1), desc = 'To Sub Screen'),
-  Key([mod4], 'period', lazy.next_screen(), desc='Next monitor'),
+  Key([mod4], 'period', lazy.next_screen(), desc = 'Next monitor'),
 
 
   # Key([], 'Print',
@@ -125,29 +126,40 @@ keys = [
   # `my_scrot_wait` is `command scrot -c -d 10 -z -p "EndeavourOS_Qtile_%Y-%m-%d_%H-%M-%S.png" -e "mv \$f ~/Pictures/"`
   Key([mod4, mod1], 'i', lazy.spawn("fish -c 'my_scrot_wait'"), desc = 'Print screen after 10 sec'),
 
+  Key([mod4, 'shift'], 'q', lazy.function(show_power_menu), desc = 'Popup Power Menu'),
 
-  Key([mod4, mod1], 'a', lazy.spawn('alacritty'),              desc = 'Run Alacritty'),
-  Key([mod4, mod1], 'b', lazy.spawn('brave'),                  desc = 'Run Brave'),
-  Key([mod4, mod1], 'c', lazy.spawn('claws-mail'),             desc = 'Run Claws mail'),
-  Key([mod4, mod1], 'g', lazy.spawn('gimp'),                   desc = 'Run Gimp'),
-  Key([mod4, mod1], 'k', lazy.spawn('keepassxc'),              desc = 'Run KeepassXC'),
-  Key([mod4, mod1], 'l', lazy.spawn('libreoffice'),            desc = 'Run LibreOffice'),
-  Key([mod4, mod1], 'm', lazy.spawn('mousepad'),               desc = 'Run Mousepad'),
-  Key([mod4, mod1], 'n', lazy.spawn('notable'),                desc = 'Run Notable'),
-  Key([mod4, mod1], 'o', lazy.spawn('pavucontrol'),            desc = 'Run Pavucontrol'),
-  Key([mod4, mod1], 't', lazy.spawn('thunar'),                 desc = 'Run Thunar'),
-  Key([mod4, mod1], 'v', lazy.spawn('vlc'),                    desc = 'Run VLC'),
-  Key([mod4, mod1], 'x', lazy.spawn('xfce4-settings-manager'), desc = 'Run Xfce4 settings'),
-
-  ## INFO: Not reflected in gen-keybinding-img?
   KeyChord([mod4], 'z', [
-      Key([], 'b', lazy.spawn('brave'),     desc = 'Launch Brave'),
-      # Key(['shift'], 'b', lazy.spawn('brave --incognito'),  desc = 'Launch Brave Incognito'),
-      Key([], 'k', lazy.spawn('keepassxc'), desc = 'Launch KeepassXC'),
+      # TODO: brave --incognito
+      Key([], 'a', lazy.spawn('alacritty'),   desc = 'Run Alacritty'),
+      Key([], 'b', lazy.spawn('brave'),       desc = 'Run Brave'),
+      Key([], 'c', lazy.spawn('claws-mail'),  desc = 'Run Claws mail'),
+      Key([], 'g', lazy.spawn('gimp'),        desc = 'Run Gimp'),
+      Key([], 'k', lazy.spawn('keepassxc'),   desc = 'Run KeepassXC'),
+      Key([], 'l', lazy.spawn('libreoffice'), desc = 'Run LibreOffice'),
+      Key([], 'm', lazy.spawn('mousepad'),    desc = 'Run Mousepad'),
+      Key([], 'n', lazy.spawn('notable'),     desc = 'Run Notable'),
+      Key([], 's', lazy.spawn('flatpak run com.valvesoftware.Steam'), desc = 'Run Steam'),
+      Key([], 't', lazy.spawn('thunar'),      desc = 'Run Thunar'),
+      Key([], 'v', lazy.spawn('vlc'),         desc = 'Run VLC'),
     ],
     mode = True,
-    name = 'applications',
+    name = 'Applications',
   ),
+
+
+  KeyChord([mod4], 'x', [
+      Key([], 'a', lazy.group['scratchpad'].dropdown_toggle('alacritty'), desc = 'Scratchpad Alacritty'),
+      Key([], 'm', lazy.group['scratchpad'].dropdown_toggle('mousepad'),  desc = 'Scratchpad Mousepad'),
+      Key([], 'n', lazy.group['scratchpad'].dropdown_toggle('notable'),   desc = 'Scratchpad Notable'),
+    ],
+    mode = True,
+    name = 'Scratchpad',
+  ),
+
+
+  Key([mod4], "F2", lazy.spawn("vlc")),
+
+
 ]
 
 

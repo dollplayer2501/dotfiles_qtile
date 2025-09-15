@@ -30,11 +30,11 @@ this_dir = os.path.dirname(__file__)
 base_dir = os.path.abspath(os.path.join(this_dir, ".."))
 sys.path.insert(0, base_dir)
 
-BUTTON_NAME_Y = 65
-BUTTON_NAME_X = 10
+BUTTON_NAME_Y = 123
+BUTTON_NAME_X = 1
 
-COMMAND_Y = 20
-COMMAND_X = 5
+COMMAND_Y = 15
+COMMAND_X = 2
 
 LEGEND = ["modifiers", "layout", "group", "window", "other"]
 
@@ -58,8 +58,8 @@ class Button:
 
 
 class Pos:
-    WIDTH = 78
-    HEIGHT = 70
+    WIDTH = 120
+    HEIGHT = 125
     GAP = 5
 
     def __init__(self, x, y):
@@ -146,7 +146,7 @@ class KeyboardPNGFactory:
         key_pos["mod1"] = pos.get_pos("mod1")
         key_pos["space"] = pos.get_pos("space")
         key_pos["Print"] = pos.get_pos("Print")
-        pos.skip_x(3)
+        pos.skip_x(3.12)
         key_pos["Up"] = pos.get_pos("Up")
 
         pos.next_row()
@@ -160,7 +160,7 @@ class KeyboardPNGFactory:
         for legend in LEGEND:
             key_pos[legend] = pos.get_pos(legend)
 
-        pos.skip_x(5)
+        pos.skip_x(3)
         key_pos["Button1"] = pos.get_pos("Button1")
         key_pos["Button2"] = pos.get_pos("Button2")
         key_pos["Button3"] = pos.get_pos("Button3")
@@ -189,7 +189,7 @@ class KeyboardPNGFactory:
             return True
 
     def render(self, filename):
-        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 1280, 800)
+        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 1920, 1080)
         context = cairo.Context(surface)
         with context:
             context.set_source_rgb(1, 1, 1)
@@ -197,18 +197,21 @@ class KeyboardPNGFactory:
 
         self.add_logo(context)
 
-        context.move_to(210, 60)
-        context.select_font_face('CaskaydiaCove Nerd Font Mono', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
-        context.set_font_size(36)
+        context.move_to(210, 65)
+        context.set_font_size(48)
+        context.set_source_rgb(0.5, 0.5, 0.5)
         context.show_text("Keybindings for Qtile")
 
-        context.move_to(210, 100)
-        context.set_font_size(18)
+        context.move_to(210, 115)
+        context.set_font_size(36)
+        context.set_source_rgb(0, 0, 0)
         if len([i for i in self.modifiers if i]):
             if self.check_class_normal():
                 context.show_text("Modifiers: " + ", ".join(self.modifiers))
             else:
-                context.show_text("Modifiers: KeyChords: " + ", ".join(self.modifiers))
+                first_key = next(iter(self.keys))
+                first_value = self.keys[first_key]
+                context.show_text("KeyChords: " + "+ ".join(self.modifiers) + ", " + first_value.name)
         else:
             context.show_text("No modifiers used.")
 
@@ -228,11 +231,12 @@ class KeyboardPNGFactory:
                 x += Pos.GAP + Pos.WIDTH
 
         # draw mouse base
-        context.rectangle(830, 660, 244, 90)
+        context.rectangle(1010, 855, 370, 60)
         context.set_source_rgb(0, 0, 0)
         context.stroke()
         context.set_font_size(28)
-        context.move_to(900, 720)
+        context.set_source_rgb(0.25, 0.25, 0.25)
+        context.move_to(1015, 910)
         context.show_text("MOUSE")
 
         surface.write_to_png(filename)
@@ -276,11 +280,19 @@ class KeyboardPNGFactory:
 
         if fn:
             key = key[4:]
-            context.set_font_size(10)
+            context.set_font_size(40)
         else:
-            context.set_font_size(14)
+            context.set_font_size(28)
 
         context.move_to(x + BUTTON_NAME_X, y + BUTTON_NAME_Y)
+
+        if 1 == len(self.translate(key)):
+            context.set_font_size(64)
+            context.set_source_rgb(0.75, 0.75, 0.75)
+        else:
+            context.set_font_size(26)
+            context.set_source_rgb(0.25, 0.25, 0.25)
+
         context.show_text(self.translate(key))
 
     def show_multiline(self, context, x, y, key):
@@ -289,7 +301,7 @@ class KeyboardPNGFactory:
         if key.key in CUSTOM_KEYS:
             c_width *= CUSTOM_KEYS[key.key]
 
-        context.set_font_size(10)
+        context.set_font_size(16)
         context.set_source_rgb(0, 0, 0)
         context.move_to(x, y)
         words = key.command.split(" ")
@@ -302,7 +314,7 @@ class KeyboardPNGFactory:
                 continue
 
             context.show_text(printable)
-            y += 10
+            y += 15
             context.move_to(x, y)
             printable = last_word
 
@@ -400,23 +412,25 @@ class MInfo(KInfo):
 
 
 class C1Info(KInfo):
-    def __init__(self, key):
-        if key.key in self.KEY_MAP:
-            self.key = self.KEY_MAP[key.key]
+    def __init__(self, key_L1):
+        if key_L1.key in self.KEY_MAP:
+            self.key = self.KEY_MAP[key_L1.key]
         else:
-            self.key = key.key
-        self.command = 'KeyChord: ' + key.name
+            self.key = key_L1.key
+        self.command = 'KeyChord: ' + key_L1.name
         self.scope = None
+        self.name = key_L1.name
 
 
 class C2Info(KInfo):
-    def __init__(self, key):
-        if key.key in self.KEY_MAP:
-            self.key = self.KEY_MAP[key.key]
+    def __init__(self, key_L1, key_L2):
+        if key_L2.key in self.KEY_MAP:
+            self.key = self.KEY_MAP[key_L2.key]
         else:
-            self.key = key.key
-        self.command = key.desc
+            self.key = key_L2.key
+        self.command = key_L2.desc
         self.scope = None
+        self.name = key_L1.name
 
 
 def get_kb_map(config_path=None):
@@ -443,7 +457,7 @@ def get_kb_map(config_path=None):
                 kb_map[tmp] = {}
 
             for sub in key.submappings:
-                infoz = C2Info(sub)
+                infoz = C2Info(key, sub)
                 kb_map[tmp][infoz.key] = infoz
 
         else:
