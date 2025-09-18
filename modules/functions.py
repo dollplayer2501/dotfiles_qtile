@@ -2,6 +2,9 @@
 #
 #
 
+from libqtile.lazy import lazy
+from libqtile import qtile
+
 
 def focus_next_floating(qtile):
   group = qtile.current_group
@@ -51,6 +54,18 @@ def go_to_group_and_move_window(name: str):
       qtile.groups_map[name].toscreen()
 
   return _inner
+
+
+def spawn_by_group(qtile):
+  group = qtile.current_group.name
+  if '1' == group:
+    qtile.spawn('kitty')
+  elif '3' == group:
+    qtile.spawn('brave')
+  elif '4' == group:
+    qtile.spawn('thunar')
+  else:
+    qtile.spawn('kitty')
 
 
 ##

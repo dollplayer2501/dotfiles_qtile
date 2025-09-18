@@ -11,7 +11,7 @@ from libqtile.config import Key, KeyChord
 from modules.variables import MOD4, CONTROL, SHIFT, TAB, SPACE, RETURN, UP, DOWN, LEFT, RIGHT
 from modules.dmenu import dmenu_normal, dmenu_power, dmenu_terminal, dmenu_window
 from modules.popup import show_power_menu
-from modules.functions import focus_next_floating
+from modules.functions import focus_next_floating, spawn_by_group
 
 
 keys = [
@@ -98,16 +98,13 @@ keys = [
   Key([MOD4, CONTROL], 't', lazy.run_extension(dmenu_terminal), desc = 'Dmenu All Terminal'),
 
 
-  Key([MOD4], TAB,    lazy.next_layout(),  desc = 'Toggle between layouts'),
-  Key([MOD4], RETURN, lazy.spawn('kitty'), desc = 'Launch kitty'),
-  Key([MOD4], SPACE,  lazy.layout.next(),  desc = 'Move normal window focus to other window'),
+  Key([MOD4], TAB,    lazy.next_layout(),            desc = 'Toggle between layouts'),
+  Key([MOD4], SPACE,  lazy.layout.next(),            desc = 'Move normal window focus to other window'),
+  Key([MOD4], RETURN, lazy.function(spawn_by_group), desc = 'Spawn app by group, kitty, brave, thunar'),
   Key([MOD4, SHIFT], SPACE, lazy.function(focus_next_floating), desc = 'Move floating window focus to other window'),
 
 
-  # NOTE: Multiple monitor?
-  # Key([MOD4], 'o', lazy.to_screen(0), desc = 'To Main Screen'),
-  # Key([MOD4], 'p', lazy.to_screen(1), desc = 'To Sub Screen'),
-  Key([MOD4], 'period', lazy.next_screen(), desc = 'Next monitor'),
+  Key([MOD4], 'period', lazy.next_screen(), desc = 'Toggle monitor, if 2 monitors'),
 
 
   # Key([], 'Print',
