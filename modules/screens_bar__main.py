@@ -31,6 +31,8 @@ from theme_colors import Theme_Colors
 
 
 screen_main = Screen(
+  # TODO: Common widgets share common values
+
   **common_config_screen,
 
   bottom = bar.Bar(
@@ -81,7 +83,15 @@ screen_main = Screen(
         background = Theme_Colors['DarkBlue_default'],
       ),
 
-      # Uptime(),
+      widget.CurrentScreen(
+        active_text = '󱎴 ',
+        inactive_text = '󰶐 ',
+        fontsize = 20,
+
+        active_color = Theme_Colors['Oreange'],
+        inactive_color = Theme_Colors['Purple'],
+        background = Theme_Colors['DarkBlue_default'],
+      ),
 
       widget.GroupBox(
         visible_groups = ['1', '2', '3', '4', '5', '9'],

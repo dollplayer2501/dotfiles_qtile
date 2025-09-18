@@ -29,6 +29,7 @@ screen_sub_01 = Screen(
   #
   # NOTE: Multiple monitor
   # TODO: I want to manage the same settings separately.
+  # TODO: Common widgets share common values
   #
 
   **common_config_screen,
@@ -52,6 +53,16 @@ screen_sub_01 = Screen(
 
         custom_icon_paths = custom_icon_path,
         foreground = Theme_Colors['Debug'],
+        background = Theme_Colors['DarkBlue_default'],
+      ),
+
+      widget.CurrentScreen(
+        active_text = '󱎴 ',
+        inactive_text = '󰶐 ',
+        fontsize = 20,
+
+        active_color = Theme_Colors['Oreange'],
+        inactive_color = Theme_Colors['Purple'],
         background = Theme_Colors['DarkBlue_default'],
       ),
 
