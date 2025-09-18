@@ -9,7 +9,7 @@ from libqtile.config import Key, Group, Match
 from libqtile.lazy import lazy
 from libqtile import layout
 #
-from modules.variables import mod1, mod4
+from modules.variables import MOD4, SHIFT
 from modules.keys import keys
 from modules.layouts import (
     layout_setting_columns,
@@ -114,25 +114,13 @@ groups = [
 
 for i in groups:
   keys.append(
-    Key([mod4], i.name, lazy.function(go_to_group(i.name)),
+    Key([MOD4], i.name, lazy.function(go_to_group(i.name)),
       desc = 'Switch to group {}'.format(i.name))
   )
   keys.append(
-    Key([mod4, 'shift'], i.name, lazy.function(go_to_group_and_move_window(i.name)),
+    Key([MOD4, SHIFT], i.name, lazy.function(go_to_group_and_move_window(i.name)),
       desc = 'Switch to & move focused window to group {}'.format(i.name))
   )
-
-
-# We can't check qtile.core.name in default config as it is loaded before qtile is started
-# We therefore defer the check until the key binding is run by using .when(func=...)
-# for vt in range(1, 9):
-# for vt in groups:
-#   keys.append(
-#     Key(['control', 'mod1'], f'f{vt}',
-#       lazy.core.change_vt(vt).when(func = lambda: qtile.core.name == 'wayland'),
-#       desc = f'Switch to VT{vt}',
-#     )
-#   )
 
 
 ##

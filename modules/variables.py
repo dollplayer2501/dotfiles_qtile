@@ -8,8 +8,19 @@ from datetime import datetime
 # from libqtile.utils import guess_terminal
 
 
-mod1 = 'mod1' # Alt
-mod4 = 'mod4' # Windows key
+MOD4 = 'mod4' # Windows key, Super
+ALT = 'mod1'
+CONTROL = 'control'
+SHIFT = 'shift'
+TAB = 'Tab'
+SPACE = 'space'
+RETURN = 'Return'
+
+UP = 'Up'
+DOWN = 'Down'
+LEFT = 'Left'
+RIGHT = 'Right'
+
 
 terminal_main = 'kitty'
 terminal_sub1 = 'alacritty'

@@ -12,7 +12,7 @@ from qtile_extras.popup import (
     PopupText
 )
 #
-from modules.variables import font_set, mod4
+from modules.variables import font_set
 from theme_colors import Theme_Colors
 
 
