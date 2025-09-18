@@ -53,13 +53,4 @@ def go_to_group_and_move_window(name: str):
   return _inner
 
 
-# NOTE: This function does not work
-# Toggle, show or hide bottom bar
-# def toggle_bar(qtile):
-#   screen = qtile.current_screen
-#   bar = screen.bottom
-#   if bar and hasattr(bar, 'window') and hasattr(bar.window, 'toggle'):
-#     bar.window.toggle()
-
-
 ##
