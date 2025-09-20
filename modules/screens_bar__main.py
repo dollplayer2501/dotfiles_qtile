@@ -8,6 +8,8 @@
 
 # TODO: Tooltips of qtile-extras
 
+import subprocess
+#
 from libqtile import bar, qtile
 from libqtile.config import Screen
 from libqtile.lazy import lazy
@@ -199,20 +201,33 @@ screen_main = Screen(
       # ),
 
       widget.ThermalZone(
-        high = 31,
-        crit = 41,
+        high = 40,
+        crit = 45,
 
         format = '{temp}°C',
         format_crit = '{temp}°C!!',
-        # format_crit = '{temp}°C CRIT!',
 
         padding = 4,
-        fontsize = 16,
+        fontsize = 18,
         font = font_set['main'],
 
         fgcolor_normal = Theme_Colors['LightBlue'],
         fgcolor_high = Theme_Colors['Oreange'],
         fgcolor_crit = Theme_Colors['Red'],
+        background = Theme_Colors['DarkBlue_default'],
+      ),
+
+      widget.GenPollText(
+        func = lambda: "GPU: " + subprocess.getoutput(
+          "amdgpu_top -n 1 -J | jq '.devices[0].gpu_activity.GFX.value'"
+        ) + "%",
+        update_interval = 2,
+
+        padding = 4,
+        fontsize = 18,
+        font = font_set['main'],
+
+        foreground = Theme_Colors['LightBlue'],
         background = Theme_Colors['DarkBlue_default'],
       ),
 
@@ -223,7 +238,7 @@ screen_main = Screen(
         # measure_swap = 'G',
 
         padding = 4,
-        fontsize = 16,
+        fontsize = 18,
         font = font_set['main'],
 
         foreground = Theme_Colors['LightBlue'],
@@ -246,8 +261,8 @@ screen_main = Screen(
         no_update_string = 'NoUpd',
         initial_text = 'Now checking',
 
-        padding = 4,
-        fontsize = 16,
+        padding = 6,
+        fontsize = 14,
         font = font_set['main'],
 
         foreground = Theme_Colors['LightBlue'], # this is initial?
@@ -259,7 +274,7 @@ screen_main = Screen(
       widget.Volume(
         emoji = False,
 
-        fmt = 'Vol:{}',
+        fmt = 'Vol: {}',
         mute_format = 'Mute',
 
         padding = 4,
