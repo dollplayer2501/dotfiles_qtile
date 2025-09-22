@@ -28,70 +28,88 @@ groups = [
   # NOTE: xprop | grep WM_CLASS
   # NOTE: and using 2nd argument
 
-  Group(name = '1', label = '1.terminal',
-    screen_affinity = 0, position = 1,
+  Group(screen_affinity = 0, position = 1,
+    name = '1', label = '1.terminal',
     layouts = [
       layout.VerticalTile(**layout_setting_verticalTile),
       layout.TreeTab(**layout_setting_treeTab),
       layout.Max(**layout_setting_max),
     ],
+    matches = [
+      Match(wm_class = 'kitty'),
+      Match(wm_class = 'Notable'),
+    ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(kitty|Notable)$"))],
   ),
 
-  Group(name = '2', label = '2.code',
-    screen_affinity = 0, position = 2,
+  Group(screen_affinity = 0, position = 2,
+    name = '2', label = '2.code',
     layouts = [
       layout.Max(**layout_setting_max),
     ],
+    matches = [
+      Match(wm_class = 'code-oss'),
+    ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(code-oss)$"))],
   ),
 
-  Group(name = '3', label = '3.web',
-    screen_affinity = 0, position = 3,
+  Group(screen_affinity = 0, position = 3,
+    name = '3', label = '3.web',
     layouts = [
       layout.Max(**layout_setting_max),
       layout.TreeTab(**layout_setting_treeTab),
     ],
+    matches = [
+      Match(wm_class = 'brave-browser'),
+      Match(wm_class = 'firefox'),
+      Match(wm_class = 'keepassxc'),
+    ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(brave-browser|firefox)$"))],
   ),
 
-  Group(name = '4', label = '4.tool',
-    screen_affinity = 0, position = 4,
+  Group(screen_affinity = 0, position = 4,
+    name = '4', label = '4.tool',
     layouts = [
       layout.MonadWide(**layout_setting_monadWide),
       layout.MonadTall(**layout_setting_monadTall),
       layout.Floating(**layout_setting_floating),
     ],
+    matches = [
+      Match(wm_class = 'Thunar'),
+      Match(wm_class = 'Mousepad'),
+      Match(wm_class = 'Virt-manager'),
+      Match(wm_class = 'Yad'),
+    ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(keepassxc|Yad|Virt-manager|Mousepad|Thunar)$"))],
   ),
 
-  Group(name = '5', label = '5.misc',
-    screen_affinity = 0, position = 5,
+  Group(screen_affinity = 0, position = 5,
+    name = '5', label = '5.misc',
     layouts = [
       layout.Max(**layout_setting_max),
       layout.TreeTab(**layout_setting_treeTab),
       layout.Floating(**layout_setting_floating),
     ],
+    matches = [
+      Match(wm_class = 'libreoffice'),
+      Match(wm_class = 'Gimp'),
+      Match(wm_class = 'Claws-mail'),
+      Match(wm_class = 'steam'),
+    ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(libreoffice|Gimp|Claws-mail|steam)$"))],
   ),
 
 
-  Group(name = '7', label = '7.sub-1',
-    screen_affinity = 1, position = 7,
+  Group(screen_affinity = 1, position = 7,
+    name = '7', label = '7.sub-1',
     layouts = [
       layout.Floating(**layout_setting_floating),
     ],
     init = True, persist = True,
-    matches = [Match(wm_class = re.compile(r"^(alacritty)$"))],
   ),
 
-  Group(name = '8', label = '8.sub-2',
-    screen_affinity = 1,  position = 8,
+  Group(screen_affinity = 1, position = 8,
+    name = '8', label = '8.sub-2',
     layouts = [
       layout.Max(**layout_setting_max),
       layout.Matrix(**layout_setting_matrix, columns = 4),
@@ -100,10 +118,10 @@ groups = [
   ),
 
 
-  Group(name = '9', label = '9.null',
-    screen_affinity = 0, position = 9,
+  Group(screen_affinity = 0, position = 9,
+    name = '9', label = '9.null',
     layouts = [
-      layout.Matrix(**layout_setting_matrix, columns = 3),
+      layout.Matrix(**layout_setting_matrix, columns = 4),
       layout.Columns(**layout_setting_columns),
       layout.Floating(**layout_setting_floating),
     ],
