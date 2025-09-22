@@ -42,10 +42,7 @@ floating_layout = layout.Floating(
     Match(wm_class = 'vlc'),
 
     Match(wm_class = 'Yad'),
-
-    Match(wm_class = 'alacritty'),
-    Match(wm_class = 'wezterm'),
-    ]
+  ]
 )
 
 

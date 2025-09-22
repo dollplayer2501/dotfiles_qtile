@@ -53,19 +53,6 @@ dmenu_power = extension.CommandSet(
 )
 
 
-dmenu_terminal = extension.CommandSet(
-  commands = {
-    'xfce4-terminal': 'xfce4-terminal',
-    'alacritty':      'alacritty',
-    'kitty':          'kitty',
-    'wezterm':        'wezterm',
-    'ghostty':        'ghostty',
-  },
-
-  **dmenu_setting,
-)
-
-
 dmenu_window = extension.WindowList(
   **dmenu_setting,
 )

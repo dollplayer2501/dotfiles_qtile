@@ -9,7 +9,7 @@ from libqtile.lazy import lazy
 from libqtile.config import Key, KeyChord
 #
 from modules.variables import MOD4, CONTROL, SHIFT, TAB, SPACE, RETURN, UP, DOWN, LEFT, RIGHT
-from modules.dmenu import dmenu_normal, dmenu_power, dmenu_terminal, dmenu_window
+from modules.dmenu import dmenu_normal, dmenu_power, dmenu_window
 from modules.popup import show_power_menu
 from modules.functions import focus_next_floating, spawn_by_group
 
@@ -86,16 +86,16 @@ keys = [
   Key([MOD4], 't', lazy.window.toggle_floating(),   desc = 'Toggle floating on the focused window'),
   Key([MOD4], 'w', lazy.window.kill(),              desc = 'Kill focused window'),
   Key([MOD4], 'q', lazy.function(show_power_menu),  desc = 'Popup Power Menu'),
-  Key([MOD4], 'r', lazy.spawncmd(),                 desc = 'Spawn a command using a prompt widget'),
   Key([MOD4], 'b', lazy.hide_show_bar(position = 'bottom'), desc = 'Toggle bottom bar'),
 
 
-  Key([MOD4, CONTROL], 'r', lazy.reload_config(), desc = 'Reload the config'),
+  Key([MOD4],          'r', lazy.spawncmd(),                  desc = 'Spawn a command using a prompt widget'),
+  Key([MOD4, CONTROL], 'r', lazy.reload_config(),             desc = 'Reload the config'),
+  Key([MOD4, SHIFT],   'r', lazy.run_extension(dmenu_normal), desc = 'Dmenu Run Normal'),
 
-  Key([MOD4, CONTROL], 'a', lazy.run_extension(dmenu_window),   desc = 'Dmenu All Tasks'),
-  Key([MOD4, CONTROL], 'd', lazy.run_extension(dmenu_normal),   desc = 'Dmenu Run Normal'),
-  Key([MOD4, CONTROL], 'm', lazy.run_extension(dmenu_power),    desc = 'Dmenu Power Menu'),
-  Key([MOD4, CONTROL], 't', lazy.run_extension(dmenu_terminal), desc = 'Dmenu All Terminal'),
+
+  Key([MOD4, CONTROL], 'a', lazy.run_extension(dmenu_window), desc = 'Dmenu All Tasks'),
+  Key([MOD4, CONTROL], 'q', lazy.run_extension(dmenu_power),  desc = 'Dmenu Power Menu'),
 
 
   Key([MOD4], TAB,    lazy.next_layout(),            desc = 'Toggle between layouts'),
@@ -121,7 +121,6 @@ keys = [
   KeyChord([MOD4], 'z', [
       # TODO: brave --incognito
       # TODO: My customized gen-keybinging-img does not hook mod+z, shift+b
-      Key([], 'a', lazy.spawn('alacritty'),   desc = 'Run Alacritty'),
       Key([], 'b', lazy.spawn('brave'),       desc = 'Run Brave'),
       Key([], 'c', lazy.spawn('claws-mail'),  desc = 'Run Claws mail'),
       Key([], 'g', lazy.spawn('gimp'),        desc = 'Run Gimp'),
@@ -141,12 +140,25 @@ keys = [
 
 
   KeyChord([MOD4], 'x', [
-      Key([], 'a', lazy.group['scratchpad'].dropdown_toggle('alacritty'), desc = 'Scratchpad Alacritty'),
-      Key([], 'm', lazy.group['scratchpad'].dropdown_toggle('mousepad'),  desc = 'Scratchpad Mousepad'),
-      Key([], 'n', lazy.group['scratchpad'].dropdown_toggle('notable'),   desc = 'Scratchpad Notable'),
+      Key([], 'm', lazy.group['scratchpad'].dropdown_toggle('mousepad'), desc = 'Scratchpad Mousepad'),
+      Key([], 'n', lazy.group['scratchpad'].dropdown_toggle('notable'),  desc = 'Scratchpad Notable'),
     ],
     mode = True,
     name = 'Scratchpad',
+  ),
+
+
+  KeyChord([MOD4], 'c', [
+      # NOTE: When running anything other than Kitty, pressing Mod4+Return launches xfce4-terminal.
+      # NOTE: The reason is unknown.
+      Key([], 'a', lazy.spawn('alacritty'),      desc = 'Run Alacritty'),
+      Key([], 'g', lazy.spawn('ghostty'),        desc = 'Run Ghostty'),
+      Key([], 'k', lazy.spawn('kitty'),          desc = 'Run Kitty'),
+      Key([], 'w', lazy.spawn('wezterm'),        desc = 'Run Wezterm'),
+      Key([], 'x', lazy.spawn('xfce4-terminal'), desc = 'Run Xfce4-terminal'),
+    ],
+    mode = True,
+    name = 'Terminal',
   ),
 
 

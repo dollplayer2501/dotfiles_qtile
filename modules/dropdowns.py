@@ -23,9 +23,8 @@ dropdown_common_settings = {
 }
 
 dropdowns = [
-  DropDown('alacritty', ['alacritty'], **dropdown_common_settings),
-  DropDown('mousepad',  ['mousepad'],  **dropdown_common_settings),
-  DropDown('notable',   ['notable'],   **dropdown_common_settings),
+  DropDown('mousepad', ['mousepad'], **dropdown_common_settings),
+  DropDown('notable',  ['notable'],  **dropdown_common_settings),
 ]
 
 

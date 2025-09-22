@@ -22,12 +22,6 @@ LEFT = 'Left'
 RIGHT = 'Right'
 
 
-terminal_main = 'kitty'
-terminal_sub1 = 'alacritty'
-terminal_sub8 = 'wezterm'
-terminal_sub9 = 'xfce4-terminal'
-
-
 autostart_sh = os.path.expanduser('~/.config/qtile/scripts/autostart.sh')
 shutdown_sh = os.path.expanduser('~/.config/qtile/scripts/shutdown.sh')
 
