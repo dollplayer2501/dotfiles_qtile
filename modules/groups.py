@@ -31,8 +31,8 @@ groups = [
   Group(screen_affinity = 0, position = 1,
     name = '1', label = '1.terminal',
     layouts = [
-      layout.VerticalTile(**layout_setting_verticalTile),
       layout.TreeTab(**layout_setting_treeTab),
+      layout.VerticalTile(**layout_setting_verticalTile),
       layout.Max(**layout_setting_max),
     ],
     matches = [

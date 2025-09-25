@@ -133,7 +133,7 @@ keys = [
       Key([], 't', lazy.spawn('thunar'),      desc = 'Run Thunar'),
       Key([], 'v', lazy.spawn('vlc'),         desc = 'Run VLC'),
     ],
-    mode = True,
+    mode = False,
     # timeout = 3, # NOTE: This does not use?
     name = 'Applications',
   ),
@@ -143,7 +143,7 @@ keys = [
       Key([], 'm', lazy.group['scratchpad'].dropdown_toggle('mousepad'), desc = 'Scratchpad Mousepad'),
       Key([], 'n', lazy.group['scratchpad'].dropdown_toggle('notable'),  desc = 'Scratchpad Notable'),
     ],
-    mode = True,
+    mode = False,
     name = 'Scratchpad',
   ),
 
@@ -157,7 +157,7 @@ keys = [
       Key([], 'w', lazy.spawn('wezterm'),        desc = 'Run Wezterm'),
       Key([], 'x', lazy.spawn('xfce4-terminal'), desc = 'Run Xfce4-terminal'),
     ],
-    mode = True,
+    mode = False,
     name = 'Terminal',
   ),
 
