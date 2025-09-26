@@ -12,7 +12,7 @@ Widgets — qtile-extras
 https://qtile-extras.readthedocs.io/en/stable/manual/ref/widgets.html
 """
 
-TODO: Tooltips of qtile-extras
+# TODO: Tooltips of qtile-extras
 
 import subprocess
 #
