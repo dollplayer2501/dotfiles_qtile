@@ -1,10 +1,9 @@
-#
-# Built-in Widgets — Qtile 0.30.1.dev1+gfecc37d documentation
-#  https://docs.qtile.org/en/latest/manual/ref/widgets.html#
-#
-# qtile-extras documentation
-#  https://qtile-extras.readthedocs.io/en/stable/
-#
+"""
+Built-in Widgets
+================
+
+This file is the sub screen widget.
+"""
 
 from libqtile import bar, qtile
 from libqtile.config import Screen

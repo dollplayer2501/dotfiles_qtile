@@ -1,7 +1,12 @@
-#
-# Built-in Layouts
-#   https://docs.qtile.org/en/stable/manual/ref/layouts.html
-#
+"""
+Built-in Layouts
+================
+
+The layout that can be used is set for each workspace.
+For group settings, see `./modules/groups.py`.
+
+https://docs.qtile.org/en/stable/manual/ref/layouts.html
+"""
 
 from libqtile import layout
 #

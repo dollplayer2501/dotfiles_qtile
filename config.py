@@ -1,3 +1,21 @@
+"""
+Qtile Configuration File
+========================
+
+[dollplayer2501/dotfiles_qtile](https://github.com/dollplayer2501/dotfiles_qtile)
+
+Divided into modules.
+
+- `./modules/`
+  Configuration files divided into functional units for Qtile
+- `./scripts/`
+  Qtile support files
+- `./icons/`
+  Icons and SVG images used by Qtile
+- `./keybind-map/`
+  Keybinding images output by `./scripts/gen-keybinding-img`, modified by me
+"""
+
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma

@@ -1,7 +1,12 @@
-#
-# Groups
-#   https://docs.qtile.org/en/latest/manual/config/groups.html#dropdown
-#
+"""
+ScratchPad and DropDown
+=======================
+
+I may eventually stop using this feature?
+For key bindings, see `./modules/keys.py`.
+
+https://docs.qtile.org/en/latest/manual/config/groups.html#scratchpad-and-dropdown
+"""
 
 from libqtile.config import DropDown, Key, KeyChord, ScratchPad
 from libqtile.lazy import lazy

@@ -1,6 +1,12 @@
-#
-#
-#
+"""
+Functions
+=========
+
+A group of functions that I may be using on my own.
+Each individual function needs to be reviewed.
+
+TODO: Adding Docstrings to individual functions?
+"""
 
 from libqtile.lazy import lazy
 from libqtile import qtile

@@ -1,7 +1,9 @@
-#
-# Using widgets in a popup
-#  https://qtile-extras.readthedocs.io/en/v0.27.0/manual/how_to/popup.html#using-widgets-in-a-popup
-#
+"""
+Popup, qtile-extras
+===================
+
+https://qtile-extras.readthedocs.io/en/v0.27.0/manual/how_to/popup.html#using-widgets-in-a-popup
+"""
 
 from libqtile import widget
 from libqtile.lazy import lazy

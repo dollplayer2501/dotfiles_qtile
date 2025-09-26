@@ -1,7 +1,9 @@
-#
-# Keys
-#   https://docs.qtile.org/en/stable/manual/config/keys.html
-#
+"""
+Keys
+====
+
+https://docs.qtile.org/en/stable/manual/config/keys.html
+"""
 
 import os
 #

@@ -1,7 +1,12 @@
-#
-# Built-in Extensions
-#   https://docs.qtile.org/en/latest/manual/ref/extensions.html
-#
+"""
+Dmenu
+=====
+
+I may eventually stop using this feature?
+For key bindings, see `./modules/keys.py`.
+
+https://docs.qtile.org/en/latest/manual/ref/extensions.html#dmenu
+"""
 
 from libqtile import extension
 from libqtile.lazy import lazy

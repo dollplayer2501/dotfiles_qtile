@@ -1,4 +1,9 @@
 #!/usr/bin/sh
+#
+# autostart.sh - Script called when Qtile starts
+#
+# See `@hook.subscribe.startup_once`, `def autostart()` in `./modules/hooks.py`.
+#
 
 echo '-------------------' >> ~/.local/share/qtile/qtile.log
 

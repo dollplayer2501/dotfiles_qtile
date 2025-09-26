@@ -1,12 +1,18 @@
-#
-# Built-in Widgets — Qtile 0.30.1.dev1+gfecc37d documentation
-#  https://docs.qtile.org/en/latest/manual/ref/widgets.html#
-#
-# qtile-extras documentation
-#  https://qtile-extras.readthedocs.io/en/stable/
-#
+"""
+Built-in Widgets
+================
 
-# TODO: Tooltips of qtile-extras
+This file is the main screen widget.
+In reality, it is called from `./modules/screens_bar.py` with `./modules/screens_bar___common.py`
+
+Built-in Widgets — Qtile
+https://docs.qtile.org/en/latest/manual/ref/widgets.html
+
+Widgets — qtile-extras
+https://qtile-extras.readthedocs.io/en/stable/manual/ref/widgets.html
+"""
+
+TODO: Tooltips of qtile-extras
 
 import subprocess
 #

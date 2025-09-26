@@ -1,10 +1,16 @@
-#
-# Hooks - Examples
-#  https://docs.qtile.org/en/stable/manual/config/hooks.html
-#
-# Built-in Hooks
-#  https://docs.qtile.org/en/stable/manual/ref/hooks.html
-#
+"""
+Hooks
+=====
+
+I don't really understand.
+Although it's not directly related to this function, is it possible to write logs at any time?
+
+Hooks - Examples
+https://docs.qtile.org/en/stable/manual/config/hooks.html
+
+Built-in Hooks
+https://docs.qtile.org/en/stable/manual/ref/hooks.html
+"""
 
 import os
 import subprocess

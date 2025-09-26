@@ -1,7 +1,14 @@
-#
-# Groups
-#   https://docs.qtile.org/en/stable/manual/config/groups.html
-#
+"""
+Groups
+======
+
+The layout that can be used is set for each workspace.
+For layout settings, see `./modules/layouts.py`.
+
+I have a dual monitor setup, but I only use one screen.
+
+https://docs.qtile.org/en/stable/manual/config/groups.html
+"""
 
 import re
 #
@@ -25,8 +32,6 @@ from modules.functions import go_to_group, go_to_group_and_move_window
 
 
 groups = [
-  # NOTE: xprop | grep WM_CLASS
-  # NOTE: and using 2nd argument
 
   Group(screen_affinity = 0, position = 1,
     name = '1', label = '1.terminal',
