@@ -1,6 +1,6 @@
 # Project Overview
 
-- This repository contains my Qtile window manager configuration files. It is not intended to be general-purpose.
+- This repository contains **MY** Qtile window manager configuration files. It is not intended to be general-purpose.
 - There may be inconsistencies between this documentation and the configuration files.
 
 ## Purpose
