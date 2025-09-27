@@ -40,6 +40,8 @@ floating_layout = layout.Floating(
     Match(wm_class = 'vlc'),
 
     Match(wm_class = 'Yad'),
+    # Setting the main terminal here may cause strange behavior.
+    # Match(wm_class = 'kitty'),
   ]
 )
 
