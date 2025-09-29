@@ -130,17 +130,7 @@ keys = [
       Key([], 'v', lazy.spawn('vlc'),         desc = 'Run VLC'),
     ],
     mode = False,
-    # timeout = 3, # NOTE: This does not use?
     name = 'Applications',
-  ),
-
-
-  KeyChord([MOD4], 'x', [
-      Key([], 'm', lazy.group['scratchpad'].dropdown_toggle('mousepad'), desc = 'Scratchpad Mousepad'),
-      Key([], 'n', lazy.group['scratchpad'].dropdown_toggle('notable'),  desc = 'Scratchpad Notable'),
-    ],
-    mode = False,
-    name = 'Scratchpad',
   ),
 
 

@@ -1,5 +1,5 @@
 > [!NOTE]
-> I found this `README.md` alone to be too complicated and tedious. For this reason, I am gradually migrating and writing documentation in `[docs](./docs/)`.  
+> I found this `README.md` alone to be too complicated and tedious. For this reason, I am gradually migrating and writing documentation in [docs](./docs/).  
 > 2025-09-29
 
 
