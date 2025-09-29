@@ -1,4 +1,9 @@
 > [!NOTE]
+> I found this `README.md` alone to be too complicated and tedious. For this reason, I am gradually migrating and writing documentation in `[docs](./docs/)`.  
+> 2025-09-29
+
+
+> [!NOTE]
 > Regarding the installation procedure for Qtile and Qtile-extras itself,  
 > I first install Xfce4 in EndeavourOS, then install Qtile and Qtile-extras with `yay`, and then configure the various environments.  
 > For this reason, various daemons use those of Xfce4.  
@@ -88,6 +93,9 @@ It looks like you might be able to choose which layouts to use for each workspac
 ## Additional information:
 
 ### Keyboard launcher is dmenu
+
+> [!NOTE]
+> At the end of September 2025, I deleted this feature as I no longer use it.
 
 <a href="https://github.com/dollplayer2501/dollplayer2501/blob/main/screenshot..qtile/05..dmenu..EndeavourOS_Qtile_2025-03-10_16-31-26.png"><img src="https://raw.githubusercontent.com/dollplayer2501/dollplayer2501/refs/heads/main/screenshot..qtile/05..dmenu..EndeavourOS_Qtile_2025-03-10_16-31-26.png" width=300></a>
 

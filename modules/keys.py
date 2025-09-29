@@ -11,7 +11,6 @@ from libqtile.lazy import lazy
 from libqtile.config import Key, KeyChord
 #
 from modules.variables import MOD4, CONTROL, SHIFT, TAB, SPACE, RETURN, UP, DOWN, LEFT, RIGHT
-from modules.dmenu import dmenu_normal, dmenu_power, dmenu_window
 from modules.popup import show_power_menu
 from modules.functions import focus_next_floating, spawn_by_group
 
@@ -91,13 +90,8 @@ keys = [
   Key([MOD4], 'b', lazy.hide_show_bar(position = 'bottom'), desc = 'Toggle bottom bar'),
 
 
-  Key([MOD4],          'r', lazy.spawncmd(),                  desc = 'Spawn a command using a prompt widget'),
-  Key([MOD4, CONTROL], 'r', lazy.reload_config(),             desc = 'Reload the config'),
-  Key([MOD4, SHIFT],   'r', lazy.run_extension(dmenu_normal), desc = 'Dmenu Run Normal'),
-
-
-  Key([MOD4, CONTROL], 'a', lazy.run_extension(dmenu_window), desc = 'Dmenu All Tasks'),
-  Key([MOD4, CONTROL], 'q', lazy.run_extension(dmenu_power),  desc = 'Dmenu Power Menu'),
+  Key([MOD4],          'r', lazy.spawncmd(),      desc = 'Spawn a command using a prompt widget'),
+  Key([MOD4, CONTROL], 'r', lazy.reload_config(), desc = 'Reload the config'),
 
 
   Key([MOD4], TAB,    lazy.next_layout(),            desc = 'Toggle between layouts'),

@@ -48,6 +48,7 @@ screen_main = Screen(
       ## ------------------------------------
 
       widget.Prompt(
+        prompt = 'Run: ',
         fontsize = 20,
         font = font_set['sub2'],
 
@@ -60,12 +61,14 @@ screen_main = Screen(
         fontsize = 20,
         font = font_set['sub2'],
 
-        chords_colors = {
-          'applications': (
-            Theme_Colors['Oreange'],
-            Theme_Colors['DarkBlue_default'],
-          ),
-        },
+        # TODO: Pend
+        # chords_colors = {
+        #   'Applications': (
+        #     # Theme_Colors['Oreange'],
+        #     Theme_Colors['Debug'],
+        #     # Theme_Colors['DarkBlue_default'],
+        #   ),
+        # },
 
         foreground = Theme_Colors['DarkBlue_default'],
         background = Theme_Colors['Oreange'],
