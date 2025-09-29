@@ -12,9 +12,6 @@
 
 - The configurations and scripts are **specific to my personal environment**. Use them at your own risk and modify as needed.
 
-## Directory Structure (Excerpt)
-
-- The contents of this `docs` directory will be addressed later.
 
 - - -
 

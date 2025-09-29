@@ -8,7 +8,7 @@ The general structure is as follows:
 ```
 ~/.config/qtile/
  ├─ docs/
- ├─ icons/
+ ├─ icons/                  # Images used in Qtile
  │   ├─ layout-*.png
  │   └─ svgrepo-com-*.svg
  ├─ keybind-map/            # Output destination of `./scripts/gen-keybinding-img`
