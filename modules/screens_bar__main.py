@@ -336,8 +336,6 @@ screen_main = Screen(
         background = Theme_Colors['DarkBlue_lighten'],
       ),
 
-      # widget.Bluetooth(),
-
       # widget.BatteryIcon(
       #   scale = 1.4,
       #   padding = 0,
@@ -359,17 +357,6 @@ screen_main = Screen(
         background = Theme_Colors['DarkBlue_lighten'],
       ),
 
-      # widget.QuickExit(
-        # default_text = '[logoff]',
-      #   default_text = '  ',
-      #   countdown_start = 3,
-      #   countdown_format='{}',
-      #   fontsize = 18,
-      #   font = font_set['main'],
-      #   foreground = Theme_Colors['Purple'],
-      #   background = Theme_Colors['DarkBlue_lighten'],
-      # ),
-
       # INFO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'qtile_extras.widget.syncthing.Syncthing': No module named 'dbus_fast'
       # widget.Syncthing(
       #   api_key = 'tSfbt9mM6doJgs2R25A66H6ay2gdFkrN',
@@ -388,9 +375,6 @@ screen_main = Screen(
 
       # INFO: WARNING libqtile __init__.py:import_class():L108 Unmet dependencies for 'libqtile.widget.wlan.Wlan': No module named 'iwlib'
       # widget.Wlan(),
-
-      # INFO: try!
-      # widget.Bluetooth(),
     ],
 
     24,

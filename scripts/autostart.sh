@@ -5,7 +5,7 @@
 # See `@hook.subscribe.startup_once`, `def autostart()` in `./modules/hooks.py`.
 #
 
-echo '-------------------' >> ~/.local/share/qtile/qtile.log
+echo '-- autostart.sh in  -- ' >> ~/.local/share/qtile/qtile.log
 
 
 #
@@ -32,6 +32,8 @@ sh -c "systemctl --user start xfce4-notifyd.service 2>/dev/null || exec /usr/lib
 #   Xfce Notification Daemon
 #     command line is `notify-send "abc"`
 #     class is "Xfce4-notifyd"
+#  NOTE: need `python-dbus-fast`
+
 
 /usr/lib/xapps/xapp-sn-watcher &
 #  xapp-sn-watcher.desktop
@@ -75,4 +77,7 @@ syncthing --no-browser --logfile="/home/dollplayer/.local/share/syncthing.log" >
 # xfce4-terminal &
 
 
+echo '-- autostart.sh out -- ' >> ~/.local/share/qtile/qtile.log
 
+
+##

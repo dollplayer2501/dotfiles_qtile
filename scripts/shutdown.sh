@@ -7,3 +7,7 @@
 
 cp /dev/null ~/.local/share/qtile/qtile.log
 
+echo '-- shutdown.sh      -- ' >> ~/.local/share/qtile/qtile.log
+
+
+##
