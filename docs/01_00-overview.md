@@ -13,7 +13,4 @@
 - The configurations and scripts are **specific to my personal environment**. Use them at your own risk and modify as needed.
 
 
-- - -
-
-I feel the granularity of the file splitting in `docs` is quite coarse (the content is very short).  
-If that’s the case, I’d just manage everything in the top-level `README.md` (grr), so please bear with me on this.
+<!-- -->
