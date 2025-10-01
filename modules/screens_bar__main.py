@@ -76,15 +76,6 @@ screen_main = Screen(
 
       ## ------------------------------------
 
-      # widget.CurrentLayout(
-      #   padding = 0,
-      #   fontsize = 16,
-      #   font = font_set['sub2'],
-        # custom_icon_paths = custom_icon_path,
-      #   foreground = Theme_Colors['Oreange'],
-      #   background = Theme_Colors['DarkBlue_default'],
-      # ),
-
       widget.CurrentLayoutIcon(
         padding = 4,
         scale = 0.8,
@@ -200,15 +191,6 @@ screen_main = Screen(
         background = Theme_Colors['DarkBlue_default'],
       ),
 
-      # INFO: need `python-psutil`
-      # widget.ThermalSensor(
-      #   format = '{temp:.1f}{unit}',
-      #   fontsize = 22,
-      #   font = font_set['sub2'],
-      #   foreground = Theme_Colors['LightBlue'],
-      #   background = Theme_Colors['DarkBlue_default'],
-      # ),
-
       widget.ThermalZone(
         high = 40,
         crit = 45,
@@ -253,15 +235,6 @@ screen_main = Screen(
         foreground = Theme_Colors['LightBlue'],
         background = Theme_Colors['DarkBlue_default'],
       ),
-
-      # widget.HDD(
-      #   format = 'HDD: {HDDPercent}%',
-      #   device = 'nvme0n1',
-      #   fontsize = 16,
-      #   font = font_set['sub2'],
-      #   foreground = Theme_Colors['LightBlue'],
-      #   background = Theme_Colors['DarkBlue_default'],
-      # ),
 
       widget.CheckUpdates(
         display_format = 'Upd: {updates}',
