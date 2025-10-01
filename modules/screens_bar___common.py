@@ -49,13 +49,4 @@ common_config_bar = {
 }
 
 
-# from modules.MyWidget import Uptime
-#
-# def get_uptime():
-# #  return os.popen('uptime -p').read().strip()
-#   return os.popen("awk '{print $1}' /proc/uptime | awk '{print int($1)}'").read().strip()
-
-# awk '{print $1}' /proc/uptime | awk '{print int($1)}'
-
-
 ##

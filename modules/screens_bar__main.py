@@ -299,11 +299,6 @@ screen_main = Screen(
         background = Theme_Colors['DarkBlue_default'],
       ),
 
-      # widget.TextBox(
-      #   text=get_uptime(),
-      #   update_interval=60,  # 60秒ごとに更新
-      # ),
-
       # INFO: NB Systray is incompatible with Wayland, consider using StatusNotifier instead
       # widget.StatusNotifier(),
 
