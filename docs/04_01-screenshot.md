@@ -6,16 +6,14 @@ The color scheme I use does not use any of the various existing color schemes. I
 
 ## TreeTab
 
-<img src="./images/EndeavourOS_Qtile_2025-10-01_19-19-51.png" width="35%">
-<img src="./images/EndeavourOS_Qtile_2025-10-01_19-17-42.png" width="35%" hspace="10">
+<img src="./images/EndeavourOS_Qtile_2025-10-01_19-19-51.png" width="35%">&nbsp;<img src="./images/EndeavourOS_Qtile_2025-10-01_19-17-42.png" width="35%">
 
 This is the basic layout when I use the terminal. There are many parts where I don't understand the settings or behavior.
 
 
 ## VerticalTile
 
-<img src="./images/EndeavourOS_Qtile_2025-10-01_19-12-12.png" width="35%">
-<img src="./images/EndeavourOS_Qtile_2025-10-01_19-12-41.png" width="35%" hspace="10">>
+<img src="./images/EndeavourOS_Qtile_2025-10-01_19-12-12.png" width="35%">&nbsp;<img src="./images/EndeavourOS_Qtile_2025-10-01_19-12-41.png" width="35%">
 
 The layout arrangement is quite different when using one window and when using multiple windows.
 

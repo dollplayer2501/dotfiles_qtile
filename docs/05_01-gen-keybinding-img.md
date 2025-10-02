@@ -1,7 +1,6 @@
 # Modification of `gen-keybinding-img`
 
-<img src="../keybind-map/mod4.png" width="35%">
-<img src="../keybind-map/mod4-z.png" width="35%" hspace="10">
+<img src="../keybind-map/mod4.png" width="35%">&nbsp;<img src="../keybind-map/mod4-z.png" width="35%">
 
 
 ## Overview

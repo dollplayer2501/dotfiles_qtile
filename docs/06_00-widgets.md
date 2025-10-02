@@ -50,8 +50,7 @@ In any case, it may be difficult to operate two (or more) screens primarily thro
 
 Also, my Conky theme development has stopped for now, and there is also the issue of how to separate the information displayed by this and the Qtile widgets.
 
-<img src="./images/EndeavourOS_Qtile_2025-09-04_22-13-45.png" width="15%">
-<img src="./images/EndeavourOS_Qtile_2025-09-04_22-14-02.png" width="15%" hspace="10">
+<img src="./images/EndeavourOS_Qtile_2025-09-04_22-13-45.png" width="25%">&nbsp;<img src="./images/EndeavourOS_Qtile_2025-09-04_22-14-02.png" width="25%">
 
 
 <!-- -->
