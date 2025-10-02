@@ -9,7 +9,7 @@ If you have set a key binding that includes [KeyChord](https://docs.qtile.org/en
 
 - Key bindings with more than two strokes are not supported (probably, unconfirmed)
 - Even if multiple key combinations are assigned to the second stroke, only alphabet keys are recognized.  
-Specifically, it works when you press `Super`+`z` to start KeyChord, then press `s` to launch an application. However, if you press `Super`+`z`, followed by `Shift`+`s`, it recognizes the `a` key, but not the `Shift` key.
+Specifically, it works when you press `Super`+`z` to start KeyChord, then press `s` to launch an application. However, if you press `Super`+`z`, followed by `Shift`+`s`, it recognizes the `s` key, but not the `Shift` key.
 - Regarding this modification, I have introduced Qtile with `yay`, so I cannot take any action such as a pull request to the Qtile development team.
 
 Meanwhile, I've made the following improvements:
@@ -50,6 +50,7 @@ python3 ~/.config/qtile/scripts/gen-keybinding-img \
   --config ~/.config/qtile/config.py \
   --output-dir ~/.config/qtile/keybind-map/
 ```
+
 
 ## Personal opinion
 
