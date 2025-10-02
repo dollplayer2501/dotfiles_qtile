@@ -1,4 +1,4 @@
-# Modification of gen-keybinding-img
+# Modification of `gen-keybinding-img`
 
 <img src="../keybind-map/mod4.png" width="35%">&nbsp;<img src="../keybind-map/mod4-z.png" width="35%">
 
