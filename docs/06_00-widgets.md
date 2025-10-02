@@ -1,15 +1,15 @@
 # Built-in Widgets
 
 
-## 概要
+## Overview
 
-私は2画面を前提にQtileのコンフィグレーションを行っています。Qtileの起動やコンフィグレーションの起点となる`config.py`からは、下記になります。
+Although I rarely use it, I configure Qtile for a dual-screen setup. The `./config.py` file, which is the starting point for launching and configuring Qtile's widgets, is shown below.
 
 ```
 from modules.screens_bar import screens
 ```
 
-そして、`modules/screens_bar.py`は下記。
+And `./modules/screens_bar.py` is as follows.
 
 ```
 from modules.screens_bar__main import screen_main
@@ -21,23 +21,37 @@ screens = [
 ]
 ```
 
-`screen_main`、`modules/screens_bar__main.py`は、メインの画面の設定になります。なお、`modules/screens_bar___common.py`は、各画面で共通の設定を記述しています。
+For example, `screen_main` (`./modules.screens_bar__main.py`) has common settings with another screen, `screen_sub_01` (such as PowerLine). To accommodate this, `./modules.screens_bar___common.py` is provided.
 
-別途、私が記述した通り、普段は1画面でQtileを使っているので、`screen_sub_01`は、ほとんど使いません。
+```
+from modules.screens_bar___common import (
+  common_powerline,
+  common_config_screen,
+  common_config_bar,
+)
+```
 
-
-## 動的な追加・削除の切り替え
-
-2画面目を追加・削除下段階で、動的に設定の読み込み・廃棄の設定ができると思いますが、現在は組み込んでいません。
-
-
-## 現在、どの画面に居るのか？を明示的に
-
-`libqtile.widget.CurrentScreen`の導入は必須だと思います。
+As for `./modules/screens_bar_none.py`, it is set to "do not display the bar." The import setting is left commented out in `./config.py`. It is almost never used, and currently it is set to be possible to toggle the display of the bar with `Super`+`b`.
 
 
-いずれにせよ、2画面（以上）をキーボード主体で操作するのは管理無理があるかもしれません。これに関しては、マウス操作に軍配が上がると思います。
+## Dynamic Add/Delete Switch
+
+You might be able to dynamically load/delete settings under Add/Delete on the second screen, but this isn't currently implemented.
 
 
+## Explicitly indicate which screen you're currently on.
+
+I think it's essential to implement [`libqtile.widget.CurrentScreen`](https://docs.qtile.org/en/stable/manual/ref/widgets.html#currentscreen).
 
 
+## Personal Opinion
+
+In any case, it may be difficult to operate two (or more) screens primarily through the keyboard. In this case, I think mouse operation is the clear winner.
+
+Also, my Conky theme development has stopped for now, and there is also the issue of how to separate the information displayed by this and the Qtile widgets.
+
+<img src="./images/EndeavourOS_Qtile_2025-09-04_22-13-45.png" width="15%">
+<img src="./images/EndeavourOS_Qtile_2025-09-04_22-14-02.png" width="15%" hspace="10">
+
+
+<!-- -->

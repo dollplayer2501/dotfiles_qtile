@@ -2,7 +2,8 @@
 
 [https://github.com/dollplayer2501/dotfiles_qtile](https://github.com/dollplayer2501/dotfiles_qtile)
 
-<img src="./images/EndeavourOS_Qtile_2025-09-28_04-03-49.png" width="30%">&nbsp;<img src="./images/EndeavourOS_Qtile_2025-09-28_04-03-57.png" width="30%">
+<img src="./images/EndeavourOS_Qtile_2025-09-28_04-03-49.png" width="30%">
+<img src="./images/EndeavourOS_Qtile_2025-09-28_04-03-57.png" width="30%" hspace="10">
 
 The Qtile configuration included here contains the following:
 

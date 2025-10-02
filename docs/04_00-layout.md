@@ -65,6 +65,12 @@ As a side note, each screen has built-in widgets. These are also managed as sepa
 
 ## My impressions when using two screens
 
+<!--
+  TODO: 分割する
+  スクショ取得の方法も交えて
+  バーのみのスクショ
+-->
+
 I'm currently studying Qtile and have a dual-monitor setup, but I only use one screen for basic use. To be honest, using two screens is quite inconvenient. To alleviate this inconvenience, I think it's essential to implement [CurrentScreen](https://docs.qtile.org/en/stable/manual/ref/widgets.html#currentscreen).
 
 
