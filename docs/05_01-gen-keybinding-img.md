@@ -3,41 +3,64 @@
 <img src="../keybind-map/mod4.png" width="35%">&nbsp;<img src="../keybind-map/mod4-z.png" width="35%">
 
 
-## 概要
+## Overview
 
-KeyChordを含むキーバインドを設定していると、`gen-keybinding-img`が異常終了すると思います。私は、これを回避するため、最低限の改修を行いました。ただし、下記の制限があります。
+If you have set a key binding that includes [KeyChord](https://docs.qtile.org/en/stable/manual/config/keys.html#keychord), [`gen-keybinding-img`](https://github.com/qtile/qtile/blob/master/scripts/gen-keybinding-img) may crash. I have made some minimal modifications to avoid this. However, there are the following limitations:
 
-- 2ストローク以上のキーバインドには対応していません（おそらく、未確認）
-- 2ストローク目に、複数のキーのコンビネーションが割り当てられていてもアルファベットキーしか認識しません  
-具体的には、Super+zでKeyChordが開始され、aを押下してあるアプリケーションが起動というパターンは対応できます。しかし、Super+z、次いで、Shift+aの場合、aは認識できますが、Shiftの部分が認識できていません
-- この改修に関して、私は`yay`でQtileを導入しているため、Qtile開発チームへのプルリクエストなどのアクションを起こせません
+- Key bindings with more than two strokes are not supported (probably, unconfirmed)
+- Even if multiple key combinations are assigned to the second stroke, only alphabet keys are recognized.  
+Specifically, it works when you press `Super`+`z` to start KeyChord, then press `s` to launch an application. However, if you press `Super`+`z`, followed by `Shift`+`s`, it recognizes the `a` key, but not the `Shift` key.
+- Regarding this modification, I have introduced Qtile with `yay`, so I cannot take any action such as a pull request to the Qtile development team.
 
-一方で、せっかくなので、下記の改修を行っています。
+Meanwhile, I've made the following improvements:
 
-- 画面サイズを1920x1080に拡張
-- フォント設定の修正（ザイズ・色）
-
-
-## `gen-keybinding-img`を動かすための準備
-
-繰り返しになりますが、私は`yay`でQtileを導入しています。このため、普通は`gen-keybinding-img`が起動しません。この状態を回避するため、下記の対応を行っています。
-
-- `/usr/bin/qtile`を`~/.config/qtile/bin/`にシンボリックリンク
-- `~/.config/qtile/`に`logo.png`をダウンロード
-- `~/.config/qtile/keybind-map/`ディレクトリの作成（画像イメージが格納される）
-- `gen-keybinding-img`の入手と、`~/.config/qtile/scripts/`への格納
-
-なお、実際の起動は、`~/.config/qtile/scripts/gen-keybinding-img.sh`で行っています。
+- Expanded the screen size to 1920x1080
+- Fixed font settings (size and color)
 
 
-## 私見
+## Preparing to run `gen-keybinding-img`
 
-私個人としては、キーバインドをリスト形式の文字列ではなく、画像で表示できるツールの存在が非常にありがたいと感じています。直感でキーバインドを認識できますので。ところが、他のタイル型ウィンドウマネージャには、おそらく、この機能が存在しない模様です。
-可能ならば、いわゆる「プログラム分割」という形式で、下記の対応を行いたいです。（時間と余力があれば）
+As I mentioned earlier, I use Qtile with `yay`. Because of this, `gen-keybinding-img` usually doesn't start. To avoid this, I've taken the following steps:
 
-1. キーバインドの解析を行い、設定を統一した出力項目のJSONで保存
-2. そのJSONを読み込み、キーボードの画像に表示
+- Symbolically link `/usr/bin/qtile` to `~/.config/qtile/bin/`
+- Download [`logo.png`](https://github.com/qtile/qtile/blob/master/libqtile/resources/logo.png) to `~/.config/qtile/`
+- Create the `~/.config/qtile/keybind-map/` directory (to store images)
+- Obtain `gen-keybinding-img` and store it in `~/.config/qtile/scripts/`
 
-なお、「キーボード」と一言で言っても、キーボード配置が千差万別なのは承知しています。そこは一旦置いて。実は私も、記号に関しては、このキーボード配列ではありません。最低限、特殊キー・数字・アルファベットが同じという状態ですが、それでも便利なPythonスクリプト（実態はCairoが動いている）には違いないと感じています。
+After setting the above, the directory structure will be as follows:
+
+```
+~/.config/qtile/
+ ├─ bin/
+ │   └─ qtile@ > /usr/bin/qtile
+ ├─ keybind-map/
+ │   └─ *.png
+ ├─ scripts/
+ │   ├─ gen-keybinding-img
+ │   └─ gen-keybinding-img.sh
+ ├─ config.py
+ └─ logo.png
+```
+
+The actual startup is performed by [`~/.config/qtile/scripts/gen-keybinding-img.sh`](../scripts/gen-keybinding-img.sh).
+
+```
+#!/usr/bin/sh
+python3 ~/.config/qtile/scripts/gen-keybinding-img \
+  --config ~/.config/qtile/config.py \
+  --output-dir ~/.config/qtile/keybind-map/
+```
+
+## Personal opinion
+
+Personally, I would be extremely grateful for the existence of a tool that can display key bindings as images rather than as list-style strings. This would allow me to intuitively recognize key bindings. However, it seems that this functionality probably does not exist in other tiling window managers. If possible, I would like to implement the following solution in the form of what is known as "program division." (If I have the time and energy)
+
+1. Analyze key bindings and save the settings as a unified output JSON file.
+2. Load the JSON file and display it in a keyboard image.
+
+The problem here is that I don't have the skills to modify the `gen-keybinding-img` script, so it's difficult for me to do so. I know this is a little late to mention, but Qtile runs on Python. This means that it doesn't simply parse a string to get the list of key bindings, but retrieves them via the Qtile API. Analyzing this process is a lot of work for me.
+
+I understand that there are many different keyboard layouts, even though we use the word "keyboard." Let's put that aside for now. Actually, I don't use this keyboard layout when it comes to symbols. At the very least, the special keys, numbers, and alphabets are the same, but I still feel that it's a useful Python script (which actually runs Cairo).
 
 
+<!-- -->
