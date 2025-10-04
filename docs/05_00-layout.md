@@ -55,7 +55,7 @@ The relationship between the currently used layout and workspace is shown below.
 
 ## Layout Settings
 
-I had two issues: I wanted to fix the layouts available on a workspace-by-workspace basis, and I wanted to use common settings. This wasn't possible with the existing [`./config.py`](../config.py) file alone. For this reason, I took the following steps:
+I had two issues: I wanted to fix the layouts available on a workspace-by-workspace basis, and I wanted to use common settings. For this reason, I took the following steps:
 
 - Layout settings are stored in [`./modules/layouts.py`](../modules/layouts.py)
 - Settings for assigning layouts to workgroups are stored in [`./modules/groups.py`](../modules/groups.py)
