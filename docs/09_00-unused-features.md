@@ -5,7 +5,7 @@ Initially, I incorporated these functions for learning purposes, but I no longer
 
 ## Dmenu
 
-The reason is that I don't use this function, so I decided it was unnecessary. I don't need it because I type commands directly from the terminal or use. For now, libqtile.widget.Prompt is sufficient for me. Although the uses are clearly different, I may focus on Popup Toolkit in the future.
+The reason is that I don't use this function, so I decided it was unnecessary. I don't need it because I type commands directly from the terminal or use. For now, `widget.Prompt` is sufficient for me. Although the uses are clearly different, I may focus on [Popup Toolkit](https://qtile-extras.readthedocs.io/en/stable/manual/ref/popup.html) in the future.
 
 
 ## DropDown and ScratchPad

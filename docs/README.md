@@ -40,7 +40,9 @@ The configurations of tools supporting my Qtile window manager are as follows:
 - [Keybindings](./05_00-keybind.md)
   - [Modification of `gen-keybinding-img`](./05_01-gen-keybinding-img.md)
 - [Built-in Widgets](./06_00-widgets.md)
-- [Functions that were used but are no longer used](./07_00-unused-features.md)
+- [Multiple Sscreens](./07_00-multiple_screens.md)
+- [Other information](./08_00-other-information.md)
+- [Functions that were used but are no longer used](./09_00-unused-features.md)
 <!-- {{TOC-OUT}} -->
 
 

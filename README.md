@@ -16,7 +16,9 @@
 - [Keybindings](./docs/05_00-keybind.md)
   - [Modification of `gen-keybinding-img`](./docs/05_01-gen-keybinding-img.md)
 - [Built-in Widgets](./docs/06_00-widgets.md)
-- [Functions that were used but are no longer used](./docs/07_00-unused-features.md)
+- [Multiple Sscreens](./docs/07_00-multiple_screens.md)
+- [Other information](./docs/08_00-other-information.md)
+- [Functions that were used but are no longer used](./docs/09_00-unused-features.md)
 <!-- {{TOC-OUT}} -->
 
 

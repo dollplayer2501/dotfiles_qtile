@@ -3,13 +3,13 @@
 
 ## Overview
 
-Although I rarely use it, I configure Qtile for a dual-screen setup. The `./config.py` file, which is the starting point for launching and configuring Qtile's widgets, is shown below.
+Although I rarely use it, I configure Qtile for a dual-screen setup. The [`./config.py`](../config.py) file, which is the starting point for launching and configuring Qtile's widgets, is shown below.
 
 ```
 from modules.screens_bar import screens
 ```
 
-And `./modules/screens_bar.py` is as follows.
+And [`./modules/screens_bar.py`](../modules/screens_bar.py) is as follows.
 
 ```
 from modules.screens_bar__main import screen_main
@@ -21,7 +21,7 @@ screens = [
 ]
 ```
 
-For example, `screen_main` (`./modules.screens_bar__main.py`) has common settings with another screen, `screen_sub_01` (such as PowerLine). To accommodate this, `./modules.screens_bar___common.py` is provided.
+For example, `screen_main` ([`./modules/screens_bar__main.py`](../modules/screens_bar.py)) has common settings with another screen, `screen_sub_01` (such as PowerLine). To accommodate this, [`./modules/screens_bar___common.py`](../modules/screens_bar___common.py) is provided.
 
 ```
 from modules.screens_bar___common import (
@@ -31,7 +31,7 @@ from modules.screens_bar___common import (
 )
 ```
 
-As for `./modules/screens_bar_none.py`, it is set to "do not display the bar." The import setting is left commented out in `./config.py`. It is almost never used, and currently it is set to be possible to toggle the display of the bar with `Super`+`b`.
+As for [`./modules/screens_bar_none.py`](../modules/screens_bar_none.py), it is set to "do not display the bar." The import setting is left commented out in [`./config.py`](../config.py). It is almost never used, and currently it is set to be possible to toggle the display of the bar with `Super`+`b`, `lazy.hide_show_bar()`.
 
 
 ## Dynamic Add/Delete Switch
