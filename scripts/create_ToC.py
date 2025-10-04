@@ -16,9 +16,6 @@ PLACEHOLDER_IN = "<!-- {{TOC-IN}} -->"
 PLACEHOLDER_OUT = "<!-- {{TOC-OUT}} -->"
 
 
-
-
-
 def main():
 
   #
@@ -51,20 +48,25 @@ def main():
 
   toc_str_docs_readme = ''
   for key, value in full_toc_dict.items():
-    toc_str_docs_readme += F'- [%s](%s)\n' % (
+    tmp1 = ''
+    if '00' == key[3:5]:
+      tmp1 = F'- [%s](%s)\n'
+    else:
+      tmp1 = F'  - [%s](%s)\n'
+
+    toc_str_docs_readme += tmp1 % (
       value, './' + key
     )
 
   in_file = os.path.join(DOCS_DIR, 'README.md')
-  print(in_file)
   with open(in_file, 'r', encoding = 'utf-8') as f:
     text = f.read()
     f.close()
 
+  tmp1 = R'' + PLACEHOLDER_IN + '.*?' + PLACEHOLDER_OUT
+  tmp2 = PLACEHOLDER_IN + '\n' + toc_str_docs_readme + PLACEHOLDER_OUT
   result = re.sub(
-    r"<!-- {{TOC-IN}} -->.*?<!-- {{TOC-OUT}} -->",
-    '<!-- {{TOC-IN}} -->\n' + toc_str_docs_readme + '<!-- {{TOC-OUT}} -->',
-    text,
+    tmp1, tmp2, text,
     flags = re.DOTALL
   )
 
@@ -75,7 +77,6 @@ def main():
 
 if __name__ == "__main__":
   main()
-
 
 
 ##

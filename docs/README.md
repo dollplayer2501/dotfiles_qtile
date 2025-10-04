@@ -31,9 +31,9 @@ The configurations of tools supporting my Qtile window manager are as follows:
 - [File Structure](./02_00-files.md)
 - [Installation](./03_00-installing.md)
 - [Built-in Layouts](./04_00-layout.md)
-- [Screenshot](./04_01-screenshot.md)
+  - [Screenshot](./04_01-screenshot.md)
 - [キーバインド](./05_00-keybind.md)
-- [Modification of `gen-keybinding-img`](./05_01-gen-keybinding-img.md)
+  - [Modification of `gen-keybinding-img`](./05_01-gen-keybinding-img.md)
 - [Built-in Widgets](./06_00-widgets.md)
 - [Functions that were used but are no longer used](./07_00-unused-features.md)
 <!-- {{TOC-OUT}} -->
