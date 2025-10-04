@@ -7,6 +7,7 @@
 ## Table of contents
 
 <!-- {{TOC-IN}} -->
+- [README.md: Document top](./docs/README.md)
 - [Project Overview](./docs/01_00-overview.md)
 - [File Structure](./docs/02_00-files.md)
 - [Installation](./docs/03_00-installing.md)

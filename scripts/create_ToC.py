@@ -2,6 +2,15 @@
 """
 generate_toc.py
 ===============
+
+`python3 scripts/create_ToC.py` at `./.config/qtile`
+
+Read `./doc/*.md` and create ToC.
+And rewrite the ToC of the following file:
+  - ./README.md
+  - ./doc/README.md
+
+The first line of `./doc/*.md` must be `# title`!
 """
 
 import sys
@@ -85,16 +94,16 @@ def main():
   # Rewrite `./README.md`
   #
 
-  tmp1 = '- [Document top](./docs/README.md)' + '\n' + toc_str_top_readme
-#  print(tmp1)
-
   in_file = os.path.join(DOCS_DIR, '../README.md')
   with open(in_file, 'r', encoding = 'utf-8') as f:
     text = f.read()
     f.close()
 
   tmp1 = R'' + PLACEHOLDER_IN + '.*?' + PLACEHOLDER_OUT
-  tmp2 = PLACEHOLDER_IN + '\n' + toc_str_top_readme + PLACEHOLDER_OUT
+  tmp2 = PLACEHOLDER_IN + '\n' + \
+    '- [README.md: Document top](./docs/README.md)' + '\n' + \
+    toc_str_top_readme + \
+    PLACEHOLDER_OUT
   result = re.sub(
     tmp1, tmp2, text,
     flags = re.DOTALL
