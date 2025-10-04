@@ -1,9 +1,8 @@
-# キーバインド
+# Keybindings
 
-- 特にトリッキーなことをしていないが、KeyChordを使っている件
-- KeyChordを使う場合、Widjet.KeyChordは必須だよ、という件（プラス、バーのみスクショ）
 
-<img src="./images/_EndeavourOS_Qtile_2025-10-02_12-05-08_short.png" width="60%">&nbsp;<img src="./images/_EndeavourOS_Qtile_2025-10-02_12-05-54_short.png" width="60%">
+I'm not doing anything particularly tricky, but I use KeyChord. See [`./modules/keys.py`](../modules/keys.py) for keybinding configuration. If you are using KeyChord, `gen-keybinding-img` will crash. To avoid this, I fixed it. See [Modification of `gen-keybinding-img`](./05_00-keybind.md) for details of the fix.  
+Also, if you want to check the image, please refer to [`./keybind-map/`](../keybind-map/).
 
 
 <!-- -->

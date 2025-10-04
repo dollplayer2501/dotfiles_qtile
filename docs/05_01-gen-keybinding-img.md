@@ -52,6 +52,13 @@ python3 ~/.config/qtile/scripts/gen-keybinding-img \
 ```
 
 
+## Using Widget.chord
+
+When using KeyChord, you cannot tell whether or not the current KeyChord key is being input. For this reason, I think it is better to introduce [widget.Chord](https://docs.qtile.org/en/stable/manual/ref/widgets.html#chord).
+
+<img src="./images/_EndeavourOS_Qtile_2025-10-02_12-05-08_short.png" width="45%">&nbsp;<img src="./images/_EndeavourOS_Qtile_2025-10-02_12-05-54_short.png" width="45%">
+
+
 ## Personal opinion
 
 Personally, I would be extremely grateful for the existence of a tool that can display key bindings as images rather than as list-style strings. This would allow me to intuitively recognize key bindings. However, it seems that this functionality probably does not exist in other tiling window managers. If possible, I would like to implement the following solution in the form of what is known as "program division." (If I have the time and energy)
