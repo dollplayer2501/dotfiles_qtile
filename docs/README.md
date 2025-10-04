@@ -1,10 +1,13 @@
 # dollplayer2501/dotfiles_qtile: My Qtile's configuration files
 
-[https://github.com/dollplayer2501/dotfiles_qtile](https://github.com/dollplayer2501/dotfiles_qtile)
 
 <img src="./images/EndeavourOS_Qtile_2025-09-28_04-03-49.png" width="30%">&nbsp;<img src="./images/EndeavourOS_Qtile_2025-09-28_04-03-57.png" width="30%">
 
-The Qtile configuration included here contains the following:
+
+## Overview
+
+This is the documentation for [dollplayer2501/dotfiles_qtile: My Qtile's configuration files](https://github.com/dollplayer2501/dotfiles_qtile).  
+This Qtile configuration included here contains the following:
 
 - Splitting the configuration files
 - A modified version of gen-keybinding-img with partial support for two-stroke KeyChords
@@ -24,7 +27,8 @@ The configurations of tools supporting my Qtile window manager are as follows:
   - Ranger
   - LazyVim
 
-- - -
+
+## Table of contents
 
 <!-- {{TOC-IN}} -->
 - [Project Overview](./01_00-overview.md)
