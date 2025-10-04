@@ -43,10 +43,10 @@ def main():
     full_toc_dict[md_file.name] = tmp2
 
   #
-  # `./docs/README.md`
+  # Create link markdown
   #
 
-  toc_str_docs_readme = ''
+  toc_str_docs_readme = toc_str_top_readme = ''
   for key, value in full_toc_dict.items():
     tmp1 = ''
     if '00' == key[3:5]:
@@ -57,6 +57,13 @@ def main():
     toc_str_docs_readme += tmp1 % (
       value, './' + key
     )
+    toc_str_top_readme += tmp1 % (
+      value, './docs/' + key
+    )
+
+  #
+  # Rewrite `./docs/README.md`
+  #
 
   in_file = os.path.join(DOCS_DIR, 'README.md')
   with open(in_file, 'r', encoding = 'utf-8') as f:
@@ -70,6 +77,30 @@ def main():
     flags = re.DOTALL
   )
 
+  with open(in_file, 'w', encoding = 'utf-8') as f:
+    f.write(result)
+    f.close()
+
+  #
+  # Rewrite `./README.md`
+  #
+
+  tmp1 = '- [Document top](./docs/README.md)' + '\n' + toc_str_top_readme
+#  print(tmp1)
+
+  in_file = os.path.join(DOCS_DIR, '../README.md')
+  with open(in_file, 'r', encoding = 'utf-8') as f:
+    text = f.read()
+    f.close()
+
+  tmp1 = R'' + PLACEHOLDER_IN + '.*?' + PLACEHOLDER_OUT
+  tmp2 = PLACEHOLDER_IN + '\n' + toc_str_top_readme + PLACEHOLDER_OUT
+  result = re.sub(
+    tmp1, tmp2, text,
+    flags = re.DOTALL
+  )
+
+  in_file = os.path.join(DOCS_DIR, '../README.md')
   with open(in_file, 'w', encoding = 'utf-8') as f:
     f.write(result)
     f.close()

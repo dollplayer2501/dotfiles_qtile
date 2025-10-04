@@ -26,6 +26,7 @@ The configurations of tools supporting my Qtile window manager are as follows:
   - Bat
   - Ranger
   - LazyVim
+  - Conky
 
 
 ## Table of contents

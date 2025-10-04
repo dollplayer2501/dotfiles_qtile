@@ -1,3 +1,29 @@
+# dollplayer2501/dotfiles_qtile: My Qtile's configuration files
+
+
+<img src="./docs/images/EndeavourOS_Qtile_2025-09-28_04-03-49.png" width="40%">&nbsp;<img src="./docs/images/EndeavourOS_Qtile_2025-09-28_04-03-57.png" width="40%">
+
+
+## Table of contents
+
+<!-- {{TOC-IN}} -->
+- [Project Overview](./docs/01_00-overview.md)
+- [File Structure](./docs/02_00-files.md)
+- [Installation](./docs/03_00-installing.md)
+- [Built-in Layouts](./docs/04_00-layout.md)
+  - [Screenshot](./docs/04_01-screenshot.md)
+- [キーバインド](./docs/05_00-keybind.md)
+  - [Modification of `gen-keybinding-img`](./docs/05_01-gen-keybinding-img.md)
+- [Built-in Widgets](./docs/06_00-widgets.md)
+- [Functions that were used but are no longer used](./docs/07_00-unused-features.md)
+<!-- {{TOC-OUT}} -->
+
+
+- - -
+
+**I'll delete it at some point below.**
+
+
 > [!NOTE]
 > I found this `README.md` alone to be too complicated and tedious. For this reason, I am gradually migrating and writing documentation in [docs](./docs/).  
 > 2025-09-29
