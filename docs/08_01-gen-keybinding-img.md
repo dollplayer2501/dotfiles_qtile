@@ -52,7 +52,7 @@ python3 ~/.config/qtile/scripts/gen-keybinding-img \
 ```
 
 
-## Using Widget.chord
+## Using widget.Chord
 
 When using KeyChord, you cannot tell whether or not the current KeyChord key is being input. For this reason, I think it is better to introduce [widget.Chord](https://docs.qtile.org/en/stable/manual/ref/widgets.html#chord).
 

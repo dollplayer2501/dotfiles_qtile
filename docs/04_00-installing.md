@@ -27,7 +27,7 @@ This is probably still a long way off. If it happens, I intend to build my envir
 
 ## Multiple desktop environments and window managers
 
-When you start Qtile with a misconfigured `./config.py`, it usually falls back to the default configuration—at least in the case of minor mistakes, such as typos. However, if the error involves introducing something new (for example, defining a new class in Python or adding a new widget in Qtile), the startup process may fail entirely, and Qtile will not launch at all. I plan to experiment more with such custom implementations in the future.
+When you start Qtile with a misconfigured [`./config.py`](../config.py), it usually falls back to the default configuration—at least in the case of minor mistakes, such as typos. However, if the error involves introducing something new (for example, defining a new class in Python or adding a new widget in Qtile), the startup process may fail entirely, and Qtile will not launch at all. I plan to experiment more with such custom implementations in the future.
 
 Considering this risk, it is important to have an alternative window manager available so that you can still log in and fix issues when Qtile refuses to start. For this reason, I did not install Qtile on a system without any desktop environment. Instead, I currently run Qtile alongside Xfce4, and in the future I plan to use i3WM as a fallback environment as well.
 

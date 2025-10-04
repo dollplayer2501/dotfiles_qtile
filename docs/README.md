@@ -33,16 +33,17 @@ The configurations of tools supporting my Qtile window manager are as follows:
 
 <!-- {{TOC-IN}} -->
 - [Project Overview](./01_00-overview.md)
-- [File Structure](./02_00-files.md)
-- [Installation](./03_00-installing.md)
-- [Built-in Layouts](./04_00-layout.md)
-  - [Screenshot](./04_01-screenshot.md)
-- [Keybindings](./05_00-keybind.md)
-  - [Modification of `gen-keybinding-img`](./05_01-gen-keybinding-img.md)
-- [Built-in Widgets](./06_00-widgets.md)
-- [Multiple Sscreens](./07_00-multiple_screens.md)
-- [Other information](./08_00-other-information.md)
-- [Functions that were used but are no longer used](./09_00-unused-features.md)
+- [Screenshot](./02_00_screenshot.md)
+- [File Structure](./03_00-files.md)
+- [Installation](./04_00-installing.md)
+- [Built-in Layouts](./05_00-layout.md)
+- [Keybindings](./06_00-keybind.md)
+- [Built-in Widgets](./07_00-widgets.md)
+- [Other Information](./08_00-other-information.md)
+  - [Modification of `gen-keybinding-img`](./08_01-gen-keybinding-img.md)
+  - [Taking a screenshot](./08_02-taking-screenshot.md)
+  - [Multiple Sscreens](./08_03-multiple_screens.md)
+  - [Functions that were used but are no longer used](./08_04-unused-features.md)
 <!-- {{TOC-OUT}} -->
 
 

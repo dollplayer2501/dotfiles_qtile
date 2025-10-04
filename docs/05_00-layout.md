@@ -55,24 +55,12 @@ The relationship between the currently used layout and workspace is shown below.
 
 ## Layout Settings
 
-I had two issues: I wanted to fix the layouts available on a workspace-by-workspace basis, and I wanted to use common settings. This wasn't possible with the existing `config.py` file alone. For this reason, I took the following steps:
+I had two issues: I wanted to fix the layouts available on a workspace-by-workspace basis, and I wanted to use common settings. This wasn't possible with the existing [`./config.py`](../config.py) file alone. For this reason, I took the following steps:
 
-- Layout settings are stored in `modules/layouts.py`
-- Settings for assigning layouts to workgroups are stored in `modules/groups.py`
+- Layout settings are stored in [`./modules/layouts.py`](../modules/layouts.py)
+- Settings for assigning layouts to workgroups are stored in [`./modules/groups.py`](../modules/groups.py)
 
 As a side note, each screen has built-in widgets. These are also managed as separate files.
-
-
-## My impressions when using two screens
-
-<!--
-  TODO: 分割する
-  スクショ取得の方法も交えて
-  バーのみのスクショ
--->
-
-I'm currently studying Qtile and have a dual-monitor setup, but I only use one screen for basic use. To be honest, using two screens is quite inconvenient. To alleviate this inconvenience, I think it's essential to implement [CurrentScreen](https://docs.qtile.org/en/stable/manual/ref/widgets.html#currentscreen).
-
 
 
 ## Personal Impressions about tiling window manager

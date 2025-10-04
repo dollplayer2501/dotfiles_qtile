@@ -9,16 +9,17 @@
 <!-- {{TOC-IN}} -->
 - [README.md: Document top](./docs/README.md)
 - [Project Overview](./docs/01_00-overview.md)
-- [File Structure](./docs/02_00-files.md)
-- [Installation](./docs/03_00-installing.md)
-- [Built-in Layouts](./docs/04_00-layout.md)
-  - [Screenshot](./docs/04_01-screenshot.md)
-- [Keybindings](./docs/05_00-keybind.md)
-  - [Modification of `gen-keybinding-img`](./docs/05_01-gen-keybinding-img.md)
-- [Built-in Widgets](./docs/06_00-widgets.md)
-- [Multiple Sscreens](./docs/07_00-multiple_screens.md)
-- [Other information](./docs/08_00-other-information.md)
-- [Functions that were used but are no longer used](./docs/09_00-unused-features.md)
+- [Screenshot](./docs/02_00_screenshot.md)
+- [File Structure](./docs/03_00-files.md)
+- [Installation](./docs/04_00-installing.md)
+- [Built-in Layouts](./docs/05_00-layout.md)
+- [Keybindings](./docs/06_00-keybind.md)
+- [Built-in Widgets](./docs/07_00-widgets.md)
+- [Other Information](./docs/08_00-other-information.md)
+  - [Modification of `gen-keybinding-img`](./docs/08_01-gen-keybinding-img.md)
+  - [Taking a screenshot](./docs/08_02-taking-screenshot.md)
+  - [Multiple Sscreens](./docs/08_03-multiple_screens.md)
+  - [Functions that were used but are no longer used](./docs/08_04-unused-features.md)
 <!-- {{TOC-OUT}} -->
 
 
