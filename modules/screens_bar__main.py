@@ -209,9 +209,9 @@ screen_main = Screen(
       ),
 
       widget.GenPollText(
-        func = lambda: "GPU: " + subprocess.getoutput(
+        func = lambda: 'GPU: ' + subprocess.getoutput(
           "amdgpu_top -n 1 -J | jq '.devices[0].gpu_activity.GFX.value'"
-        ) + "%",
+        ) + '%',
         update_interval = 2,
 
         padding = 4,
