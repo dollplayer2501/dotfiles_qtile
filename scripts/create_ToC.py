@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""
+generate_toc.py
+===============
+"""
+
+import sys
+import os
+import re
+from pathlib import Path
+import pprint
+
+
+DOCS_DIR = Path(os.path.expanduser('~/.config/qtile/docs/'))
+PLACEHOLDER_IN = "<!-- {{TOC-IN}} -->"
+PLACEHOLDER_OUT = "<!-- {{TOC-OUT}} -->"
+
+
+
+
+
+def main():
+
+  #
+  # Read ToC
+  #
+
+  md_files = list(DOCS_DIR.glob('*.md'))
+  if not md_files:
+    print('No markdown files found in `' + str(DOCS_DIR) + '`.')
+    return
+  md_files.sort()
+
+  full_toc_dict = {}
+  for md_file in md_files:
+    if 'README' in md_file.name:
+      continue
+
+    text = None
+    with open(md_file, 'r', encoding = 'utf-8') as f:
+      text = f.readline()
+      f.close()
+
+    tmp1 = text.rstrip('\n')
+    tmp2 = tmp1[2:]
+    full_toc_dict[md_file.name] = tmp2
+
+  #
+  # `./docs/README.md`
+  #
+
+  toc_str_docs_readme = ''
+  for key, value in full_toc_dict.items():
+    toc_str_docs_readme += F'- [%s](%s)\n' % (
+      value, './' + key
+    )
+
+  in_file = os.path.join(DOCS_DIR, 'README.md')
+  print(in_file)
+  with open(in_file, 'r', encoding = 'utf-8') as f:
+    text = f.read()
+    f.close()
+
+  result = re.sub(
+    r"<!-- {{TOC-IN}} -->.*?<!-- {{TOC-OUT}} -->",
+    '<!-- {{TOC-IN}} -->\n' + toc_str_docs_readme + '<!-- {{TOC-OUT}} -->',
+    text,
+    flags = re.DOTALL
+  )
+
+  with open(in_file, 'w', encoding = 'utf-8') as f:
+    f.write(result)
+    f.close()
+
+
+if __name__ == "__main__":
+  main()
+
+
+
+##
