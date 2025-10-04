@@ -1,6 +1,32 @@
 # Other Information
 
-This is not directly related to Qtile settings, but it is about the scripts that support the Qtile environment.
+This is not directly related to Qtile settings, but it is about the scripts that support the Qtile environment.  
+Anything not covered here is documented separately.
+
+
+<!-- ###################################################################### -->
+## GPU load display
+
+I'm using `widget.GenPollText` and issuing `"amdgpu_top -n 1 -J | jq '.devices[0].gpu_activity.GFX.value'"`.
+
+
+<!-- ###################################################################### -->
+## Japanese Imperial Calendar
+
+I'm a Japanese person living in Japan. I rarely use the Japanese calendar in my daily life, but when I need to, I can't remember the Japanese calendar and it's very inconvenient.  
+For this reason, I set the `format` of `widget.Clock` to the following:
+
+```
+format = '%Y' + '/R' + str(current_gengou_reiwa) + '-%m-%d %a %H:%M',
+```
+
+The contents of the `current_gengou_reiwa` function are written below in [`./modules/variables.py`](../modules/variables.py).
+
+```
+current_gengou_reiwa = int(current_date_time.strftime('%Y')) - 2018
+```
+
+In other words, it only supports Reiwa. There's no need to go back in time, but if the era name changes in the future, you'll need to support it.
 
 
 <!-- ###################################################################### -->
@@ -20,7 +46,7 @@ The output file name is fixed to `_EndeavourOS_Qtile_yyyy-mm-dd_hh-nn-ss_short.p
 <!-- ###################################################################### -->
 ## `./scripts/gen-keybinding-img`、`./script/gen-keybinding-img.sh`
 
-See [Modification of `gen-keybinding-img`](./05_01-gen-keybinding-img.md).
+See [Modification of `gen-keybinding-img`](./08_01-gen-keybinding-img.md).
 
 
 <!-- ###################################################################### -->
