@@ -10,8 +10,6 @@ I have a dual monitor setup, but I only use one screen.
 https://docs.qtile.org/en/stable/manual/config/groups.html
 """
 
-import re
-#
 from libqtile.config import Key, Group, Match
 from libqtile.lazy import lazy
 from libqtile import layout

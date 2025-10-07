@@ -19,13 +19,13 @@ The configurations of tools supporting my Qtile window manager are as follows:
 
 - [kitty terminal](https://github.com/dollplayer2501/dotfiles_kitty)
 - [Starship](https://github.com/dollplayer2501/dotfiles_starship)
+- [LazyVim](https://github.com/dollplayer2501/dotfiles_nvim_rev2)
 - The following are in private repositories:
   - Fish shell
   - Picom
   - Fastfetch
   - Bat
   - Ranger
-  - LazyVim
   - Conky
 
 
