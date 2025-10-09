@@ -191,20 +191,35 @@ screen_main = Screen(
         background = Theme_Colors['DarkBlue_default'],
       ),
 
-      widget.ThermalZone(
-        high = 40,
-        crit = 45,
+      # NOTE: This does not work
+      # `/sys/class/thermal/thermal_zone0/temp` does not exit.
+      # widget.ThermalZone(
+      #   high = 40,
+      #   crit = 45,
+      #   format = '{temp}°C',
+      #   format_crit = '{temp}°C!!',
+      #   padding = 4,
+      #   fontsize = 18,
+      #   font = font_set['main'],
+      #   fgcolor_normal = Theme_Colors['LightBlue'],
+      #   fgcolor_high = Theme_Colors['Oreange'],
+      #   fgcolor_crit = Theme_Colors['Red'],
+      #   background = Theme_Colors['DarkBlue_default'],
+      # ),
 
-        format = '{temp}°C',
-        format_crit = '{temp}°C!!',
+      # NOTE: This need `lm_sensors` package.
+      #       And check `sensors`.
+      widget.ThermalSensor(
+        tag_sensor = 'CPU',
+        update_interval = 2,
+        threshold = 45,
 
-        padding = 4,
-        fontsize = 18,
+        padding = 2,
+        fontsize = 14,
         font = font_set['main'],
 
-        fgcolor_normal = Theme_Colors['LightBlue'],
-        fgcolor_high = Theme_Colors['Oreange'],
-        fgcolor_crit = Theme_Colors['Red'],
+        foreground = Theme_Colors['LightBlue'],
+        foreground_alert = Theme_Colors['Oreange'],
         background = Theme_Colors['DarkBlue_default'],
       ),
 
