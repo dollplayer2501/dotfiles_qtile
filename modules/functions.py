@@ -65,13 +65,13 @@ def go_to_group_and_move_window(name: str):
 def spawn_by_group(qtile):
   group = qtile.current_group.name
   if '1' == group:
-    qtile.spawn('kitty')
+    qtile.spawn('/usr/bin/kitty')
   elif '3' == group:
-    qtile.spawn('brave')
+    qtile.spawn('/usr/bin/firefox')
   elif '4' == group:
-    qtile.spawn('thunar')
+    qtile.spawn('/usr/bin/thunar')
   else:
-    qtile.spawn('kitty')
+    qtile.spawn('/usr/bin/kitty')
 
 
 ##

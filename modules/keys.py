@@ -117,10 +117,9 @@ keys = [
   KeyChord([MOD4], 'z', [
       # TODO: brave --incognito
       # TODO: My customized gen-keybinging-img does not hook mod+z, shift+b
-      Key([], 'b', lazy.spawn('brave'),       desc = 'Run Brave'),
+      Key([], 'b', lazy.spawn('firefox'),     desc = 'Run Firefox'),
       Key([], 'c', lazy.spawn('claws-mail'),  desc = 'Run Claws mail'),
       Key([], 'g', lazy.spawn('gimp'),        desc = 'Run Gimp'),
-      Key([], 'h', lazy.spawn('brave --incognito'), desc = 'Run Brave private'),
       Key([], 'k', lazy.spawn('keepassxc'),   desc = 'Run KeepassXC'),
       Key([], 'l', lazy.spawn('libreoffice'), desc = 'Run LibreOffice'),
       Key([], 'm', lazy.spawn('mousepad'),    desc = 'Run Mousepad'),
