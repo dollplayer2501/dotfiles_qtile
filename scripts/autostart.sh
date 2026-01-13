@@ -5,8 +5,7 @@
 # See `@hook.subscribe.startup_once`, `def autostart()` in `./modules/hooks.py`.
 #
 
-echo '-- autostart.sh in  -- ' >> ~/.local/share/qtile/qtile.log
-
+echo '-- autostart.sh in  -- ' >>~/.local/share/qtile/qtile.log
 
 #
 # Xfce4
@@ -33,7 +32,6 @@ sh -c "systemctl --user start xfce4-notifyd.service 2>/dev/null || exec /usr/lib
 #     command line is `notify-send "abc"`
 #     class is "Xfce4-notifyd"
 #  NOTE: need `python-dbus-fast`
-
 
 /usr/lib/xapps/xapp-sn-watcher &
 #  xapp-sn-watcher.desktop
@@ -65,19 +63,23 @@ sh -c "systemctl --user start xfce4-notifyd.service 2>/dev/null || exec /usr/lib
 
 # xsetroot -cursor_name left_ptr & disowm
 
+# NOTE:
+# /usr/bin/fcitx5 &
+# This is into `~/.xprofile`, in
+#   export GTK_IM_MODULE=fcitx
+#   export QT_IM_MODULE=fcitx
+#   export XMODIFIERS=@im=fcitx
+#   export GLFW_IM_MODULE=ibus
+#   fcitx5 -d &
 
-/usr/bin/fcitx5 &
 /usr/bin/picom --daemon &
 # sh ~/.config/conky/wonder_wall_03/start-quick.sh &
 
 cp /dev/null /home/dollplayer/.local/share/syncthing.log
-syncthing --no-browser --logfile="/home/dollplayer/.local/share/syncthing.log" > /dev/null &
-
+syncthing --no-browser --logfile="/home/dollplayer/.local/share/syncthing.log" >/dev/null &
 
 # xfce4-terminal &
 
-
-echo '-- autostart.sh out -- ' >> ~/.local/share/qtile/qtile.log
-
+echo '-- autostart.sh out -- ' >>~/.local/share/qtile/qtile.log
 
 ##
