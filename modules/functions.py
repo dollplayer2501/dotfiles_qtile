@@ -74,4 +74,20 @@ def spawn_by_group(qtile):
     qtile.spawn('/usr/bin/kitty')
 
 
+def get_uptime():
+  with open('/proc/uptime', 'r') as f:
+    seconds = int(float(f.readline().split()[0]))
+
+  days, seconds = divmod(seconds, 86400)
+  hours, seconds = divmod(seconds, 3600)
+  minutes, _ = divmod(seconds, 60)
+
+  if days > 0:
+    return f"UP: {days}d {hours}h {minutes}m"
+  elif hours > 0:
+    return f"UP: {hours}h {minutes}m"
+  else:
+    return f"UP: {minutes}m"
+
+
 ##

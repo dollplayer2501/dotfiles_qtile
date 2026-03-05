@@ -35,6 +35,10 @@ from modules.screens_bar___common import (
 )
 from modules.popup import show_power_menu
 #
+from modules.functions import (
+  get_uptime,
+)
+#
 from theme_colors import Theme_Colors
 
 
@@ -179,6 +183,12 @@ screen_main = Screen(
       #   **common_powerline,
       # ),
 
+
+      #
+      ## ------------------------------------
+      #
+
+
       widget.CPU(
         format = 'CPU: {load_percent}%',
         # format = 'CPU: {freq_current}GHz {load_percent}%',
@@ -265,6 +275,19 @@ screen_main = Screen(
         foreground = Theme_Colors['LightBlue'], # this is initial?
         colour_have_updates = Theme_Colors['LightBlue'],
         colour_no_updates = Theme_Colors['LightBlue'],
+        background = Theme_Colors['DarkBlue_default'],
+      ),
+
+      widget.GenPollText(
+        # func = lambda: subprocess.getoutput("uptime -p"),
+        func = get_uptime,
+        update_interval = 60,
+
+        padding = 6,
+        fontsize = 16,
+        font = font_set['main'],
+
+        foreground = Theme_Colors['LightBlue'],
         background = Theme_Colors['DarkBlue_default'],
       ),
 
