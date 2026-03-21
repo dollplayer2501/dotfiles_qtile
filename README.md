@@ -1,3 +1,9 @@
+> [!NOTE]
+> I will change the status of this repository to "Archive" on March 26, 2026, Japan time.  
+> I will continue to use this setting, but for now, I am considering using Chezmoi to manage various applications together.
+
+- - -
+
 # dollplayer2501/dotfiles_qtile: My Qtile's configuration files
 
 

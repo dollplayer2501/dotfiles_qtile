@@ -140,6 +140,9 @@ screen_main = Screen(
         selected = ('<u>', '</u>'),
         padding = 0,
 
+        # If I use this, will things like `markuo`, `selected` become weird?
+        # max_chars = 40,
+
         foreground = Theme_Colors['LightBlue'],
         background = Theme_Colors['DarkBlue_lighten'],
 

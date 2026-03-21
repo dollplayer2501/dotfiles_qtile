@@ -99,6 +99,18 @@ keys = [
   Key([MOD4], RETURN, lazy.function(spawn_by_group), desc = 'Spawn app by group, kitty, brave, thunar'),
   Key([MOD4, SHIFT], SPACE, lazy.function(focus_next_floating), desc = 'Move floating window focus to other window'),
 
+  # NOTE: 2026-03-17
+  # My environment is an Xfce4 environment on EndeavourOS with Qtile installed.
+  # Because of this, pressing Mod4 + Enter sometimes launches the Xfce4 terminal.
+  # (I have Kitty Terminal set as the default.)
+  #  > python3 -c "from libqtile.utils import guess_terminal; print(guess_terminal())"
+  #  alacritty
+  #  > xfconf-query -c xfce4-keyboard-shortcuts -lv | grep -i "super.*return\|return.*super"
+  #   /commands/custom/<Super>Return             exo-open --launch TerminalEmulator
+  #   /commands/default/<Super>Return            exo-open --launch TerminalEmulator
+  #  > xfconf-query -c xfce4-keyboard-shortcuts -rp "/commands/custom/<Super>Return"
+  #  > xfconf-query -c xfce4-keyboard-shortcuts -rp "/commands/default/<Super>Return"
+  # I'm not sure if this is correct.
 
   Key([MOD4], 'period', lazy.next_screen(), desc = 'Toggle monitor, if 2 monitors'),
 

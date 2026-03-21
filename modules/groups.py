@@ -95,6 +95,7 @@ groups = [
     ],
     matches = [
       # TODO: Is this function not enabled when starting from Thunar?
+      Match(wm_class = 'libreoffice'),
       Match(wm_class = 'libreoffice-startcenter'),
       Match(wm_class = 'libreoffice-writer'),
 

@@ -67,5 +67,17 @@ def enter_chord(chord_name):
   # send_notification("qtile", "Started {chord_name} key chord.")
   pass
 
+
+#
+# TODO: This does not work?
+#
+@hook.subscribe.client_new
+def assign_libreoffice(client):
+  wm_class = client.window.get_wm_class()
+  if wm_class and any('libreoffice' in c for c in wm_class):
+    client.togroup('5')
+
+
+
 ##
 
